@@ -81,7 +81,7 @@ async function showVersion() {
   document.getElementById("v-time").innerHTML = currVersionData.versionTime;
   document.getElementById("b-name").innerHTML = currVersionData.buffName;
   document.getElementById("b-text").innerHTML = currVersionData.buffDesc;
-  showEnemies();
+  showNode();
 }
 async function prevVersion() { versionNum = versionNum == 1 ? (leaksToggle.checked ? versionIDs.length : cntNoLeaks) : versionNum - 1; await showVersion(); }
 async function nextVersion() { versionNum = versionNum == (leaksToggle.checked ? versionIDs.length : cntNoLeaks) ? 1 : versionNum + 1; await showVersion(); }
@@ -182,7 +182,6 @@ function showEnemies() {
           enemyName.className = "e-name";
           enemyHover.className = "e-hover";
           enemyImg.src = eImg;
-          enemyImg.loading = "lazy";
           enemyHover.appendChild(enemyImg);
           enemyName.innerHTML = eName;
           enemyHover.appendChild(enemyName);
@@ -278,10 +277,6 @@ function generateWR(mult, wr) {
   weakImg2.src = "./shiyu-assets/elements/none.webp";
   resImg1.src = "./shiyu-assets/elements/none.webp";
   resImg2.src = "./shiyu-assets/elements/none.webp";
-  weakImg1.loading = "lazy";
-  weakImg2.loading = "lazy";
-  resImg1.loading = "lazy";
-  resImg2.loading = "lazy";
   let wkCnt = 0, resCnt = 0;
   for (let i = 0; i < 5; i++) {
     if (mult[i] < 1 && wkCnt == 0) { weakImg1.src = `./shiyu-assets/elements/${elementsData[i]}.webp`; wkCnt++;}
