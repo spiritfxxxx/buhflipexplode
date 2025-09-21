@@ -1,7 +1,7 @@
 let buhImg = document.getElementById("gif");
-let buh = "/home-assets/buh.webp";
-let buhFlip = "/home-assets/buhFlip.webp";
-let buhFlipExplode = "/home-assets/buhFlipExplode.webp"; 
+let buh = "./home-assets/buh.webp";
+let buhFlip = "./home-assets/buhFlip.webp";
+let buhFlipExplode = "./home-assets/buhFlipExplode.webp"; 
 let isPlaying = false;
 let canClick = true;
 

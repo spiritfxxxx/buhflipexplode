@@ -18,8 +18,8 @@ let menuIsOpen = false, versionSelectorIsOpen = false, chartIsOpen = false;
 
 /* load main page data from .json files, and display */
 async function loadShiyuPage() {
-  versionData = await (await fetch("/shiyu-assets/shiyu-versions.json")).json();
-  enemyData = await (await fetch("/shiyu-assets/shiyu-enemies.json")).json();
+  versionData = await (await fetch("./shiyu-assets/shiyu-versions.json")).json();
+  enemyData = await (await fetch("./shiyu-assets/shiyu-enemies.json")).json();
   versionIDs = Object.keys(versionData);
   hpData = await buildHPData(versionIDs, enemyData);
   loadSavedState();
@@ -158,7 +158,7 @@ function showEnemies() {
         let eMods = currEnemyData.mods;
         let showEnemySpoilers = spoilersToggle.checked || !eTags.includes("spoiler");
         let eName = showEnemySpoilers ? currEnemyData.name : "SPOILER ENEMY";
-        let eImg = showEnemySpoilers ? `/shiyu-assets/shiyu-enemy-images/${currEnemyData.image}.webp` : `/shiyu-assets/shiyu-enemy-images/doppelganger-i.webp`;
+        let eImg = showEnemySpoilers ? `./shiyu-assets/shiyu-enemy-images/${currEnemyData.image}.webp` : `./shiyu-assets/shiyu-enemy-images/doppelganger-i.webp`;
 
         /* define current enemy's various stats */
         let eHP = currEnemy.hp;
@@ -274,20 +274,20 @@ function generateWR(mult, wr) {
   weakImg2.className = "wk";
   resImg1.className = "res";
   resImg2.className = "res";
-  weakImg1.src = "/shiyu-assets/elements/none.webp";
-  weakImg2.src = "/shiyu-assets/elements/none.webp";
-  resImg1.src = "/shiyu-assets/elements/none.webp";
-  resImg2.src = "/shiyu-assets/elements/none.webp";
+  weakImg1.src = "./shiyu-assets/elements/none.webp";
+  weakImg2.src = "./shiyu-assets/elements/none.webp";
+  resImg1.src = "./shiyu-assets/elements/none.webp";
+  resImg2.src = "./shiyu-assets/elements/none.webp";
   weakImg1.loading = "lazy";
   weakImg2.loading = "lazy";
   resImg1.loading = "lazy";
   resImg2.loading = "lazy";
   let wkCnt = 0, resCnt = 0;
   for (let i = 0; i < 5; i++) {
-    if (mult[i] < 1 && wkCnt == 0) { weakImg1.src = `/shiyu-assets/elements/${elementsData[i]}.webp`; wkCnt++;}
-    else if (mult[i] < 1 && wkCnt == 1) weakImg2.src = `/shiyu-assets/elements/${elementsData[i]}.webp`;
-    else if (mult[i] > 1 && resCnt == 0) { resImg1.src = `/shiyu-assets/elements/${elementsData[i]}.webp`; resCnt++; }
-    else if (mult[i] > 1 && resCnt == 1) resImg2.src = `/shiyu-assets/elements/${elementsData[i]}.webp`;
+    if (mult[i] < 1 && wkCnt == 0) { weakImg1.src = `./shiyu-assets/elements/${elementsData[i]}.webp`; wkCnt++;}
+    else if (mult[i] < 1 && wkCnt == 1) weakImg2.src = `./shiyu-assets/elements/${elementsData[i]}.webp`;
+    else if (mult[i] > 1 && resCnt == 0) { resImg1.src = `./shiyu-assets/elements/${elementsData[i]}.webp`; resCnt++; }
+    else if (mult[i] > 1 && resCnt == 1) resImg2.src = `./shiyu-assets/elements/${elementsData[i]}.webp`;
   }
   wr.appendChild(weakImg1);
   wr.appendChild(weakImg2);
