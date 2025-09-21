@@ -158,7 +158,7 @@ function showEnemies() {
         let eMods = currEnemyData.mods;
         let showEnemySpoilers = spoilersToggle.checked || !eTags.includes("spoiler");
         let eName = showEnemySpoilers ? currEnemyData.name : "SPOILER ENEMY";
-        let eImg = showEnemySpoilers ? `/shiyu-assets/shiyu-enemy-images/${currEnemyData.image}.webp` : `/shiyu-enemy-images/doppelganger-i.webp`;
+        let eImg = showEnemySpoilers ? `/shiyu-assets/shiyu-enemy-images/${currEnemyData.image}.webp` : `/shiyu-assets/shiyu-enemy-images/doppelganger-i.webp`;
 
         /* define current enemy's various stats */
         let eHP = currEnemy.hp;
