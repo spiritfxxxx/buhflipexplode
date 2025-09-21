@@ -1,0 +1,42 @@
+html, body {
+  font-family: 'Inconsolata', monospace;
+  background-color: #111111;
+  color: #ffffff;
+  text-align: center;
+}
+p {
+  margin: 0;
+}
+
+.msg {
+  margin-top: 20%;
+  font-size: 32px;
+  user-select: none;
+}
+nav {
+  padding: 25px;
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+a {
+  padding: 10px 20px;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #b2cee7;
+  border-radius: 12px;
+  user-select: none;
+}
+a:hover {
+  color: #000000;
+  background-color: #b2cee7;
+  transition: all 0.1s ease-in-out;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/Inconsolata-Regular.ttf') format('truetype');
+}
