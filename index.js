@@ -1,7 +1,5 @@
 let buhImg = document.getElementById("gif");
-let buh = "./home-assets/buh.webp";
-let buhFlip = "./home-assets/buhFlip.webp";
-let buhFlipExplode = "./home-assets/buhFlipExplode.webp"; 
+let buh = "./index-assets/buh.webp";
 let isPlaying = false;
 let canClick = true;
 
@@ -28,9 +26,9 @@ function playGif(gifSrc, duration) {
 
 /* left click to flip, right click to explode */
 buhImg.addEventListener("click", () => {
-  playGif(buhFlip, 2970);
+  playGif("./index-assets/buhFlip.webp", 2970);
 });
 buhImg.addEventListener("contextmenu", (e) => {
   e.preventDefault();
-  playGif(buhFlipExplode, 2480);
+  playGif("./index-assets/buhFlipExplode.webp", 2480);
 });
