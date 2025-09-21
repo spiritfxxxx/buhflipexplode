@@ -52,5 +52,5 @@ a:hover {
 /* importing font */
 @font-face {
   font-family: 'Inconsolata';
-  src: url("/Inconsolata-Regular.ttf") format('truetype');
+  src: url("Inconsolata-Regular.ttf") format('truetype');
 }

@@ -81,7 +81,7 @@ a.btn:hover {
 /* importing font + mobile support */
 @font-face {
   font-family: 'Inconsolata';
-  src: url("/Inconsolata-Regular.ttf") format('truetype');
+  src: url("Inconsolata-Regular.ttf") format('truetype');
 }
 @media (max-width: 500px) {
   .small-image, .large-image { max-width: 80vw; height: auto; }

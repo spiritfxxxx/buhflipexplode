@@ -786,7 +786,7 @@ input:checked + #st {
 /* importing font and mobile support */
 @font-face {
   font-family: 'Inconsolata';
-  src: url("/Inconsolata-Regular.ttf") format('truetype');
+  src: url("Inconsolata-Regular.ttf") format('truetype');
 }
 @media (max-width: 800px) {
   .vg-c { width: 150px; }
