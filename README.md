@@ -14,4 +14,4 @@ The ZZZ & HSR Endgame Archive: https://www.buhflipexplode.org/
 [@fx69](https://discord.com/users/779046790636765234/)
 
 ## Source Code
-You are here!
+[here](https://github.com/spiritfxxxx/buhflipexplode-src)
