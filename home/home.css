@@ -30,7 +30,7 @@ body:after {
   width: 0px;
   height: 0px;
   overflow: hidden;
-  content: url(../../assets/misc/home-hover.webp) url(../../assets/misc/top-hover.webp) url(../../assets/misc/calc-hover.webp) url(../../assets/misc/chart-hover.webp) url(../../assets/misc/download-hover.webp);
+  content: url(../assets/misc/home-hover.webp) url(../assets/misc/top-hover.webp) url(../assets/misc/calc-hover.webp) url(../assets/misc/chart-hover.webp) url(../assets/misc/download-hover.webp);
 }
 li {
   margin-left: 15px;
@@ -180,10 +180,10 @@ li {
   background-position: center;
 }
 #top-btn {
-  background-image: url(../../assets/misc/top.webp);
+  background-image: url(../assets/misc/top.webp);
 }
 #top-btn:hover {
-  background-image: url(../../assets/misc/top-hover.webp);
+  background-image: url(../assets/misc/top-hover.webp);
 }
 
 /* ----------------------------------------------------------------------- MENU BAR ----------------------------------------------------------------------- */
@@ -263,10 +263,10 @@ li {
   color: #b2cee7;
 }
 #mb-home-btn {
-  background-image: url(../../assets/misc/home-hover.webp);
+  background-image: url(../assets/misc/home-hover.webp);
 }
 #mb-home-btn:hover {
-  background-image: url(../../assets/misc/home-hover.webp);
+  background-image: url(../assets/misc/home-hover.webp);
 }
 #mb-about-btn {
   font-size: 20px;
