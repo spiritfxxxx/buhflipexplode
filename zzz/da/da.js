@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 41, vBeta = 42, v22 = 19, v28 = 35, v31 = 42;
+let vLive = 42, vBeta = 45, v22 = 19, v28 = 35, v31 = 42;
 let leaksToggle = document.getElementById("lks")
 let spoilersToggle = document.getElementById("spl");
 let chartDropdown = document.getElementById("c-dd");
@@ -33,7 +33,7 @@ function loadHPData() {
   hpData = Array.from({length: 8}, () => Array.from({length: versionIDs.length}).fill(null));
   for (let v = 1; v <= versionIDs.length; ++v) {
     let versionEnemies = versionData[versionIDs[v - 1]].versionEnemies;
-    let raw60kTrialsEnemyHP = alt60kTrialsEnemyHP = 0;
+    let raw60kTrialEnemyHP = alt60kTrialEnemyHP = 0;
     let raw60kAdversityEnemyHP = alt60kAdversityEnemyHP = 0;
 
     // build boss hp database
@@ -49,7 +49,7 @@ function loadHPData() {
       let eTags = currEnemyData.tags;
 
       // calculate boss raw hp
-      if (s != 4) raw60kTrialsEnemyHP += eHP;
+      if (s != 4) raw60kTrialEnemyHP += eHP;
       else raw60kAdversityEnemyHP += eHP;
 
       // calculate boss alt hp
@@ -61,7 +61,7 @@ function loadHPData() {
         if (eTags.includes("shutdown")) altHP -= eHP * (currEnemyID == "28300" ? 0.02 : (currEnemyID == "27300" || currEnemyID == "31300") ? 0.025 : currEnemyID == "26300" ? 0.04 : 0.015);
         if (eTags.includes("convert")) altHP += eHP * (currEnemyID == "30300" ? 0.045 : 0.003);
       }
-      if (s != 4) alt60kTrialsEnemyHP += altHP;
+      if (s != 4) alt60kTrialEnemyHP += altHP;
       else alt60kAdversityEnemyHP += altHP;
 
       // add boss appearance to boss hp map
@@ -69,11 +69,11 @@ function loadHPData() {
       hpDataSpecific[currEnemyID].push([versionIDs[v - 1], Math.round(eHP)]);
     }
 
-    // trials hp data
-    hpData[0][v - 1] = Math.round(raw60kTrialsEnemyHP * 0.281083138);
-    hpData[1][v - 1] = Math.round(raw60kTrialsEnemyHP);
-    hpData[2][v - 1] = Math.round(alt60kTrialsEnemyHP * 0.281083138);
-    hpData[3][v - 1] = Math.round(alt60kTrialsEnemyHP);
+    // trial hp data
+    hpData[0][v - 1] = Math.round(raw60kTrialEnemyHP * 0.281083138);
+    hpData[1][v - 1] = Math.round(raw60kTrialEnemyHP);
+    hpData[2][v - 1] = Math.round(alt60kTrialEnemyHP * 0.281083138);
+    hpData[3][v - 1] = Math.round(alt60kTrialEnemyHP);
 
     // adversity hp data
     hpData[4][v - 1] = Math.round(raw60kAdversityEnemyHP * 0.571428571);
@@ -137,7 +137,7 @@ function showEnemies() {
     // display side title
     let sideHeader = document.createElement("div");
     sideHeader.className = "s-header";
-    sideHeader.innerHTML = (s != 4 ? `Side ${s}` : `Adversity`) + ` Lv70`;
+    sideHeader.innerHTML = (s != 4 ? `Trial ${s}` : `Adversity`) + ` Lv70`;
 
     // display side HP multiplier
     let hpMult = document.createElement("div");
@@ -288,7 +288,7 @@ function showEnemies() {
       trait.className = "t";
       traitTitle.className = "t-title";
       traitDesc.className = "bt-desc";
-      traitTitle.innerHTML = `Side ${s} Boss Traits`;
+      traitTitle.innerHTML = `Trial ${s} Boss Traits`;
       trait.appendChild(traitTitle);
       traitDesc.innerHTML = eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerDesc}<br>` : `${currEnemyData.desc[currEnemyType]}<br>`;
       traitDesc.innerHTML += (currEnemyID == "14301" && versionNum == 6) ? `<li>Successfully triggering <span style="font-weight:bold;">Perfect Assist</span> grants <span style="color:#ffaf2c;font-weight:bold;">300 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>` : (eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerPerf}` : `${currEnemyData.perf[currEnemyType]}`);
@@ -298,7 +298,7 @@ function showEnemies() {
     }
   }
 
-  // display trials HP values
+  // display trial HP values
   document.getElementById("v-hp-raw-20000-tri").innerHTML = showNumberFormat(hpData[0][versionNum - 1]);
   document.getElementById("v-hp-raw-60000-tri").innerHTML = showNumberFormat(hpData[1][versionNum - 1]);
   document.getElementById("v-hp-alt-20000-tri").innerHTML = showNumberFormat(hpData[2][versionNum - 1]);
@@ -409,7 +409,7 @@ function loadSavedState() {
   if (localStorage.getItem("spoilersEnabled") == "true") spoilersToggle.checked = true;
   versionNum = parseInt(localStorage.getItem("lastDAVersion") || `${vLive}`);
   chartScoreNum = localStorage.getItem("lastDAChartScore") || "60k";
-  chartDisplayType = localStorage.getItem("lastDAChartType") || "Trials";
+  chartDisplayType = localStorage.getItem("lastDAChartType") || "Trial";
   chartDropdown.value = chartDisplayType;
   currNumberFormat = localStorage.getItem("numberFormat") || "period";
   if (!leaksToggle.checked) versionNum = Math.min(versionNum, vLive);
@@ -550,7 +550,7 @@ function showHPCalc() {
   let select = document.getElementById("cc-b-dd");
   select.innerHTML = ``;
   for (let i = 0; i < enemyIDs.length; ++i) {
-    if (calcDropdown.value == "Trials" ? (enemyIDs[i][2] == "3" && enemyIDs[i] != "10301" && enemyIDs[i] != "10302" && enemyIDs[i] != "10303" && enemyIDs[i] != "16300") : (enemyIDs[i][2] == "4" && enemyIDs[i] != "30400")) {
+    if (calcDropdown.value == "Trial" ? (enemyIDs[i][2] == "3" && enemyIDs[i] != "10301" && enemyIDs[i] != "10302" && enemyIDs[i] != "10303" && enemyIDs[i] != "16300") : (enemyIDs[i][2] == "4" && enemyIDs[i] != "30400")) {
       let option = document.createElement("option");
       option.text = (spoilersToggle.checked || !enemyData[enemyIDs[i]].tags.includes("spoiler")) ? enemyData[enemyIDs[i]].name : "SPOILER BOSS";
       option.value = enemyIDs[i];
@@ -638,13 +638,13 @@ function calculateBoss(hp, score, option) {
   else if (score > 60000) score = 60000;
 
   let bossValues = Array.from({length: 8}, () => Array.from({length: 3}).fill(null));
-  bossValues = calcDropdown.value == "Trials" ? [[0, 0, 0], [1200, 4, 4000], [1700, 4, 4800], [2200, 4, 7200], [2500, 4, 9600], [3000, 4, 10400], [5000, 3, 7800], [5000, 6, 16200]] : [[0, 0, 0], [3600, 4, 3000], [3600, 4, 4000], [3600, 2, 3000], [6000, 2, 7000], [6000, 2, 8000], [6000, 10, 35000]];
+  bossValues = calcDropdown.value == "Trial" ? [[0, 0, 0], [1200, 4, 4000], [1700, 4, 4800], [2200, 4, 7200], [2500, 4, 9600], [3000, 4, 10400], [5000, 3, 7800], [5000, 6, 16200]] : [[0, 0, 0], [3600, 4, 3000], [3600, 4, 4000], [3600, 2, 3000], [6000, 4, 14000], [8000, 1, 3500], [10000, 7, 24500], [10000, 2, 8000]];
 
   // calculate hp/score to the floored threshold
   let calcHP = 0, calcScore = 0, threshold;
   let hpToNextThreshold, scoreToNextThreshold;
   for (threshold = 0; threshold < bossValues.length; ++threshold) {
-    hpToNextThreshold = bossValues[threshold][0] * bossValues[threshold][1] * bossData[1] / (calcDropdown.value == "Trials" ? 874 : 1580) / 100;
+    hpToNextThreshold = bossValues[threshold][0] * bossValues[threshold][1] * bossData[1] / (calcDropdown.value == "Trial" ? 874 : 1580) / 100;
     scoreToNextThreshold = bossValues[threshold][2];
     if (calcHP + hpToNextThreshold > hp + 1) break;
     if (calcScore + scoreToNextThreshold > score) break;
@@ -823,10 +823,10 @@ function showHPChart() {
 
   // global chart settings
   let newHPData;
-  if (chartDisplayType == "Trials") newHPData = hpData.slice(0, 4);
+  if (chartDisplayType == "Trial") newHPData = hpData.slice(0, 4);
   else newHPData = hpData.slice(4, 8).map(row => row.slice(v31 - 1, versionIDs.length));
 
-  hpChart.data.labels = versionIDs.slice(chartDisplayType == "Trials" ? 0 : v31 - 1, versionIDs.length);
+  hpChart.data.labels = versionIDs.slice(chartDisplayType == "Trial" ? 0 : v31 - 1, versionIDs.length);
   hpChart.data.datasets = [
     generateHPDataset(`Raw HP`, chartScoreNum != "60k" ? newHPData[0] : newHPData[1], "#e06666"),
     generateHPDataset(`Alt HP`, chartScoreNum != "60k" ? newHPData[2] : newHPData[3], "#f6b26b")

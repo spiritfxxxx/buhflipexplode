@@ -1032,8 +1032,9 @@ input:checked + #lt, input:checked + #st {
   src: url(../../assets/Inconsolata-Regular.woff2) format("woff2");
 }
 @media (max-width: 1360px) {
-  #b1, #b2, #b3 { min-height: 260.5px; }
-  .t { min-height: 713px; }
+  #b1, #b2, #b3 { min-height: 281.5px; }
+  #t { min-height: 524.5px; }
+  .t { min-height: 755px; }
 }
 @media (max-width: 1080px) {
   #v-hp { margin: 15px; }

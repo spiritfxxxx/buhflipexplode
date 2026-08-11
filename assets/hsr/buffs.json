@@ -592,7 +592,7 @@
 
   "40000025":[ "Finale's Kiss",                              "TBD",                "At the start of any ally target's turn, all ally targets regenerate <span style='color:#f29e38;font-weight:bold;'>25%</span> Energy. This effect can only be triggered <span style='color:#f29e38;font-weight:bold;'>1</span> time per battle. Increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by all ally targets by <span style='color:#f29e38;font-weight:bold;'>40%</span>." ],
 
-  "40000026":[ "Midnight Song",                              "TBD",                "Increases the <span style='color:#5555ff;font-weight:bold;'>SPD</span> of all ally targets by <span style='color:#f29e38;font-weight:bold;'>10%</span>, and increases the <span style='color:#5555ff;font-weight:bold;'>SPD</span> of <span style='font-weight:bold;'>Cyrene's Support ♪</span> by <span style='color:#f29e38;font-weight:bold;'>25%</span>." ],
+  "40000026":[ "Memoria Swarm",                              "TBD",                "When the number of ally memosprites is 1/2/3/4, DMG dealt by all allies increases by <span style='color:#f29e38;font-weight:bold;'>20%/25%/30%/50%</span>." ],
 
 
 
@@ -660,5 +660,9 @@
 
   "41000017":[ "Scales",                                     "Enemy targets initially have <span style='color:#f29e38;font-weight:bold;'>20</span> stacks of this effect. Each stack reduces enemy targets' DMG taken by <span style='color:#f29e38;font-weight:bold;'>2%</span>. Enemy targets lose <span style='color:#f29e38;font-weight:bold;'>1</span> stack each time they are attacked. Stacks of this effect will reset during boss enemy phase transitions." ],
   "41000017.1":[ "Scales+",                                  "Enemy targets initially have <span style='color:#f29e38;font-weight:bold;'>20</span> stacks of this effect. Each stack reduces enemy targets' DMG taken by <span style='color:#f29e38;font-weight:bold;'>3%</span>. Enemy targets lose <span style='color:#f29e38;font-weight:bold;'>1</span> stack each time they are attacked. Stacks of this effect will reset during boss enemy phase transitions." ],
-  "41000017.2":[ "Scales++",                                 "Enemy targets initially have <span style='color:#f29e38;font-weight:bold;'>20</span> stacks of this effect. Each stack reduces enemy targets' DMG taken by <span style='color:#f29e38;font-weight:bold;'>4%</span>. Enemy targets lose <span style='color:#f29e38;font-weight:bold;'>1</span> stack each time they are attacked. Stacks of this effect will reset during boss enemy phase transitions." ]
+  "41000017.2":[ "Scales++",                                 "Enemy targets initially have <span style='color:#f29e38;font-weight:bold;'>20</span> stacks of this effect. Each stack reduces enemy targets' DMG taken by <span style='color:#f29e38;font-weight:bold;'>4%</span>. Enemy targets lose <span style='color:#f29e38;font-weight:bold;'>1</span> stack each time they are attacked. Stacks of this effect will reset during boss enemy phase transitions." ],
+
+  "41000018":[ "Unwavering",                                 "Enemy targets' <span style='color:#f08b83;font-weight:bold;'>Toughness</span> cannot be reduced, and <span style='color:#f08b83;font-weight:bold;'>Break DMG</span> taken is reduced by <span style='color:#f29e38;font-weight:bold;'>50%</span>." ],
+
+  "41000019":[ "Joint Forces",                               "DMG taken by enemy targets is reduced by <span style='color:#f29e38;font-weight:bold;'>60%</span>. When there are more than 4 ally targets currently on the field, this effect is reduced by <span style='color:#f29e38;font-weight:bold;'>20%</span> for each additional target." ]
 }

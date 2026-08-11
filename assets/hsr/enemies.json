@@ -397,7 +397,7 @@
   "44301":{"name":"Lord of Saṃvartasthāyi, Asat Pramad: \"Decay\"",            "baseHP":160,         "baseSPD":140,        "toughness":"400",                        "image":"asat-pramad2",                         "elementMult":[1.2, 1.0, 1.2, 1.2, 1.0, 1.2, 1.0],             "tags":[],                  "mods":[]                   },
   "44302":{"name":"Lord of Saṃvartasthāyi, Asat Pramad: \"Existence\"",        "baseHP":160,         "baseSPD":140,        "toughness":"360",                        "image":"asat-pramad3",                         "elementMult":[1.2, 1.0, 1.2, 1.2, 1.0, 1.2, 1.0],             "tags":[],                  "mods":[]                   },
   "45000":{"name":"Astropolis Sentinel",                                       "baseHP":1.5,         "baseSPD":110,        "toughness":"30",                         "image":"astropolis-sentinel",                  "elementMult":[1.2, 1.2, 1.2, 1.2, 1.0, 1.0, 1.2],             "tags":[],                  "mods":[]                   },
-  "45100":{"name":"Lighthouse",                                                "baseHP":13,          "baseSPD":144,        "toughness":"160",                        "image":"lighthouse",                           "elementMult":[1.2, 1.0, 1.2, 1.2, 1.0, 1.0, 1.2],             "tags":[],                  "mods":[]                   },
+  "45100":{"name":"Lighthouse",                                                "baseHP":14,          "baseSPD":144,        "toughness":"160",                        "image":"lighthouse",                           "elementMult":[1.2, 1.0, 1.2, 1.2, 1.0, 1.0, 1.2],             "tags":[],                  "mods":[]                   },
 
 
 
@@ -705,8 +705,8 @@
                           ""]
            },
 
-  "45400":{"name":"Unwaning Ageless Immortal",                                 "baseHP":262.5,       "baseSPD":120,        "toughness":["200", "200", "200", "200"],                  "image":"abundant-ebon-deer",    "elementMult":[1.0, 1.0, 1.0, 1.4, 1.4, 1.0, 1.4],             "tags":[],                  "mods":[],
-            "traitNames":["Steadfast Safeguard", "Bountiful Prosperity", "Like a Deer With Wings", "Dazzling Aura"],
+  "45400":{"name":"Unwaning Ageless Immortal",                                 "baseHP":280,         "baseSPD":120,        "toughness":["200", "200", "200", "200"],                  "image":"abundant-ebon-deer",    "elementMult":[1.0, 1.0, 1.0, 1.4, 1.4, 1.0, 1.4],             "tags":[],                  "mods":[],
+            "traitNames":["Steadfast Safeguard", "Bountiful Prosperity", "Like a Deer With Wings", "Dazzling Halo"],
             "traitDescs":["Boss Mirage takes <span style='color:#f29e38;font-weight:bold;'>50%</span> less DMG. After Weakness is <span style='color:#f08b83;font-weight:bold;'>Broken</span>, action gets additionally delayed and DMG taken increases by <span style='color:#f29e38;font-weight:bold;'>100%</span>.",
 
                           "When the Boss Mirage's summons are defeated, it deals minor True DMG to this unit and slightly reduces its <span style='color:#f08b83;font-weight:bold;'>Toughness</span>. If the defeated target is an Elite Enemy, it instead deals massive True DMG to this unit and massively reduces its <span style='color:#f08b83;font-weight:bold;'>Toughness</span>. Then, it immediately summons new summons.",
