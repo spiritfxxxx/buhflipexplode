@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 42, vBeta = 45, v22 = 19, v28 = 35, v31 = 42;
+let vLive = 43, vBeta = 45, v22 = 19, v28 = 35, v31 = 42;
 let leaksToggle = document.getElementById("lks")
 let spoilersToggle = document.getElementById("spl");
 let chartDropdown = document.getElementById("c-dd");
