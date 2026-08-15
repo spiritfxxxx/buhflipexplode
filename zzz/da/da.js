@@ -292,7 +292,7 @@ function showEnemies() {
       trait.appendChild(traitTitle);
       traitDesc.innerHTML = eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerDesc}<br>` : `${currEnemyData.desc[currEnemyType]}<br>`;
       traitDesc.innerHTML += (currEnemyID == "14301" && versionNum == 6) ? `<li>Successfully triggering <span style="font-weight:bold;">Perfect Assist</span> grants <span style="color:#ffaf2c;font-weight:bold;">300 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>` : (eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerPerf}` : `${currEnemyData.perf[currEnemyType]}`);
-      traitDesc.innerHTML += (currEnemyID[0] >= "2" || (currEnemyID == "14303" && versionNum >= 4)) ? `<br>${currEnemyData.misc}` : ``;
+      traitDesc.innerHTML += (currEnemyID[0] >= "2" || (currEnemyID == "14303" && versionNum >= 4)) ? ((currEnemyID == "27300" && versionNum == 47) ? `` : `<br>${currEnemyData.misc}`) : ``;
       trait.appendChild(traitDesc);
       side.appendChild(trait);
     }
