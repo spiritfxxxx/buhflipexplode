@@ -317,14 +317,14 @@
   "3.2.2":{ "versionName":"3.2 Phase 2",
             "versionTime":"xx/xx/20xx - xx/xx/20xx",
             "versionBuffIDs":["69000071", "69000072", "69000074"],
-            "versionHPMult":[190, 340, 240, 325], "versionDazeMult":[100, 100, 80, 100], "versionAnomMult":110,
+            "versionHPMult":[190, 340, 240, 230], "versionDazeMult":[100, 100, 80, 100], "versionAnomMult":110,
             "versionEnemies":[ {"id":"32300", "type":0}, {"id":"21300", "type":0}, {"id":"24300", "type":1}, {"id":"32400", "type":0} ]
           },
 
   "3.2.3":{ "versionName":"3.2 Phase 3",
             "versionTime":"xx/xx/20xx - xx/xx/20xx",
             "versionBuffIDs":["69000075", "69000076", "69000077"],
-            "versionHPMult":[190, 200, 270, 230], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":110,
+            "versionHPMult":[190, 200, 270, 325], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":110,
             "versionEnemies":[ {"id":"32300", "type":0}, {"id":"31301", "type":0}, {"id":"27300", "type":1}, {"id":"31400", "type":1} ]
           }
 }
