@@ -228,12 +228,7 @@ li {
 
 /* boss hp display */
 #v-hp-raw {
-  color: #e06666;
-  font-weight: bold;
-  user-select: all;
-}
-#v-hp-aoe {
-  color: #6d9eeb;
+  color: #ff5555;
   font-weight: bold;
   user-select: all;
 }

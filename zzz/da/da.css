@@ -190,7 +190,7 @@ li {
 
 /* boss hp display */
 #v-hp-raw-20000-tri, #v-hp-raw-60000-tri, #v-hp-raw-20000-adv, #v-hp-raw-60000-adv {
-  color: #e06666;
+  color: #ff5555;
   font-weight: bold;
   user-select: all;
 }

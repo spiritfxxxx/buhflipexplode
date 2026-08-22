@@ -192,7 +192,7 @@ li {
 
 /* enemy hp display */
 #k-hp-raw {
-  color: #e06666;
+  color: #ff5555;
   font-weight: bold;
   user-select: all;
 }

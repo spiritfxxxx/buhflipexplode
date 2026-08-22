@@ -623,7 +623,7 @@ function showHPChart() {
   // global chart settings
   hpChart.data.labels = versionNames;
   hpChart.data.datasets = chartDisplayType == "Knight + Checkmate" ?
-  [ generateHPDataset(`Raw Knight HP`, hpData[2], "#e06666"), generateHPDataset(`Raw Checkmate HP`, hpData[0], "#6d9eeb") ] :
+  [ generateHPDataset(`Raw Knight HP`, hpData[2], "#ff5555"), generateHPDataset(`Raw Checkmate HP`, hpData[0], "#6d9eeb") ] :
   [ generateHPDataset(`Raw Checkmate: ZZ HP`, hpData[1], "#f6b26b") ];
   hpChart.options.scales.y.min = 0;
   hpChart.options.scales.y.max = chartDisplayType == "Knight + Checkmate" ? 120000000 : 360000000;

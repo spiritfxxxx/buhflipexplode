@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 43, vBeta = 45, v22 = 19, v28 = 35, v31 = 42;
+let vLive = 43, vBeta = 45, vMias = 19, vWind = 35, vAdv = 42;
 let leaksToggle = document.getElementById("lks")
 let spoilersToggle = document.getElementById("spl");
 let chartDropdown = document.getElementById("c-dd");
@@ -55,11 +55,16 @@ function loadHPData() {
       // calculate boss alt hp
       let altHP = eHP * (currEnemyID[2] >= "2" && currEnemyData.baseDEF[currEnemyType] < 60 ? (794 + currEnemyData.baseDEF[currEnemyType] * 1588 / 100) / (794 + 60 * 1588 / 100) : 1);
       if (eTags.length >= 1 && !(eTags.length == 1 && eTags.includes("spoiler"))) {
-        if (eTags.includes("ucc")) altHP -= eHP * 0.036;
-        if (eTags.includes("hunter")) altHP -= eHP * 0.01;
-        if (eTags.includes("miasma")) altHP -= eHP * (currEnemyID == "25300" ? 0.045 : (v >= v22 ? 0.025 : 0.03));
-        if (eTags.includes("shutdown")) altHP -= eHP * (currEnemyID == "28300" ? 0.02 : (currEnemyID == "27300" || currEnemyID == "31300") ? 0.025 : currEnemyID == "26300" ? 0.04 : 0.015);
-        if (eTags.includes("convert")) altHP += eHP * (currEnemyID == "30300" ? 0.045 : 0.003);
+        // define boss hp tags
+        let impairHP = eTags.find(tag => /^impr.+$/.test(tag));
+        let miasmaHP = eTags.find(tag => /^mias.+$/.test(tag));
+        let shutdownHP = eTags.find(tag => /^shut.+$/.test(tag));
+        let convertHP = eTags.find(tag => /^conv.+$/.test(tag));
+
+        if (impairHP) altHP -= eHP * impairHP.slice(7, 12) / 10000;
+        if (miasmaHP) altHP -= eHP * (v < vMias ? 300 : miasmaHP.slice(7, 12)) / 10000;
+        if (shutdownHP) altHP -= eHP * shutdownHP.slice(7, 12) / 10000;
+        if (convertHP) altHP -= eHP * (convertHP.slice(7, 12) - convertHP.slice(13, 18)) / 10000;
       }
       if (s != 4) alt60kTrialEnemyHP += altHP;
       else alt60kAdversityEnemyHP += altHP;
@@ -128,7 +133,7 @@ function showEnemies() {
   // display sides
   let side1 = document.getElementById("s1"), side2 = document.getElementById("s2"), side3 = document.getElementById("s3"), sideH = document.getElementById("sh");
   side1.innerHTML = side2.innerHTML = side3.innerHTML = sideH.innerHTML = ``;
-  document.getElementById("s-h").style.display = versionNum < v31 ? "none" : "flex";
+  document.getElementById("s-h").style.display = versionNum < vAdv ? "none" : "flex";
 
   // loop sides
   for (let s = 1; s <= versionEnemies.length; ++s) {
@@ -211,31 +216,33 @@ function showEnemies() {
       let lowDEF = currEnemyID[2] >= "2" && currEnemyData.baseDEF[currEnemyType] < 60;
       let eHPNew = eHP * (lowDEF ? (794 + currEnemyData.baseDEF[currEnemyType] * 1588 / 100) / (794 + 60 * 1588 / 100) : 1);
       let color = "#ffffff";
+      ttHP.innerHTML += lowDEF ? `<span style="font-weight:bold;">NORMALIZED to 953 DEF</span> → <span style="font-weight:bold;">×${Math.round(eHPNew / eHP * 100000) / 1000}%</span><br>`: ``;
 
-      if (eTags.includes("ucc")) {
-        eHPNew -= eHP * 0.036;
+      // define enemy hp tags
+      let impairHP = eTags.find(tag => /^impr.+$/.test(tag));
+      let miasmaHP = eTags.find(tag => /^mias.+$/.test(tag));
+      let shutdownHP = eTags.find(tag => /^shut.+$/.test(tag));
+      let convertHP = eTags.find(tag => /^conv.+$/.test(tag));
+
+      if (impairHP) {
+        eHPNew -= eHP * impairHP.slice(7, 12) / 10000;
         color = "#ca9a00";
-        ttHP.innerHTML += instant(color, "IMPAIRED!!", 3) + ` on<br>legs, 3 time(s) on core<br>`;
+        ttHP.innerHTML += instant(color, "IMPAIRED!!", impairHP.slice(5, 6), impairHP.slice(7, 12) / 100, 0, "") + `<br>`;
       }
-      if (eTags.includes("hunter")) {
-        eHPNew -= eHP * 0.01;
-        color = "#ca9a00";
-        ttHP.innerHTML += instant(color, "IMPAIRED!!", 1) + `<br>`;
-      }
-      if (eTags.includes("miasma")) {
-        eHPNew -= eHP * (currEnemyID == "25300" ? 0.045 : (versionNum >= v22 ? 0.025 : 0.03));
+      if (miasmaHP) {
+        eHPNew -= eHP * (versionNum < vMias ? 300 : miasmaHP.slice(7, 12)) / 10000;
         color = "#b4317b";
-        ttHP.innerHTML += instant(color, "PURIFIED!!", currEnemyID == "25300" ? 3 : 1) + `<br>`;
+        ttHP.innerHTML += instant(color, "PURIFIED!!", miasmaHP.slice(5, 6), (versionNum < vMias ? 3 : miasmaHP.slice(7, 12)) / 100, 0, "") + `<br>`;
       }
-      if (eTags.includes("shutdown")) {
-        eHPNew -= eHP * (currEnemyID == "28300" ? 0.02 : (currEnemyID == "27300" || currEnemyID == "31300") ? 0.025 : currEnemyID == "26300" ? 0.04 : 0.015);
+      if (shutdownHP) {
+        eHPNew -= eHP * shutdownHP.slice(7, 12) / 10000;
         color = "#b47ede";
-        ttHP.innerHTML += instant(color, "SHUTDOWN!!", currEnemyID == "26300" ? 2 : 1) + `<br>`;
+        ttHP.innerHTML += instant(color, "SHUTDOWN!!", shutdownHP.slice(5, 6), shutdownHP.slice(7, 12) / 100, 0, "") + `<br>`;
       }
-      if (eTags.includes("convert")) {
-        eHPNew += eHP * (currEnemyID == "31300" ? 0.01 : currEnemyID == "30300" ? 0.045 : 0.003);
+      if (convertHP) {
+        eHPNew -= eHP * (convertHP.slice(7, 12) - convertHP.slice(13, 18)) / 10000;
         color = "#007bb8";
-        ttHP.innerHTML += instant(color, "CONVERT!!", 1) + `<br>`;
+        ttHP.innerHTML += instant(color, "CONVERT!!", convertHP.slice(5, 6), convertHP.slice(7, 12) / 100, convertHP.slice(13, 18) / 100, "Corruptive Barrier(s)") + `<br>`;
       }
 
       // display tooltip text
@@ -261,7 +268,7 @@ function showEnemies() {
     // display enemy misc stats
     let ttMiscStat = document.createElement("div");
     ttMiscStat.className = "tt-e-stat";
-    ttMiscStat.innerHTML = `+<span class="tt-text">${generateEnemyStats(sideDazeMult / 100 * eDaze, eStunMult, eStunTime, versionAnomMult / 100 * eAnom, eElementMult, eMods)}</span>`;
+    ttMiscStat.innerHTML = `+<span class="tt-text">${generateEnemyStats(currEnemyID, sideDazeMult / 100 * eDaze, eStunMult, eStunTime, versionAnomMult / 100 * eAnom, eElementMult, eMods)}</span>`;
     enemy.appendChild(ttMiscStat);
 
     // display enemy 40%+ resistances
@@ -273,13 +280,16 @@ function showEnemies() {
     side.appendChild(waveEnemies);
 
     // add enemy stage description
+    let currEnemyDesc = currEnemy.desc;
+    let currEnemyPerf = currEnemy.perf;
+    let currEnemyMisc = currEnemy.misc;
     if (side == sideH && currEnemyID[2] == "4") {
       let traitTitle = document.getElementById("t-title");
       let traitDesc = document.getElementById("t-desc");
       traitTitle.innerHTML = `Adversity Boss Traits`;
-      traitDesc.innerHTML = eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerDesc}<br>` : `${currEnemyData.desc[currEnemyType]}<br>`;
-      traitDesc.innerHTML += eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerPerf}` : `${currEnemyData.perf[currEnemyType]}`;
-      traitDesc.innerHTML += `<br>${currEnemyData.misc}`;
+      traitDesc.innerHTML = buffData[currEnemyID + `dad${eTags.includes("spoiler") && !spoilersToggle.checked ? "s" : ""}`][currEnemyDesc] + `<br>` +
+                            buffData[currEnemyID + `dap${eTags.includes("spoiler") && !spoilersToggle.checked ? "s" : ""}`][currEnemyPerf] + `<br>` +
+                            (currEnemyMisc != -1 ? buffData[currEnemyID + `dam`][currEnemyMisc] : ``);
     }
     else {
       let trait = document.createElement("div");
@@ -290,9 +300,9 @@ function showEnemies() {
       traitDesc.className = "bt-desc";
       traitTitle.innerHTML = `Trial ${s} Boss Traits`;
       trait.appendChild(traitTitle);
-      traitDesc.innerHTML = eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerDesc}<br>` : `${currEnemyData.desc[currEnemyType]}<br>`;
-      traitDesc.innerHTML += (currEnemyID == "14301" && versionNum == 6) ? `<li>Successfully triggering <span style="font-weight:bold;">Perfect Assist</span> grants <span style="color:#ffaf2c;font-weight:bold;">300 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>` : (eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerPerf}` : `${currEnemyData.perf[currEnemyType]}`);
-      traitDesc.innerHTML += (currEnemyID[0] >= "2" || (currEnemyID == "14303" && versionNum >= 4)) ? ((currEnemyID == "27300" && versionNum == 47) ? `` : `<br>${currEnemyData.misc}`) : ``;
+      traitDesc.innerHTML = buffData[currEnemyID + `dad${eTags.includes("spoiler") && !spoilersToggle.checked ? "s" : ""}`][currEnemyDesc] + `<br>` +
+                            buffData[currEnemyID + `dap${eTags.includes("spoiler") && !spoilersToggle.checked ? "s" : ""}`][currEnemyPerf] + `<br>` +
+                            (currEnemyMisc != -1 ? buffData[currEnemyID + `dam`][currEnemyMisc] : ``);
       trait.appendChild(traitDesc);
       side.appendChild(trait);
     }
@@ -305,8 +315,8 @@ function showEnemies() {
   document.getElementById("v-hp-alt-60000-tri").innerHTML = showNumberFormat(hpData[3][versionNum - 1]);
 
   // display adversity HP values
-  document.getElementById("tri").style.display = versionNum < v31 ? "none" : "inline";
-  document.getElementById("v-hp-adv").style.display = versionNum < v31 ? "none" : "flex";
+  document.getElementById("tri").style.display = versionNum < vAdv ? "none" : "inline";
+  document.getElementById("v-hp-adv").style.display = versionNum < vAdv ? "none" : "flex";
   document.getElementById("v-hp-raw-20000-adv").innerHTML = showNumberFormat(hpData[4][versionNum - 1]);
   document.getElementById("v-hp-raw-60000-adv").innerHTML = showNumberFormat(hpData[5][versionNum - 1]);
   document.getElementById("v-hp-alt-20000-adv").innerHTML = showNumberFormat(hpData[6][versionNum - 1]);
@@ -329,12 +339,12 @@ function generateWR(mult, wr, id) {
   weakImg1.src = weakImg2.src = "../../assets/zzz/elements/none.webp";
   resImg1.src = resImg2.src = "../../assets/zzz/elements/none.webp";
   let wkCnt = resCnt = 0;
-  for (let e = 0; e < elementsData.length - (versionNum < v28); ++e) {
+  for (let e = 0; e < elementsData.length - (versionNum < vWind); ++e) {
     if (mult[e] < 1) { (wkCnt == 0 ? weakImg1 : weakImg2).src = `../../assets/zzz/elements/${elementsData[e]}.webp`; ++wkCnt;}
     else if (mult[e] > 1) { (resCnt == 0 ? resImg1 : resImg2).src = `../../assets/zzz/elements/${elementsData[e]}.webp`; ++resCnt; }
   }
   wr.appendChild(weakImg1);
-  if (versionNum >= v28 && id == "24300") {
+  if (versionNum >= vWind && id == "24300") {
     let weakImg3 = document.createElement("img");
     weakImg3.className = "wk";
     weakImg3.src = "../../assets/zzz/elements/physical.webp";
@@ -354,7 +364,7 @@ function generateR(mult, r, id, enemy) {
   resEle.className = "e-res-ele";
   bossRES.innerHTML = "Boss DMG RES";
 
-  for (let e = 0; e < elementsData.length - (versionNum < v28); ++e) {
+  for (let e = 0; e < elementsData.length - (versionNum < vWind); ++e) {
     if (mult[e] > 1.2) {
       hasRES = true;
       let res = document.createElement("div");
@@ -377,16 +387,16 @@ function generateR(mult, r, id, enemy) {
 }
 
 // display special tooltip
-function alt(color, name, hpNew, hp, def) {
+function alt(color, name, hpNew, hp) {
   return `<span style="color:${color};">✦</span><span class="tt-text">
           <span style="font-weight:bold;text-decoration:underline;">${name}</span><br>
-          <span style="color:#f6b26b;font-weight:bold;">Alt HP</span>: <span style="color:${color};font-weight:bold;">${showNumberFormat(Math.ceil(hpNew))}</span><br>
-          <span style="font-weight:bold;">(${def ? `normalized → ` : ``}${Math.round(hpNew / hp * 1000) / 10}% of Base HP)</span><br><br>`;
+          <span style="color:#f6b26b;font-weight:bold;">Alt HP</span>: <span style="color:#f6b26b;font-weight:bold;">${showNumberFormat(Math.ceil(hpNew))}</span><br>
+          <span style="font-weight:bold;">(${Math.round(hpNew / hp * 100000) / 1000}% of <span style="color:#ff5555;">Raw HP</span>)</span><br><br>`;
 }
-function instant(color, type, cnt) { return `<span style="font-weight:bold;"><span style="color:${color};">${type}</span></span> ${cnt} time(s)</span>`; }
+function instant(color, type, cnt, hpD, hpU, mech) { return `<span style="font-weight:bold;color:${color};">${type}</span> ${cnt} time(s) ${hpD == 3.6 ? ` on legs,<br>3 time(s) on core` : ``} → <span style="font-weight:bold;">-${hpD}%</span> ${hpU != 0 ? `<br>${mech} → <span style="font-weight:bold;">+${hpU}%</span>` : ``}`; }
 
 // display misc stats
-function generateEnemyStats(daze, stun, time, anom, dmg, mods) {
+function generateEnemyStats(id, daze, stun, time, anom, dmg, mods) {
   let anomMult = [1, 1, 1, 1, 1.2, 0.5];
   let color = ["#98eff0", "#ff5521", "#2eb6ff", "#fe437e", "#f0d12b", "#a6c5fd"];
   let stats = `<span style="font-weight:bold;">Max Daze: <span style="color:#ffe599;">${Math.round(daze * 10000) / 10000}</span></span><br>
@@ -394,7 +404,7 @@ function generateEnemyStats(daze, stun, time, anom, dmg, mods) {
   if (mods.includes("no-anom")) return stats + `<span style="font-weight:bold;">IMMUNE TO ANOMALY</span>`;
   else {
     stats += `<span style="font-weight:bold;">Min Anomaly Buildup:</span><br>`;
-    for (let i = 0; i < elementsData.length - (versionNum < v28); ++i) stats += `<span style="color:${color[i]};font-weight:bold;">${Math.round(anom * anomMult[i] * (1 / (2 - Math.min(dmg[i], 1.2))) * 100) / 100}</span>/`;
+    for (let i = 0; i < elementsData.length - (versionNum < vWind); ++i) stats += `<span style="color:${color[i]};font-weight:bold;">${Math.round(anom * (id[2] == "1" && i == 5 ? 46/45 : 1) * anomMult[i] * (1 / (2 - Math.min(dmg[i], 1.2))) * 100) / 100}</span>/`;
     stats = stats.slice(0, -1) + `<br>${mods.includes("no-freeze") ? `<span style="color:#98eff0;font-weight:bold;">UNFREEZABLE</span>` : ``}`;
   }
   return stats;
@@ -824,16 +834,16 @@ function showHPChart() {
   // global chart settings
   let newHPData;
   if (chartDisplayType == "Trial") newHPData = hpData.slice(0, 4);
-  else newHPData = hpData.slice(4, 8).map(row => row.slice(v31 - 1, versionIDs.length));
+  else newHPData = hpData.slice(4, 8).map(row => row.slice(vAdv - 1, versionIDs.length));
 
-  hpChart.data.labels = versionIDs.slice(chartDisplayType == "Trial" ? 0 : v31 - 1, versionIDs.length);
+  hpChart.data.labels = versionIDs.slice(chartDisplayType == "Trial" ? 0 : vAdv - 1, versionIDs.length);
   hpChart.data.datasets = [
-    generateHPDataset(`Raw HP`, chartScoreNum != "60k" ? newHPData[0] : newHPData[1], "#e06666"),
+    generateHPDataset(`Raw HP`, chartScoreNum != "60k" ? newHPData[0] : newHPData[1], "#ff5555"),
     generateHPDataset(`Alt HP`, chartScoreNum != "60k" ? newHPData[2] : newHPData[3], "#f6b26b")
   ];
   hpChart.options.plugins.title.text = `Deadly Assault HP - ${chartScoreNum == "60k" ? chartScoreNum : document.querySelector(".c-k").innerHTML} Score - ${chartDisplayType}`;
-  hpChart.options.scales.y.min = chartScoreNum != "60k" ? 60000000 : 120000000;
-  hpChart.options.scales.y.max = chartScoreNum != "60k" ? 480000000 : 960000000;
+  hpChart.options.scales.y.min = chartScoreNum != "60k" ? 40000000 : 160000000;
+  hpChart.options.scales.y.max = chartScoreNum != "60k" ? 600000000 : 1000000000;
   hpChart.options.scales.y.ticks.stepSize = (hpChart.options.scales.y.max - hpChart.options.scales.y.min) / 14;
   hpChart.update();
   saveProgress();

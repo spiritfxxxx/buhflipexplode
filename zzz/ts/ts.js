@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 2, vBeta = 3, v26 = 2, v28 = 2, modeNumOld = 2, modeNum = 2;
+let vLive = 2, vBeta = 3, vPost = 2, vWind = 2, modeNumOld = 2, modeNum = 2;
 let leaksToggle = document.getElementById("lks");
 let spoilersToggle = document.getElementById("spl");
 let versionNumOld, versionNum, nodeNum, nodeMax, endingNum, currNumberFormat;
@@ -41,7 +41,7 @@ async function loadHPData() {
             Array.from({length: 6}, () => Array.from({length: 5}, () => Array.from({length: versionIDs[1].length}).fill(null))) ];
   for (let m = 1; m <= hpData.length; ++m) {
     for (let v = 1; v <= versionIDs[m - 1].length; ++v) {
-      nodeLvlData = m == 1 ? nodeLvlDataEasy : (v < v26 ? nodeLvlDataHardPre26 : nodeLvlDataHardPost26);
+      nodeLvlData = m == 1 ? nodeLvlDataEasy : (v < vPost ? nodeLvlDataHardPre26 : nodeLvlDataHardPost26);
       let versionEnemies = versionData[m - 1].versions[versionIDs[m - 1][v - 1]].versionEnemies;
       for (let n = 1; n <= versionEnemies.nodes.length; ++n) {
         let currNode = versionEnemies.nodes[n - 1];
@@ -60,11 +60,16 @@ async function loadHPData() {
         raw60kEnemyHP = eHP;
         alt60kEnemyHP += eHP * (currEnemyID[2] >= "2" && currEnemyData.baseDEF[currEnemyType] < 60 ? (794 + currEnemyData.baseDEF[currEnemyType] * 1588 / 100) / (794 + 60 * 1588 / 100) : 1);
         if (eTags.length >= 1 && !(eTags.length == 1 && eTags.includes("spoiler"))) {
-          if (eTags.includes("ucc")) alt60kEnemyHP -= eHP * 0.036;
-          if (eTags.includes("hunter")) alt60kEnemyHP -= eHP * 0.01;
-          if (eTags.includes("miasma")) alt60kEnemyHP -= eHP * (currEnemyID == "25300" ? 0.045 : 0.025);
-          if (eTags.includes("shutdown")) alt60kEnemyHP -= eHP * (currEnemyID == "28300" ? 0.02 : currEnemyID == "27300" ? 0.025 : currEnemyID == "26300" ? 0.04 : 0.015);
-          if (eTags.includes("convert")) alt60kEnemyHP += eHP * (currEnemyID == "30300" ? 0.09 : 0.003);
+          // define boss hp tags
+          let impairHP = eTags.find(tag => /^impr.+$/.test(tag));
+          let miasmaHP = eTags.find(tag => /^mias.+$/.test(tag));
+          let shutdownHP = eTags.find(tag => /^shut.+$/.test(tag));
+          let convertHP = eTags.find(tag => /^conv.+$/.test(tag));
+
+          if (impairHP) alt60kEnemyHP -= eHP * impairHP.slice(7, 12) / 10000;
+          if (miasmaHP) alt60kEnemyHP -= eHP * miasmaHP.slice(7, 12) / 10000;
+          if (shutdownHP) alt60kEnemyHP -= eHP * shutdownHP.slice(7, 12) / 10000;
+          if (convertHP) alt60kEnemyHP -= eHP * (convertHP.slice(7, 12) - convertHP.slice(13, 18)) / 10000;
         }
 
         // build enemy hp database
@@ -89,12 +94,17 @@ async function loadHPData() {
               aoeHP += addAOE ? eHP : 0;
               altHP += addAOE ? eHP * (currEnemyID[2] >= "2" && currEnemyData.baseDEF[currEnemyType] < 60 ? (794 + currEnemyData.baseDEF[currEnemyType] * 1588 / 100) / (794 + 60 * 1588 / 100) : 1) : 0;
               if (eTags.length >= 1 && !(eTags.length == 1 && (eTags.includes("spoiler") || eTags.includes("hitch")))) {
+                // define enemy hp tags
+                let impairHP = eTags.find(tag => /^impr.+$/.test(tag));
+                let miasmaHP = eTags.find(tag => /^mias.+$/.test(tag));
+                let shutdownHP = eTags.find(tag => /^shut.+$/.test(tag));
+                let convertHP = eTags.find(tag => /^conv.+$/.test(tag));
+
                 if (eTags.includes("palicus")) altHP += eHP * 0.5;
-                if (eTags.includes("robot")) altHP -= eHP * 0.1;
-                if (eTags.includes("brute")) altHP -= eHP * 0.08;
-                if (eTags.includes("miasma")) altHP -= eHP * (currEnemyID == "26202" ? 0.3 : 0.15);
-                if (eTags.includes("shutdown")) altHP -= eHP * 0.15;
-                if (eTags.includes("convert")) altHP += eHP * 0.05;
+                if (impairHP) altHP -= eHP * impairHP.slice(7, 12) / 10000;
+                if (miasmaHP) altHP -= eHP * miasmaHP.slice(7, 12) / 10000;
+                if (shutdownHP) altHP -= eHP * shutdownHP.slice(7, 12) / 10000;
+                if (convertHP) altHP -= eHP * (convertHP.slice(7, 12) - convertHP.slice(13, 18)) / 10000;
               }
               addAOE = false;
             }
@@ -140,8 +150,8 @@ function showNode() {
     modeNumOld = modeNum;
   }
   if (modeNum == 2) changePrePostNode();
-  nodeMax = versionNum < v26 ? 4 : 3;
-  nodeLvlData = modeNum == 1 ? nodeLvlDataEasy : (versionNum < v26 ? nodeLvlDataHardPre26 : nodeLvlDataHardPost26);
+  nodeMax = versionNum < vPost ? 4 : 3;
+  nodeLvlData = modeNum == 1 ? nodeLvlDataEasy : (versionNum < vPost ? nodeLvlDataHardPre26 : nodeLvlDataHardPost26);
   document.getElementById("n-text").innerHTML = Math.min(nodeNum, nodeMax);
   showEndings();
   showBuffs();
@@ -154,26 +164,26 @@ function changeNode(n) {
   showNode();
 }
 function changePrePostNode() {
-  if (versionNumOld < v26 && versionNum >= v26) {
+  if (versionNumOld < vPost && versionNum >= vPost) {
     if (nodeNum == 3 || (nodeNum >= nodeMax && nodeNum - nodeMax < 2)) nodeNum--;
     else if (nodeNum >= nodeMax && nodeNum - nodeMax >= 2) nodeNum = 4;
   }
-  else if (versionNumOld >= v26 && versionNum < v26 && nodeNum >= 2) nodeNum++;
+  else if (versionNumOld >= vPost && versionNum < vPost && nodeNum >= 2) nodeNum++;
   versionNumOld = versionNum;
 }
 
 // final node's endings display
 function showEndings() {
-  if (versionNum >= v26 && endingNum > 2) endingNum = 2;
+  if (versionNum >= vPost && endingNum > 2) endingNum = 2;
   if (modeNum == 2 && nodeNum >= nodeMax) {
     document.getElementById("end").style.display = "flex";
-    document.getElementById("end-3").style.display = versionNum < v26 ? "flex" : "none";
+    document.getElementById("end-3").style.display = versionNum < vPost ? "flex" : "none";
     let endingButtons = document.querySelectorAll(".end-text");
     endingButtons.forEach(btn => btn.classList.toggle("selected", btn.dataset.format == endingNum));
   }
   else document.getElementById("end").style.display = "none";
 }
-function changeEndings(n) { endingNum = n; nodeNum = (versionNum < v26 ? 3 : 2) + n; showNode(); }
+function changeEndings(n) { endingNum = n; nodeNum = (versionNum < vPost ? 3 : 2) + n; showNode(); }
 
 // display buffs
 function showBuffs() {
@@ -327,46 +337,38 @@ function showEnemies() {
             let lowDEF = currEnemyID[2] >= "2" && currEnemyData.baseDEF[currEnemyType] < 60;
             let eHPNew = eHP * (lowDEF ? (794 + currEnemyData.baseDEF[currEnemyType] * 1588 / 100) / (794 + 60 * 1588 / 100) : 1);
             let color = "#ffffff";
+            ttHP.innerHTML += lowDEF ? `<span style="font-weight:bold;">NORMALIZED to 953 DEF</span> → <span style="font-weight:bold;">×${Math.round(eHPNew / eHP * 100000) / 1000}%</span><br>`: ``;
+
+            // define enemy hp tags
+            let impairHP = eTags.find(tag => /^impr.+$/.test(tag));
+            let miasmaHP = eTags.find(tag => /^mias.+$/.test(tag));
+            let shutdownHP = eTags.find(tag => /^shut.+$/.test(tag));
+            let convertHP = eTags.find(tag => /^conv.+$/.test(tag));
 
             if (eTags.includes("palicus")) {
               eHPNew -= eHP * 0.25;
               color = "#93c47d";
               ttHP.innerHTML += palicus(eHPNew) + `<br>`;
             }
-            if (eTags.includes("robot")) {
-              eHPNew -= eHP * 0.1;
+            if (impairHP) {
+              eHPNew -= eHP * impairHP.slice(7, 12) / 10000;
               color = "#ca9a00";
-              ttHP.innerHTML += instant(color, "IMPAIRED!!", 2) + `<br>`;
+              ttHP.innerHTML += instant(color, "IMPAIRED!!", impairHP.slice(5, 6), impairHP.slice(7, 12) / 100, 0, "") + `<br>`;
             }
-            if (eTags.includes("brute")) {
-              eHPNew -= eHP * 0.08;
-              color = "#ca9a00";
-              ttHP.innerHTML += instant(color, "IMPAIRED!!", 1) + `<br>`;
-            }
-            if (eTags.includes("ucc")) {
-              eHPNew -= eHP * 0.036;
-              color = "#ca9a00";
-              ttHP.innerHTML += instant(color, "IMPAIRED!!", 3) + ` on<br>legs, 3 time(s) on core<br>`;
-            }
-            if (eTags.includes("hunter")) {
-              eHPNew -= eHP * 0.01;
-              color = "#ca9a00";
-              ttHP.innerHTML += instant(color, "IMPAIRED!!", 1) + `<br>`;
-            }
-            if (eTags.includes("miasma")) {
-              eHPNew -= eHP * (currEnemyID[2] != "3" ? (currEnemyID == "26202" ? 0.3 : 0.15) : (currEnemyID == "25300" ? 0.045 : 0.025));
+            if (miasmaHP) {
+              eHPNew -= eHP * miasmaHP.slice(7, 12) / 10000;
               color = "#b4317b";
-              ttHP.innerHTML += instant(color, "PURIFIED!!", currEnemyID == "25300" ? 3 : currEnemyID == "26202" ? 2 : 1) + `<br>`;
+              ttHP.innerHTML += instant(color, "PURIFIED!!", miasmaHP.slice(5, 6), miasmaHP.slice(7, 12) / 100, 0, "") + `<br>`;
             }
-            if (eTags.includes("shutdown")) {
-              eHPNew -= eHP * (currEnemyID == "28300" ? 0.02 : (currEnemyID == "27300" || currEnemyID == "31300") ? 0.025 : currEnemyID == "26300" ? 0.04 : 0.015);
+            if (shutdownHP) {
+              eHPNew -= eHP * shutdownHP.slice(7, 12) / 10000;
               color = "#b47ede";
-              ttHP.innerHTML += instant(color, "SHUTDOWN!!", currEnemyID == "26300" ? 2 : 1) + `<br>`;
+              ttHP.innerHTML += instant(color, "SHUTDOWN!!", shutdownHP.slice(5, 6), shutdownHP.slice(7, 12) / 100, 0, "") + `<br>`;
             }
-            if (eTags.includes("convert")) {
-              eHPNew += eHP * (currEnemyID[2] != "3" ? 0.05 : currEnemyID == "31300" ? 0.01 : currEnemyID == "30300" ? 0.045 : 0.003);
+            if (convertHP) {
+              eHPNew -= eHP * (convertHP.slice(7, 12) - convertHP.slice(13, 18)) / 10000;
               color = "#007bb8";
-              ttHP.innerHTML += instant(color, "CONVERT!!", 1) + `<br>`;
+              ttHP.innerHTML += instant(color, "CONVERT!!", convertHP.slice(5, 6), convertHP.slice(7, 12) / 100, convertHP.slice(13, 18) / 100, "Corruptive Barrier(s)") + `<br>`;
             }
 
             // display tooltip text
@@ -402,7 +404,7 @@ function showEnemies() {
         // display enemy misc stats
         let ttMiscStat = document.createElement("div");
         ttMiscStat.className = "tt-e-stat";
-        ttMiscStat.innerHTML = `+<span class="tt-text">${generateEnemyStats(sideDazeMult / 100 * eDaze, eStunMult, eStunTime, (currEnemyID[2] == "3" ? versionAnomMultBoss : versionAnomMultEnemy) / 100 * eAnom, eElementMult, eMods)}</span>`;
+        ttMiscStat.innerHTML = `+<span class="tt-text">${generateEnemyStats(currEnemyID, sideDazeMult / 100 * eDaze, eStunMult, eStunTime, (currEnemyID[2] == "3" ? versionAnomMultBoss : versionAnomMultEnemy) / 100 * eAnom, eElementMult, eMods)}</span>`;
         if (s == 1) ttMiscStat.querySelector(".tt-text").style.top = "292.5px";
         enemy.appendChild(ttMiscStat);
 
@@ -423,12 +425,16 @@ function showEnemies() {
 
         // add enemy stage description
         if (side == sideB && currEnemyID[2] == "3") {
+          let currEnemyDesc = currEnemy.desc;
+          let currEnemyPerf = currEnemy.perf;
+          let currEnemyMisc = currEnemy.misc;
           let traitTitle = document.getElementById("t-title");
           let traitDesc = document.getElementById("t-desc");
           traitTitle.innerHTML = `Final BATTLE ${Math.min(nodeNum, nodeMax)}${modeNum != 2 || nodeNum < nodeMax ? `` : `.${nodeNum - nodeMax + 1}`}${s != 1 ? `-${s - 1}` : ``} Boss Traits`;
-          traitDesc.innerHTML = eTags.includes("spoiler") && !spoilersToggle.checked ? `${currEnemyData.spoilerDesc}<br>${currEnemyData.spoilerPerf}` : `${currEnemyData.desc[currEnemyType]}<br>${currEnemyData.perf[currEnemyType]}`;
-          traitDesc.innerHTML += `<li>When an extra score multiplier is active in this stage, the <span style="color:#ffaf2c;font-weight:bold;">Performance Points</span> cap will increase accordingly.</li>`;
-          traitDesc.innerHTML += (currEnemyID[0] == "2" || currEnemyID == "14303" || currEnemyID == "14302") ? `<br>${currEnemyData.misc}` : ``;
+          traitDesc.innerHTML = buffData[currEnemyID + `dad${eTags.includes("spoiler") && !spoilersToggle.checked ? "s" : ""}`][currEnemyDesc] + `<br>` +
+                                buffData[currEnemyID + `dap${eTags.includes("spoiler") && !spoilersToggle.checked ? "s" : ""}`][currEnemyPerf] +
+                                `<li>When an extra score multiplier is active in this stage, the <span style="color:#ffaf2c;font-weight:bold;">Performance Points</span> cap will increase accordingly.</li><br>` +
+                                (currEnemyMisc != -1 ? buffData[currEnemyID + `dam`][currEnemyMisc] : ``);
         }
       }
       wave.appendChild(waveEnemies);
@@ -462,12 +468,12 @@ function generateWR(mult, wr, id, s) {
   resImg1.src = resImg2.src = "../../assets/zzz/elements/none.webp";
   if (s == 1) weakImg1.style.height = weakImg2.style.height = resImg1.style.height = resImg2.style.height = "24px";
   let wkCnt = resCnt = 0;
-  for (let e = 0; e < elementsData.length - (modeNum == 2 && versionNum < v28); ++e) {
+  for (let e = 0; e < elementsData.length - (modeNum == 2 && versionNum < vWind); ++e) {
     if (mult[e] < 1) { (wkCnt == 0 ? weakImg1 : weakImg2).src = `../../assets/zzz/elements/${elementsData[e]}.webp`; ++wkCnt;}
     else if (mult[e] > 1) { (resCnt == 0 ? resImg1 : resImg2).src = `../../assets/zzz/elements/${elementsData[e]}.webp`; ++resCnt; }
   }
   wr.appendChild(weakImg1);
-  if (versionNum >= v28 && id == "24300") {
+  if (versionNum >= vWind && id == "24300") {
     let weakImg3 = document.createElement("img");
     weakImg3.className = "wk";
     weakImg3.src = "../../assets/zzz/elements/physical.webp";
@@ -488,7 +494,7 @@ function generateR(mult, r, s, id, enemy) {
   resEle.className = "e-res-ele";
   bossRES.innerHTML = "Boss DMG RES";
 
-  for (let e = 0; e < elementsData.length - (modeNum == 2 && versionNum < v28); ++e) {
+  for (let e = 0; e < elementsData.length - (modeNum == 2 && versionNum < vWind); ++e) {
     if (mult[e] > 1.2) {
       hasRES = true;
       let res = document.createElement("div");
@@ -512,11 +518,11 @@ function generateR(mult, r, s, id, enemy) {
 }
 
 // display special tooltip
-function alt(color, name, hpNew, hp, def) {
+function alt(color, name, hpNew, hp) {
   return `<span style="color:${color};">✦</span><span class="tt-text">
           <span style="font-weight:bold;text-decoration:underline;">${name}</span><br>
-          <span style="color:#f6b26b;font-weight:bold;">Alt HP</span>: <span style="color:${color};font-weight:bold;">${showNumberFormat(Math.ceil(hpNew))}</span><br>
-          <span style="font-weight:bold;">(${def ? `normalized → ` : ``}${Math.round(hpNew / hp * 1000) / 10}% of Base HP)</span><br><br>`;
+          <span style="color:#f6b26b;font-weight:bold;">Alt HP</span>: <span style="color:#f6b26b;font-weight:bold;">${showNumberFormat(Math.ceil(hpNew))}</span><br>
+          <span style="font-weight:bold;">(${Math.round(hpNew / hp * 100000) / 1000}% of <span style="color:#ff5555;">Raw HP</span>)</span><br><br>`;
 }
 function hitch(hp) {
   return `<span style="color:#ffffff;">✦</span><span class="tt-text">
@@ -525,10 +531,10 @@ function hitch(hp) {
           technically doesn't<br>need to be killed</span>`;
 }
 function palicus() { return `hit both 50% of the time</span>`; }
-function instant(color, type, cnt) { return `<span style="font-weight:bold;"><span style="color:${color};">${type}</span></span> ${cnt} time(s)</span>`; }
+function instant(color, type, cnt, hpD, hpU, mech) { return `<span style="font-weight:bold;color:${color};">${type}</span> ${cnt} time(s) → <span style="font-weight:bold;">-${hpD}%</span> ${hpU != 0 ? `<br>${mech} → <span style="font-weight:bold;">+${hpU}%</span>` : ``}`; }
 
 // display misc stats
-function generateEnemyStats(daze, stun, time, anom, dmg, mods) {
+function generateEnemyStats(id, daze, stun, time, anom, dmg, mods) {
   let anomMult = [1, 1, 1, 1, 1.2, 0.5];
   let color = ["#98eff0", "#ff5521", "#2eb6ff", "#fe437e", "#f0d12b", "#a6c5fd"];
   let stats = `<span style="font-weight:bold;">Max Daze: <span style="color:#ffe599;">${Math.round(daze * 10000) / 10000}</span></span><br>
@@ -536,7 +542,7 @@ function generateEnemyStats(daze, stun, time, anom, dmg, mods) {
   if (mods.includes("no-anom")) return stats + `<span style="font-weight:bold;">IMMUNE TO ANOMALY</span>`;
   else {
     stats += `<span style="font-weight:bold;">Min Anomaly Buildup:</span><br>`;
-    for (let i = 0; i < elementsData.length - (modeNum == 2 && versionNum < v28); ++i) stats += `<span style="color:${color[i]};font-weight:bold;">${Math.round(anom * anomMult[i] * (1 / (2 - Math.min(dmg[i], 1.2))) * 100) / 100}</span>/` + (window.innerWidth < 480 && i == 2 ? `<br>`: ``);
+    for (let i = 0; i < elementsData.length - (modeNum == 2 && versionNum < vWind); ++i) stats += `<span style="color:${color[i]};font-weight:bold;">${Math.round(anom * (id[2] == "1" && i == 5 ? 46/45 : 1) * anomMult[i] * (1 / (2 - Math.min(dmg[i], 1.2))) * 100) / 100}</span>/` + (window.innerWidth < 1360 && i == 2 ? `<br>`: ``);
     stats = stats.slice(0, -1) + `<br>${mods.includes("no-freeze") ? `<span style="color:#98eff0;font-weight:bold;">UNFREEZABLE</span>` : ``}`;
   }
   return stats;

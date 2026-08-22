@@ -662,12 +662,12 @@ function showHPChart() {
   // global chart settings
   hpChart.data.labels = labels;
   hpChart.data.datasets = [
-    generateHPDataset("Raw HP", rawHPData, "#e06666"),
+    generateHPDataset("Raw HP", rawHPData, "#ff5555"),
     generateHPDataset("AOE HP", aoeHPData, "#6d9eeb")
   ].filter(Boolean);
   if (modeNum == 3 && chartNodeNum == 12) {
     hpChart.data.datasets.push(
-      generateHPDataset("Raw 12-3 HP", rawHPStarData, "#e06666"),
+      generateHPDataset("Raw 12-3 HP", rawHPStarData, "#ff5555"),
       generateHPDataset("AOE 12-3 HP", aoeHPStarData, "#6d9eeb")
     );
   }

@@ -626,8 +626,8 @@ function showHPChart() {
 
   // global chart settings
   hpChart.data.labels = versionNames;
-  hpChart.data.datasets = [ generateHPDataset("Raw HP", hpData[chartNodeNum - 1], "#e06666") ];
-  if (chartNodeNum == 4) hpChart.data.datasets.push(generateHPDataset("Raw 4-3 HP", hpData[4], "#e06666"));
+  hpChart.data.datasets = [ generateHPDataset("Raw HP", hpData[chartNodeNum - 1], "#ff5555") ];
+  if (chartNodeNum == 4) hpChart.data.datasets.push(generateHPDataset("Raw 4-3 HP", hpData[4], "#ff5555"));
   hpChart.options.scales.y.min = 0;
   hpChart.options.scales.y.max = 70000000;
   hpChart.options.scales.y.ticks.stepSize = 5000000;
