@@ -146,9 +146,9 @@ function showEnemies() {
 
     // display side HP multiplier
     let hpMult = document.createElement("div");
-    let sideHPMult = versionHPMult[s - 1], sideDazeMult = versionDazeMult[s - 1];
+    let sideHPMult = versionHPMult[s - 1], sideDazeMult = versionDazeMult[s - 1], sideAnomMult = versionAnomMult[s - 1];
     hpMult.className = "s-hp-daze-anom-mult";
-    hpMult.innerHTML = `HP: <span style="color:#ff5555;">${sideHPMult}%</span> | Daze: <span style="color:#ffe599;">${sideDazeMult}%</span> | Anom: <span style="color:#7b78ff;">${versionAnomMult}%</span>`;
+    hpMult.innerHTML = `HP: <span style="color:#ff5555;">${sideHPMult}%</span> | Daze: <span style="color:#ffe599;">${sideDazeMult}%</span> | Anom: <span style="color:#7b78ff;">${sideAnomMult}%</span>`;
     sideHeader.appendChild(hpMult);
     side.appendChild(sideHeader);
 
@@ -268,7 +268,7 @@ function showEnemies() {
     // display enemy misc stats
     let ttMiscStat = document.createElement("div");
     ttMiscStat.className = "tt-e-stat";
-    ttMiscStat.innerHTML = `+<span class="tt-text">${generateEnemyStats(currEnemyID, sideDazeMult / 100 * eDaze, eStunMult, eStunTime, versionAnomMult / 100 * eAnom, eElementMult, eMods)}</span>`;
+    ttMiscStat.innerHTML = `+<span class="tt-text">${generateEnemyStats(currEnemyID, sideDazeMult / 100 * eDaze, eStunMult, eStunTime, sideAnomMult / 100 * eAnom, eElementMult, eMods)}</span>`;
     enemy.appendChild(ttMiscStat);
 
     // display enemy 40%+ resistances
