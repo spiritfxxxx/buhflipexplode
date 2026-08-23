@@ -81,9 +81,9 @@ function loadHPData() {
     hpData[3][v - 1] = Math.round(alt60kTrialEnemyHP);
 
     // adversity hp data
-    hpData[4][v - 1] = Math.round(raw60kAdversityEnemyHP * 0.571428571);
+    hpData[4][v - 1] = Math.round(raw60kAdversityEnemyHP * 0.475587701);
     hpData[5][v - 1] = Math.floor(raw60kAdversityEnemyHP);
-    hpData[6][v - 1] = Math.round(alt60kAdversityEnemyHP * 0.571428571);
+    hpData[6][v - 1] = Math.round(alt60kAdversityEnemyHP * 0.475587701);
     hpData[7][v - 1] = Math.round(alt60kAdversityEnemyHP);
   }
 }
