@@ -377,8 +377,8 @@ function showEnemies() {
 
           // change styling for bosses
           if (s == 1) {
-            ttHP.style.bottom = "95%";
-            ttHP.style.right = "91.5%";
+            ttHP.style.top = "-19.5px";
+            ttHP.style.left = "-13.5px";
             ttHP.style.fontSize = "32px";
             ttHP.querySelector(".tt-text").style.bottom = "42.5px";
           }

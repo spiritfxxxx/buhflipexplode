@@ -951,8 +951,8 @@ input:checked + #lt, input:checked + #st {
   user-select: none;
 }
 .tt-e-hp {
-  top: -19.5px;
-  left: -13.5px;
+  bottom: 95.5%;
+  right: 91.5%;
   position: absolute;
   font-family: "Arial";
   font-size: 32px;

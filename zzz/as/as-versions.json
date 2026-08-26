@@ -1,0 +1,7 @@
+{
+  "3.0.1":{ "versionName":"3.0 Phase 1",
+            "versionTime":"17/06/2026 - xx/xx/20xx",
+            "versionHPMult":[333, 400, 767], "versionDazeMult":[100, 100, 100], "versionAnomMult":100,
+            "versionEnemies":[ {"id":"30400", "type":0}, {"id":"23201", "type":0}, {"id":"30203", "type":0} ]
+          }
+}
