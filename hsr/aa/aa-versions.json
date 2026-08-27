@@ -223,5 +223,31 @@
                   { "enemies":[ {"id":"31200", "count":1, "phase":2} ] } ] }
               ]
             }
+          },
+
+  "4.6.1":{ "versionName":"Return to Roots",
+            "versionTime":"xx/xx/20xx - xx/xx/20xx",
+            "versionBuffIDs":["40000021", "40000027", "40000028"],
+            "versionDebuffIDs":[ ["41000002", "41000022", "41000023"], ["41000002.1", "41000022.1", "41000023.1"],
+                                 ["41000020"], ["41000011.1", "41000016"], ["41000021"] ],
+            "versionEnemies":{
+              "sides":[
+                { "sideElementMult":[1.2, 1.2, 1.2, 1.2, 1.0, 1.0, 1.0], "sideHPMult":630, "waves":[
+                  { "enemies":[ {"id":"31100.1", "count":1}, {"id":"45100", "count":1} ] },
+                  { "enemies":[ {"id":"46200", "count":1, "phase":2} ] } ] },
+                { "sideElementMult":[1.2, 1.2, 1.2, 1.2, 1.0, 1.0, 1.0], "sideHPMult":580, "waves":[
+                  { "enemies":[ {"id":"31100.1", "count":1}, {"id":"45100", "count":1} ] },
+                  { "enemies":[ {"id":"46200", "count":1, "phase":2} ] } ] },
+                { "sideElementMult":[1.2, 1.0, 1.2, 1.2, 1.2, 1.2, 1.0], "sideHPMult":560, "waves":[
+                  { "enemies":[ {"id":"42100", "count":1, "hpMult":600}, {"id":"41100", "count":1, "hpMult":600} ] },
+                  { "enemies":[ {"id":"41200", "count":1, "phase":2} ] } ] },
+                { "sideElementMult":[1.0, 1.2, 1.2, 1.0, 1.2, 1.2, 1.2], "sideHPMult":380, "waves":[
+                  { "enemies":[ {"id":"43100", "count":1, "hpMult":560}, {"id":"15100", "count":1, "hpMult":560} ] },
+                  { "enemies":[ {"id":"42200", "count":1, "phase":2} ] } ] },
+                { "sideElementMult":[1.2, 1.0, 1.2, 1.2, 1.0, 1.2, 1.2], "sideHPMult":470, "waves":[
+                  { "enemies":[ {"id":"37100", "count":1, "hpMult":550}, {"id":"12100", "count":1, "hpMult":550} ] },
+                  { "enemies":[ {"id":"38200", "count":1, "phase":1} ] } ] }
+              ]
+            }
           }
 }

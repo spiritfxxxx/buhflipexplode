@@ -3,14 +3,7 @@
     <title>Annihilation Simulacrum</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="buhflipexplode Annihilation Simulacrum">
-    <meta property="og:description" content="View the ZZZ Annihilation Simulacrum history!">
-    <meta property="og:image" content="https://spiritfxxxx.github.io/buhflipexplode/assets/misc/buh.webp">
-    <meta property="og:url" content="https://spiritfxxxx.github.io/buhflipexplode/zzz/as">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="as.css">
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XMBEH24PY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,115 +13,65 @@
     </script>
   </head>
   <body>
-    <div id="mb-o" onclick="toggleMenu()"></div>
-    <div id="vs-o" onclick="toggleVersionSelector()"></div>
-    <div id="cc-o" onclick="toggleCalc()"></div>
-    <div id="sidebar">
-      <div id="mb-btn" onclick="toggleMenu()">☰</div>
-      <div id="c-btn" onclick="toggleChart()"></div>
-      <div id="cc-btn" onclick="toggleCalc()"></div>
-      <div id="top-btn" onclick="jumpToTop()"></div>
-    </div>
-    <div id="mb">
-      <div id="mb-bar">
-        <div id="mb-btn-open" onclick="toggleMenu()">☰</div>
-        <div id="mb-bar-misc">
-          <a id="mb-about-btn" href="../../about/">ⓘ</a>
-          <a id="mb-home-btn" href="../../home/"></a>
-        </div>
-      </div>
-      <div id="mb-c">
-        <div id="mb-sec">ZZZ</div>
-        <a href="../../zzz/sd/">Shiyu Defense</a>
-        <a href="../../zzz/da/">Deadly Assault</a>
-        <a href="../../zzz/ts/">Threshold Simulation</a>
-        <a href="../../zzz/as/ style="color:#b2cee7;text-decoration:underline;"">Annihilation Simulacrum</a>
-        <div id="mb-sec">HSR</div>
-        <a href="../../hsr/fh/">Forgotten Hall</a>
-        <a href="../../hsr/pf/">Pure Fiction</a>
-        <a href="../../hsr/as/">Apocalyptic Shadow</a>
-        <a href="../../hsr/aa/">Anomaly Arbitration</a>
-        <div id="mb-nf">
-          <div id="mb-sec">Settings</div>
-          <span>HP Format <span class="tt-menu">�
-            <span class="tt-text">change # formatting</span></span>
-            <div id="mb-ex-num"></div>
-          </span>
-          <div id="mb-nfb">
-            <button class="nfb" data-format="none" onclick="changeNumberFormat(this)">NONE</button>
-            <button class="nfb" data-format="comma" onclick="changeNumberFormat(this)">COMMA</button>
-            <button class="nfb" data-format="period" onclick="changeNumberFormat(this)">PERIOD</button>
-          </div>
-        </div>
-        <div id="mb-t">
-          <div id="mb-stg">
-            <span>Leaks <span class="tt-menu">�
-              <span class="tt-text">unreleased and/or STC content</span></span>
-            </span>
-            <label id="mb-lt">
-              <input type="checkbox" id="lks" style="display:none;">
-              <span id="lt"></span>
-            </label>
-          </div>
-          <div id="mb-stg">
-            <span>Spoilers <span class="tt-menu">�
-              <span class="tt-text">leaks + story/boss spoiler content</span></span>
-            </span>
-            <label id="mb-st">
-              <input type="checkbox" id="spl" style="display:none;">
-              <span id="st"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="page">
-      <div id="vs">
-        <div id="vs-x-bar">
-          <div id="vs-x" onclick="toggleVersionSelector()">✖</div>
-        </div>
-        <div id="vg"></div>
-      </div>
-      <div id="title">Annihilation Simulacrum</div>
-      <div id="v">
-        <div id="v-l" onclick="changeVersion(-1)">◁</div>
-        <div id="v-text" onclick="toggleVersionSelector()">
-          <div id="v-name"></div>
-          <div id="v-time"></div>
-          <div id="v-id"></div>
-        </div>
-        <div id="v-r" onclick="changeVersion(1)">▷</div>
-      </div>
-      <!--<div id="v-hp">
-        <div id="v-hp-tri">
-          <div><span><span id="tri">Trial </span><span style="color:#e06666;font-weight:bold;">Raw</span><span class="tt-v-hp">� <span class="tt-text">sum of all boss HP</span></span> / <span><span style="color:#f29e38;font-weight:bold;">Alt</span></span><span class="tt-v-hp">� <span class="tt-text">raw hp & boss mechanic interaction<br>(+ normalized for lower DEF)</span></span> HP</div>
-          <div>20000 Score: <span id="v-hp-raw-20000-tri"></span> / <span id="v-hp-alt-20000-tri"></span></div>
-          <div>60000 Score: <span id="v-hp-raw-60000-tri"></span> / <span id="v-hp-alt-60000-tri"></span></div>
-        </div>
-        <div id="v-hp-adv" style="flex-direction:column">
-          <div><span>Adversity <span style="color:#e06666;font-weight:bold;">Raw</span></span> / <span><span style="color:#f29e38;font-weight:bold;">Alt</span> HP</span></div>
-          <div>30000 Score: <span id="v-hp-raw-20000-adv"></span> / <span id="v-hp-alt-20000-adv"></span></div>
-          <div>60000 Score: <span id="v-hp-raw-60000-adv"></span> / <span id="v-hp-alt-60000-adv"></span></div>
-        </div>
-      </div>
-      <div id="b">
-        <div id="b1"></div>
-        <div id="b2"></div>
-        <div id="b3"></div>
-      </div>
-      <div id="s-h">
-        <div id="sh"></div>
-        <div id="t">
-          <div id="t-title"></div>
-          <div id="t-desc"></div>
-        </div>
-      </div>-->
-      <div id="s-n">
-        <div id="s1"></div>
-        <div id="s2"></div>
-        <div id="s3"></div>
-      </div>
-    </div>
-    <script src="as.js"></script>
+    <img id="buh" src="../../assets/misc/buhFlipExplodeLoop.webp">
+    <div id="msg">Coming soon™!</div>
+    <nav>
+      <a href="../../home/">Home</a>
+    </nav>
+    <style>
+      html, body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #111111;
+        color: #ffffff;
+        font-family: "Inconsolata", monospace;
+        text-align: center;
+        scrollbar-gutter: stable;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      /* buhflipexplode */
+      #buh {
+        margin-top: 17.5vh;
+        width: 275px;
+        border: 2px solid #b2cee7;
+        user-select: none;
+      }
+      /* 404 message */
+      #msg {
+        padding: 2.5vh;
+        font-size: 32px;
+        user-select: none;
+      }
+      /* go home button*/
+      nav {
+        padding: 2.5vh;
+        gap: 50px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      a {
+        padding: 10px 20px;
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        border: 2px solid #b2cee7;
+        border-radius: 8px;
+        user-select: none;
+      }
+      a:hover {
+        color: #000000;
+        background-color: #b2cee7;
+        transition: all 0.1s ease-in-out;
+      }
+      @font-face {
+        font-family: "Inconsolata";
+        src: url(/assets/Inconsolata-Regular.woff2) format("woff2");
+      }
+    </style>
   </body>
 </html>

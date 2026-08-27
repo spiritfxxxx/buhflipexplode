@@ -141,6 +141,10 @@
 
   "12000042":"<li>At the beginning of each Cycle, randomly causes an ally target following the Path of <span style='font-weight:bold;'>The Hunt</span> or the Path of <span style='font-weight:bold;'>Erudition</span> to take action immediately, and increases their DMG dealt by <span style='color:#f29e38;font-weight:bold;'>80%</span> for <span style='color:#f29e38;font-weight:bold;'>1</span> turn(s).</li>",
 
+  "12000043":"<li>The first character in the ally lineup gains the <span style='color:#ffbd88;font-weight:bold;'>Elation Skill</span> <span style='font-weight:bold;'>Euphoric Maelstrom</span>, dealing <span style='color:#f29e38;font-weight:bold;'>100%</span> <span style='color:#ffbd88;font-weight:bold;'>Elation DMG</span> of the character's Type to all enemies.</li><li>At the start of each cycle, <span style='color:#ffbd88;font-weight:bold;'>Aha</span> immediately gains <span style='color:#f29e38;font-weight:bold;'>1</span> extra turn, taking into account a fixed <span style='color:#f29e38;font-weight:bold;'>20</span> <span style='color:#ffbd88;font-weight:bold;'>Punchlines</span>. This turn does not consume <span style='color:#ffbd88;font-weight:bold;'>Punchlines</span>.</li>",
+
+  "12000044":"<li>When an ally target uses their <span style='font-weight:bold;'>Ultimate</span>, they gain <span style='color:#f29e38;font-weight:bold;'>5</span> <span style='color:#ffbd88;font-weight:bold;'>Punchlines</span>.</li><li>At the start of each cycle, <span style='color:#ffbd88;font-weight:bold;'>Aha</span> immediately gains <span style='color:#f29e38;font-weight:bold;'>1</span> extra turn with a fixed <span style='color:#f29e38;font-weight:bold;'>20</span> <span style='color:#ffbd88;font-weight:bold;'>Punchlines</span> taken into account. This turn does not consume <span style='color:#ffbd88;font-weight:bold;'>Punchlines</span>.</li>",
+
 
 
 
@@ -295,11 +299,13 @@
 
   "21000061":[ "Smack Talk",                                 "084",                "<li>Increases the All-Type RES PEN of <span style='font-weight:bold;'>Follow-Up ATK</span> DMG dealt by <span style='color:#f29e38;font-weight:bold;'>30%</span>. During <span style='font-weight:bold;'>Surging Grit</span>, after an ally target uses a <span style='font-weight:bold;'>Follow-Up ATK</span> to attack enemy targets, deals Additional DMG equal to <span style='color:#f29e38;font-weight:bold;'>40%</span> of the attacker's ATK plus <span style='color:#f29e38;font-weight:bold;'>20%</span> of the attacker's Max HP to targets adjacent to each attacked enemy target. This DMG is considered as <span style='font-weight:bold;'>Follow-Up ATK</span> DMG.</li>" ],
 
-  "21000062":[ "Grand Rhetoric",                             "085",                "<li>During <span style='font-weight:bold;'>Surging Grit</span>, CRIT DMG dealt by ally targets when using their <span style='font-weight:bold;'>Ultimate</span> increases by <span style='color:#f29e38;font-weight:bold;'>60%</span>. When <span style='font-weight:bold;'>Surging Grit</span> ends, all allies regenerate <span style='color:#f29e38;font-weight:bold;'>20%</span> Energy.</li><li>TBD</li>" ],
+  "21000062":[ "Grand Rhetoric",                             "085",                "<li>During <span style='font-weight:bold;'>Surging Grit</span>, CRIT DMG dealt by ally targets when using their <span style='font-weight:bold;'>Ultimate</span> increases by <span style='color:#f29e38;font-weight:bold;'>60%</span>. When <span style='font-weight:bold;'>Surging Grit</span> ends, all allies regenerate <span style='color:#f29e38;font-weight:bold;'>20%</span> Energy.</li><li>After ally targets use their <span style='font-weight:bold;'>Ultimate</span>, every enemy target hit additionally accumulates <span style='color:#f29e38;font-weight:bold;'>5</span> Grit Value for allies.</li>" ],
 
-  "21000063":[ "Motormouth",                                 "086",                "<li>Increases the <span style='color:#5555ff;font-weight:bold;'>SPD</span> of all allies by <span style='color:#f29e38;font-weight:bold;'>20%</span>. During <span style='font-weight:bold;'>Surging Grit</span>, DMG received by enemy targets additionally increases by <span style='color:#f29e38;font-weight:bold;'>30%</span>.</li><li>TBD</li>" ],
+  "21000063":[ "Motormouth",                                 "086",                "<li>Increases the <span style='color:#5555ff;font-weight:bold;'>SPD</span> of all allies by <span style='color:#f29e38;font-weight:bold;'>20%</span>. During <span style='font-weight:bold;'>Surging Grit</span>, DMG received by enemy targets additionally increases by <span style='color:#f29e38;font-weight:bold;'>30%</span>.</li><li>After ally targets use their <span style='font-weight:bold;'>Basic ATK</span> or <span style='font-weight:bold;'>Skill</span>, every enemy target hit additionally accumulates <span style='color:#f29e38;font-weight:bold;'>3</span> Grit Value for allies.</li>" ],
 
-  "21000064":[ "Riddle Fanatic",                             "TBD",                "<li>After an ally memosprite uses an attack, gains <span style='color:#f29e38;font-weight:bold;'>2</span> <span style='color:#ffbd88;font-weight:bold;'>Punchline</span>. During <span style='font-weight:bold;'>Surging Grit</span>, DMG dealt by ally memosprites increases by <span style='color:#f29e38;font-weight:bold;'>50%</span>.</li><li>TBD</li>" ],
+  "21000064":[ "Riddle Fanatic",                             "079",                "<li>After an ally memosprite uses an attack, gains <span style='color:#f29e38;font-weight:bold;'>2</span> <span style='color:#ffbd88;font-weight:bold;'>Punchline</span>. During <span style='font-weight:bold;'>Surging Grit</span>, DMG dealt by ally memosprites increases by <span style='color:#f29e38;font-weight:bold;'>50%</span>.</li><li>TBD</li>" ],
+
+  "21000065":[ "Fugato",                                     "048",                "<li>During <span style='font-weight:bold;'>Surging Grit</span>, after an ally target uses an attack, additionally causes <span style='color:#f29e38;font-weight:bold;'>1</span> random <span style='color:#a59ddd;font-weight:bold;'>DoT</span> debuff currently applied to the attacked target to immediately produce DMG equal to <span style='color:#f29e38;font-weight:bold;'>400%</span> of its original DMG.</li><li>TBD</li>" ],
 
 
 
@@ -534,9 +540,11 @@
 
   "31000078":[ "Blighted to the Bone",                       "021",                "After an ally target deals <span style='color:#a59ddd;font-weight:bold;'>DoT</span> to an enemy, <span style='color:#f29e38;font-weight:bold;'>1</span> Energy is regenerated. <span style='color:#a59ddd;font-weight:bold;'>DoT</span> dealt by all allies ignores <span style='color:#f29e38;font-weight:bold;'>40%</span> of enemy targets' All-Type RES." ],
 
-  "31000079":[ "Land of Fertility",                          "TBD",                "Increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by all allies by <span style='color:#f29e38;font-weight:bold;'>30%</span>, and additionally increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by the 1st character in the lineup by <span style='color:#f29e38;font-weight:bold;'>30%</span>." ],
+  "31000079":[ "Land of Fertility",                          "044",                "Increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by all allies by <span style='color:#f29e38;font-weight:bold;'>30%</span>, and additionally increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by the 1st character in the lineup by <span style='color:#f29e38;font-weight:bold;'>30%</span>." ],
 
   "31000080":[ "Literary Brilliance",                        "TBD",                "Decreases the <span style='color:#35d07a;font-weight:bold;'>Wind RES</span> and <span style='color:#d955f2;font-weight:bold;'>Lightning RES</span> of all enemies by <span style='color:#f29e38;font-weight:bold;'>40%</span>." ],
+
+  "31000081":[ "Magic Time",                                 "068",                "At the start of battle, when there are 1/2/3/4 <span style='font-weight:bold;'>Elation</span> character(s) in the team, increases the <span style='color:#ffbd88;font-weight:bold;'>Elation</span> of all allies by <span style='color:#f29e38;font-weight:bold;'>10%/20%/30%/60%</span>." ],
 
 
 
@@ -588,11 +596,15 @@
 
   "40000023":[ "Endless Euphoria",                           "074",                "All ally targets' All-Type RES PEN increases by <span style='color:#f29e38;font-weight:bold;'>20%</span>, and the All-Type RES PEN of <span style='color:#ffbd88;font-weight:bold;'>Elation DMG</span> dealt additionally increases by <span style='color:#f29e38;font-weight:bold;'>20%</span>." ],
 
-  "40000024":[ "Marvelous Laughter",                         "TBD",                "Increases all ally targets' <span style='color:#ffbd88;font-weight:bold;'>Elation</span> by <span style='color:#f29e38;font-weight:bold;'>40%</span>, and increases the All-Type RES PEN of <span style='color:#ffbd88;font-weight:bold;'>Elation DMG</span> dealt by <span style='color:#f29e38;font-weight:bold;'>20%</span>. This effect is doubled when using an <span style='color:#ffbd88;font-weight:bold;'>Elation Skill</span>." ],
+  "40000024":[ "Marvelous Laughter",                         "074",                "Increases all ally targets' <span style='color:#ffbd88;font-weight:bold;'>Elation</span> by <span style='color:#f29e38;font-weight:bold;'>40%</span>, and increases the All-Type RES PEN of <span style='color:#ffbd88;font-weight:bold;'>Elation DMG</span> dealt by <span style='color:#f29e38;font-weight:bold;'>20%</span>. This effect is doubled when using an <span style='color:#ffbd88;font-weight:bold;'>Elation Skill</span>." ],
 
-  "40000025":[ "Finale's Kiss",                              "TBD",                "At the start of any ally target's turn, all ally targets regenerate <span style='color:#f29e38;font-weight:bold;'>25%</span> Energy. This effect can only be triggered <span style='color:#f29e38;font-weight:bold;'>1</span> time per battle. Increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by all ally targets by <span style='color:#f29e38;font-weight:bold;'>40%</span>." ],
+  "40000025":[ "Finale's Kiss",                              "088",                "At the start of any ally target's turn, all ally targets regenerate <span style='color:#f29e38;font-weight:bold;'>25%</span> Energy. This effect can only be triggered <span style='color:#f29e38;font-weight:bold;'>1</span> time per battle. Increases <span style='font-weight:bold;'>Skill</span> and <span style='font-weight:bold;'>Ultimate</span> DMG dealt by all ally targets by <span style='color:#f29e38;font-weight:bold;'>40%</span>." ],
 
-  "40000026":[ "Memoria Swarm",                              "TBD",                "When the number of ally memosprites is 1/2/3/4, DMG dealt by all allies increases by <span style='color:#f29e38;font-weight:bold;'>20%/25%/30%/50%</span>." ],
+  "40000026":[ "Memoria Swarm",                              "055",                "When the number of ally memosprites is 1/2/3/4, DMG dealt by all allies increases by <span style='color:#f29e38;font-weight:bold;'>20%/25%/30%/50%</span>." ],
+
+  "40000027":[ "Ecstasy Night",                              "089",                "Merrymakes <span style='color:#ffbd88;font-weight:bold;'>Elation DMG</span> dealt by the first character in the lineup increases by <span style='color:#f29e38;font-weight:bold;'>50%</span>." ],
+
+  "40000028":[ "Rapid Charge",                               "086",                "Increases the <span style='color:#5555ff;font-weight:bold;'>SPD</span> of ally <span style='font-weight:bold;'>Frenzied Beast's Seed Germ</span> by <span style='color:#f29e38;font-weight:bold;'>80%</span>." ],
 
 
 
@@ -664,5 +676,17 @@
 
   "41000018":[ "Unwavering",                                 "Enemy targets' <span style='color:#f08b83;font-weight:bold;'>Toughness</span> cannot be reduced, and <span style='color:#f08b83;font-weight:bold;'>Break DMG</span> taken is reduced by <span style='color:#f29e38;font-weight:bold;'>50%</span>." ],
 
-  "41000019":[ "Joint Forces",                               "DMG taken by enemy targets is reduced by <span style='color:#f29e38;font-weight:bold;'>60%</span>. When there are more than 4 ally targets currently on the field, this effect is reduced by <span style='color:#f29e38;font-weight:bold;'>20%</span> for each additional target." ]
+  "41000019":[ "Joint Forces",                               "DMG taken by enemy targets is reduced by <span style='color:#f29e38;font-weight:bold;'>60%</span>. When there are more than 4 ally targets currently on the field, this effect is reduced by <span style='color:#f29e38;font-weight:bold;'>20%</span> for each additional target." ],
+
+  "41000020":[ "Purify",                                     "At the start of an enemy target's turn, dispels all <span style='color:#a59ddd;font-weight:bold;'>DoT</span> effects on this unit, and decreases <span style='color:#a59ddd;font-weight:bold;'>DoT</span> taken by <span style='color:#f29e38;font-weight:bold;'>50%</span>." ],
+
+  "41000021":[ "Lockdown",                                   "After each time an ally target uses an attack, applies <span style='color:#f29e38;font-weight:bold;'>1</span> stack of this effect. Upon reaching <span style='color:#f29e38;font-weight:bold;'>6</span> stack(s), causes the target to enter the <span style='color:#d8c732;font-weight:bold;'>Imprisonment</span> state for <span style='color:#f29e38;font-weight:bold;'>1</span> turn and reduces their Energy by a fixed amount of <span style='color:#f29e38;font-weight:bold;'>30%</span>. All stacks of this effect are cleared at the start of the target's turn or after a debuff is triggered." ],
+
+  "41000022":[ "Perforation",                                "When an enemy target uses an attack, if the attacked ally target has a Shield, increases the DMG dealt by the enemy target by <span style='color:#f29e38;font-weight:bold;'>200%</span>." ],
+  "41000022.1":[ "Perforation+",                             "When an enemy target uses an attack, if the attacked ally target has a Shield, increases the DMG dealt by the enemy target by <span style='color:#f29e38;font-weight:bold;'>400%</span>." ],
+  "41000022.2":[ "Perforation++",                            "When an enemy target uses an attack, if the attacked ally target has a Shield, increases the DMG dealt by the enemy target by <span style='color:#f29e38;font-weight:bold;'>600%</span>." ],
+
+  "41000023":[ "Unyielding",                                 "When an enemy target is attacked, they gain a Shield equal to <span style='color:#f29e38;font-weight:bold;'>1%</span> of their Max HP." ],
+  "41000023.1":[ "Unyielding+",                              "When an enemy target is attacked, they gain a Shield equal to <span style='color:#f29e38;font-weight:bold;'>2%</span> of their Max HP." ],
+  "41000023.2":[ "Unyielding++",                             "When an enemy target is attacked, they gain a Shield equal to <span style='color:#f29e38;font-weight:bold;'>3%</span> of their Max HP." ]
 }
