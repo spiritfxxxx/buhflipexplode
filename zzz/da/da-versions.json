@@ -447,7 +447,7 @@
             "versionBuffIDs":["69000071", "69000072", "69000073"],
             "versionHPMult":[215, 220, 230, 210], "versionDazeMult":[100, 100, 80, 100], "versionAnomMult":[110, 110, 110, 110],
             "versionEnemies":[
-              {"id":"32300", "type":0, "desc":0, "perf":0, "misc":-1},
+              {"id":"32300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"31300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"24300", "type":0, "desc":1, "perf":0, "misc":0},
               {"id":"32400", "type":0, "desc":0, "perf":0, "misc":-1} ]
@@ -458,7 +458,7 @@
             "versionBuffIDs":["69000074", "69000071", "69000075"],
             "versionHPMult":[215, 340, 230, 240], "versionDazeMult":[100, 100, 80, 100], "versionAnomMult":[110, 110, 110, 110],
             "versionEnemies":[
-              {"id":"32300", "type":0, "desc":0, "perf":0, "misc":-1},
+              {"id":"32300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"21300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"24300", "type":0, "desc":1, "perf":0, "misc":0},
               {"id":"32400", "type":0, "desc":0, "perf":0, "misc":-1} ]
@@ -467,11 +467,11 @@
   "3.2.3":{ "versionName":"3.2 Phase 3",
             "versionTime":"xx/xx/20xx - xx/xx/20xx",
             "versionBuffIDs":["69000076", "69000077", "69000078"],
-            "versionHPMult":[230, 190, 215, 345], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 125, 110, 110],
+            "versionHPMult":[230, 190, 215, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 125, 110, 110],
             "versionEnemies":[
               {"id":"28300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"31301", "type":0, "desc":0, "perf":0, "misc":-1},
-              {"id":"32300", "type":0, "desc":0, "perf":0, "misc":-1},
+              {"id":"32300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"31400", "type":0, "desc":1, "perf":0, "misc":-1} ]
           }
 }
