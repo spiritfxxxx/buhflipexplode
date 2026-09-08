@@ -175,7 +175,7 @@ function showEnemies() {
       let eImg = showEnemySpoilers ? `../../assets/hsr/enemies/${currEnemyData.image}.webp` : `../../assets/hsr/enemies/spoiler.webp`;
 
       // define enemy stats
-      let eHP = Math.round(currEnemyData.baseHP * nodeHPMult[nodeNum - 1] * currEnemyHPMult / 100);
+      let eHP = Math.round((versionNum >= 21 && nodeNum == 4 && currEnemyID == "24400" ? 85 : currEnemyData.baseHP) * nodeHPMult[nodeNum - 1] * currEnemyHPMult / 100);
       let eSPD = Math.round(currEnemyData.baseSPD * nodeSPDMult[nodeNum - 1]);
       let eToughness = currEnemyData.toughness[nodeNum - 1];
       let eElementMult = currEnemyData.elementMult;
