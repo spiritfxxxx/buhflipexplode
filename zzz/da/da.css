@@ -123,7 +123,7 @@ li {
 }
 #b1, #b2, #b3 {
   padding: 15px;
-  min-height: 219.5px;
+  min-height: 241.5px;
   border-radius: 4px;
   background-color: #27363e;
   flex: 1;
@@ -1032,7 +1032,7 @@ input:checked + #lt, input:checked + #st {
   src: url(../../assets/Inconsolata-Regular.woff2) format("woff2");
 }
 @media (max-width: 1360px) {
-  #b1, #b2, #b3 { min-height: 281.5px; }
+  #b1, #b2, #b3 { min-height: 302.5px; }
   #t { min-height: 524.5px; }
   .t { min-height: 755px; }
 }
