@@ -478,7 +478,7 @@
   "3.3.1":{ "versionName":"3.3 Phase 1",
             "versionTime":"xx/xx/20xx - xx/xx/20xx",
             "versionBuffIDs":["69000079", "69000080", "69000081"],
-            "versionHPMult":[235, 480, 300, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
+            "versionHPMult":[245, 480, 300, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
             "versionEnemies":[
               {"id":"33300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"10304", "type":0, "desc":0, "perf":0, "misc":-1},
@@ -489,7 +489,7 @@
   "3.3.2":{ "versionName":"3.3 Phase 2",
             "versionTime":"xx/xx/20xx - xx/xx/20xx",
             "versionBuffIDs":["69000082", "69000083", "69000084"],
-            "versionHPMult":[235, 200, 420, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
+            "versionHPMult":[245, 200, 420, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
             "versionEnemies":[
               {"id":"33300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"31301", "type":0, "desc":0, "perf":0, "misc":-1},
@@ -500,7 +500,7 @@
   "3.3.3":{ "versionName":"3.3 Phase 3",
             "versionTime":"xx/xx/20xx - xx/xx/20xx",
             "versionBuffIDs":["69000085", "69000086", "69000087"],
-            "versionHPMult":[200, 260, 255, 360], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
+            "versionHPMult":[200, 260, 235, 360], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
             "versionEnemies":[
               {"id":"31301", "type":0, "desc":0, "perf":0, "misc":-1},
               {"id":"32300", "type":0, "desc":1, "perf":0, "misc":0},
