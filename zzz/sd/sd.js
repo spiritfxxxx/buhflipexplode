@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 57, vBeta = 60, vPost = 38, vWind = 47, modeNumOld = 4, modeNum = 4;
+let vLive = 58, vBeta = 60, vPost = 38, vWind = 47, modeNumOld = 4, modeNum = 4;
 let leaksToggle = document.getElementById("lks");
 let spoilersToggle = document.getElementById("spl");
 let chartDropdown = document.getElementById("c-dd");
@@ -179,6 +179,16 @@ function showBuffs() {
       if (revamp) b.appendChild(buffTitle);
       b.appendChild(buffName);
       b.appendChild(buffDesc);
+      if (modeNum == 1 && nodeNum >= 7 && nodeNum <= 9) {
+        let extraBuffName = document.createElement("div");
+        let extraBuffDesc = document.createElement("div");
+        extraBuffName.className = "b-name";
+        extraBuffDesc.className = "b-desc";
+        extraBuffName.innerHTML = "<br>" + buffData["61000010"][0];
+        extraBuffDesc.innerHTML = buffData["61000010"][1];
+        b.appendChild(extraBuffName);
+        b.appendChild(extraBuffDesc);
+      }
       if (!revamp || modeNum != 4) break;
     }
   }

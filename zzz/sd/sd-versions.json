@@ -2,7 +2,7 @@
   { "name":"Stable Node", "versions":{
     "0.0.0":{ "versionName":"Stable Node",
               "versionTime":"04/07/2024 - PRESENT",
-              "versionBuffIDs":["61000001", "61000002", "61000003", "61000004", "61000005", "61000006", "61000007", "61000008", "61000009", "61000010"],
+              "versionBuffIDs":["61000000", "61000001", "61000002", "61000003", "61000004", "61000005", "61000006", "61000007", "61000008", "61000009"],
               "versionDazeMult":100, "versionAnomMult":100,
               "versionEnemies":{
                 "nodes":[
@@ -87,7 +87,7 @@
   { "name":"Disputed Node", "versions":{
     "0.0.1":{ "versionName":"Disputed Node",
               "versionTime":"13/08/2024 - PRESENT",
-              "versionBuffIDs":["61100001", "61100002", "61100003", "61100004", "61100005", "61100006", "61100007", "61100008"],
+              "versionBuffIDs":["61100000", "61100001", "61100002", "61100003", "61100004", "61100005", "61100006", "61100007"],
               "versionDazeMult":130, "versionAnomMult":100,
               "versionEnemies":{
                 "nodes":[
@@ -142,7 +142,7 @@
   { "name":"Ambush Node", "versions":{
     "0.0.2":{ "versionName":"Ambush Node",
               "versionTime":"24/08/2024 - 06/11/2024",
-              "versionBuffIDs":["61100001", "61100002", "61100005", "61100007", "61100006"],
+              "versionBuffIDs":["61100000", "61100001", "61100004", "61100006", "61100005"],
               "versionDazeMult":130, "versionAnomMult":100,
               "versionEnemies":{
               "nodes":[
