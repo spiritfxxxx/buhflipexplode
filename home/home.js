@@ -1,54 +1,46 @@
-/* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-let leaksToggle = document.getElementById("lks");
-let spoilersToggle = document.getElementById("spl");
-let currNumberFormat;
-let menuIsOpen = false;
-
-// build & display main page
-function loadPage() {
-  loadSavedState();
-  changeNumberFormat();
-}
-
-/* ------------------------------------------------------------------------- GIF ------------------------------------------------------------------------ */
-
-let buhImg = document.getElementById("buh");
+let menuBarIsOpen = false, canClick = true;
 let buh = "../assets/misc/buh.webp";
 let buhFlip = "../assets/misc/buhFlip.webp";
 let buhFlipExplode = "../assets/misc/buhFlipExplode.webp";
-let canClick = true;
+let currNumberFormat, leaksToggle = document.getElementById("lks"), spoilersToggle = document.getElementById("spl");
+let buhImg = document.getElementById("buh");
 
-// pause buh after flipping/exploding (he is tired)
-function enableClicksAfterDelay() {
-  setTimeout(() => { canClick = true; }, 3000);
+// display main page
+function loadPage() {
+  loadSaveState();
+  changeNumberFormat();
 }
+window.addEventListener("DOMContentLoaded", () => { loadPage(); });
 
-// flip/explode buh
-function playGif(src, duration) {
+/* -------------------------------------------------------------------------- BUH -------------------------------------------------------------------------- */
+
+// display flip/explode + pause after (he is tired)
+function showBuh(img, time) {
   if (!canClick) return;
   canClick = false;
   let currTime = new Date().getTime();
-  buhImg.src = src + "?t=" + currTime;
+  buhImg.src = img + "?t=" + currTime;
   setTimeout(() => {
-    buhImg.src = buh + "?t=" + (currTime + duration);
-    enableClicksAfterDelay();
-  }, duration);
+    buhImg.src = buh + "?t=" + (currTime + time);
+    setTimeout(() => { canClick = true; }, 3000);
+  }, time);
 }
-buhImg.addEventListener("click", () => { playGif(buhFlip, 2970); });
-buhImg.addEventListener("contextmenu", (e) => { e.preventDefault(); playGif(buhFlipExplode, 2480); });
+buhImg.addEventListener("click", () => { showBuh(buhFlip, 2970); });
+buhImg.addEventListener("contextmenu", (e) => { e.preventDefault(); showBuh(buhFlipExplode, 2480); });
 
-/* ------------------------------------------------------------ MISCELLANEOUS + QOL + NAVIGATION ------------------------------------------------------------ */
+/* ----------------------------------------------------------------------- QOL & NAV ----------------------------------------------------------------------- */
 
-// load last page/settings
-function loadSavedState() {
-  if (localStorage.getItem("leaksEnabled") == "true") leaksToggle.checked = true;
-  if (localStorage.getItem("spoilersEnabled") == "true") spoilersToggle.checked = true;
+// load saved settings/page
+function loadSaveState() {
   currNumberFormat = localStorage.getItem("numberFormat") || "period";
+  leaksToggle.checked = localStorage.getItem("leaksEnabled") == "true";
+  spoilersToggle.checked = localStorage.getItem("spoilersEnabled") == "true";
 }
 
-// save current page/settings
-function saveProgress() {
+// save current settings/page
+function saveState() {
   localStorage.setItem("numberFormat", currNumberFormat);
   localStorage.setItem("leaksEnabled", leaksToggle.checked);
   localStorage.setItem("spoilersEnabled", spoilersToggle.checked);
@@ -64,47 +56,45 @@ function jumpToTop() {
 document.addEventListener("keydown", (e) => {
   e.stopPropagation();
   if (e.shiftKey || e.ctrlKey || e.metaKey || e.altKey) return;
-  if (e.key == "Escape") { e.preventDefault(); toggleMenu(); }
-  else if (e.key == "Enter" && !menuIsOpen) { e.preventDefault(); jumpToTop(); }
+  if (e.key == "Escape") { e.preventDefault(); toggleMenuBar(); }
   else if (e.key == " ") { e.preventDefault(); }
+  else if (e.key == "Enter" && !menuBarIsOpen) { e.preventDefault(); jumpToTop(); }
 });
 
-/* ------------------------------------------------------------------------ MENU BAR ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------ MENU BAR ------------------------------------------------------------------------ */
 
 // display/hide menu bar
-function toggleMenu() {
-  menuIsOpen = !menuIsOpen;
+function toggleMenuBar() {
+  menuBarIsOpen = !menuBarIsOpen;
   let menuBar = document.getElementById("mb");
-  let menuBarOverlay = document.getElementById("mb-o");
-  document.body.style.overflow = menuIsOpen ? "hidden" : "auto";
-  menuBar.style.display = menuBarOverlay.style.display = menuIsOpen ? "flex" : "none";
+  let menuBarOverlay = document.getElementById("mb-over");
+  document.body.style.overflow = menuBarIsOpen ? "hidden" : "auto";
+  menuBar.style.display = menuBarOverlay.style.display = menuBarIsOpen ? "flex" : "none";
 }
 
-// display number format & example: 2222222 2,222,222 2.222.222
+// display number format
 function showNumberFormat(num) {
-  if (currNumberFormat == "comma") return num.toLocaleString("en-US");
   if (currNumberFormat == "period") return num.toLocaleString("de-DE");
+  if (currNumberFormat == "comma") return num.toLocaleString("en-US");
   return num;
 }
+
+// change number format
 function changeNumberFormat(e) {
   if (e) currNumberFormat = e.dataset.format;
-  let ex = document.getElementById("mb-ex-num");
-  let numFormatButtons = document.querySelectorAll(".nfb");
-  ex.innerHTML = showNumberFormat(2222222);
-  numFormatButtons.forEach(btn => btn.classList.toggle("selected", btn.dataset.format == currNumberFormat));
-  saveProgress();
+  let numFormatExample = document.getElementById("mb-nf-ex");
+  let numFormatOptions = document.querySelectorAll(".nf-opt");
+  numFormatExample.innerHTML = showNumberFormat(2222222);
+  numFormatOptions.forEach(opt => opt.classList.toggle("selected", opt.dataset.format == currNumberFormat));
+  saveState();
 }
 
 // display/hide leaks/spoilers
 leaksToggle.addEventListener("change", () => {
   if (!leaksToggle.checked) spoilersToggle.checked = false;
-  saveProgress();
+  saveState();
 });
 spoilersToggle.addEventListener("change", () => {
   if (spoilersToggle.checked) leaksToggle.checked = true;
-  saveProgress();
+  saveState();
 });
-
-/* ----------------------------------------------------------------------------- MAIN ----------------------------------------------------------------------- */
-
-window.addEventListener("DOMContentLoaded", async () => { loadPage(); });

@@ -22,60 +22,53 @@
     </script>
   </head>
   <body>
-    <div id="mb-o" onclick="toggleMenu()"></div>
-    <div id="vs-o" onclick="toggleVersionSelector()"></div>
-    <div id="sidebar">
-      <div id="mb-btn" onclick="toggleMenu()">☰</div>
-      <div id="top-btn" onclick="jumpToTop()"></div>
+    <div id="mb-over" onclick="toggleMenuBar()"></div>
+    <div id="vs-over" onclick="toggleVersionSelector()"></div>
+    <div id="sb">
+      <div id="mb-o" onclick="toggleMenuBar()"></div>
+      <div id="top" onclick="jumpToTop()"></div>
     </div>
     <div id="mb">
       <div id="mb-bar">
-        <div id="mb-btn-open" onclick="toggleMenu()">☰</div>
-        <div id="mb-bar-misc">
-          <a id="mb-about-btn" href="../../about/">ⓘ</a>
-          <a id="mb-home-btn" href="../../home/"></a>
+        <div id="mb-x" onclick="toggleMenuBar()"></div>
+        <div id="mb-misc">
+          <a id="mb-about" href="../../about/"></a>
+          <a id="mb-home" href="../../home/"></a>
         </div>
       </div>
-      <div id="mb-c">
-        <div id="mb-sec">ZZZ</div>
+      <div id="mb-cont">
+        <div id="mb-header">ZZZ</div>
         <a href="../../zzz/sd/">Shiyu Defense</a>
         <a href="../../zzz/da/">Deadly Assault</a>
         <a href="../../zzz/ts/" style="color:#b2cee7;text-decoration:underline;">Threshold Simulation</a>
         <a href="../../zzz/as/">Annihilation Simulacrum</a>
-        <div id="mb-sec">HSR</div>
+        <div id="mb-header">HSR</div>
         <a href="../../hsr/fh/">Forgotten Hall</a>
         <a href="../../hsr/pf/">Pure Fiction</a>
         <a href="../../hsr/as/">Apocalyptic Shadow</a>
         <a href="../../hsr/aa/">Anomaly Arbitration</a>
-        <div id="mb-nf">
-          <div id="mb-sec">Settings</div>
-          <span>HP Format <span class="tt-menu">�
-            <span class="tt-text">change # formatting</span></span>
-            <div id="mb-ex-num"></div>
+        <div id="mb-stg">
+          <div id="mb-header">Settings</div>
+          <span>HP Format <span class="tt-menu">�<span class="tt-text">change # formatting</span></span>
+            <div id="mb-nf-ex"></div>
           </span>
-          <div id="mb-nfb">
-            <button class="nfb" data-format="none" onclick="changeNumberFormat(this)">NONE</button>
-            <button class="nfb" data-format="comma" onclick="changeNumberFormat(this)">COMMA</button>
-            <button class="nfb" data-format="period" onclick="changeNumberFormat(this)">PERIOD</button>
+          <div id="mb-nf">
+            <button class="nf-opt" data-format="none" onclick="changeNumberFormat(this)">NONE</button>
+            <button class="nf-opt" data-format="comma" onclick="changeNumberFormat(this)">COMMA</button>
+            <button class="nf-opt" data-format="period" onclick="changeNumberFormat(this)">PERIOD</button>
           </div>
-        </div>
-        <div id="mb-t">
-          <div id="mb-stg">
-            <span>Leaks <span class="tt-menu">�
-              <span class="tt-text">unreleased and/or STC content</span></span>
-            </span>
-            <label id="mb-lt">
+          <div id="mb-tgl">
+            <span>Leaks <span class="tt-menu">�<span class="tt-text">unreleased and/or STC content</span></span></span>
+            <label id="mb-tgl-lks">
               <input type="checkbox" id="lks" style="display:none;">
-              <span id="lt"></span>
+              <span id="tgl-lks"></span>
             </label>
           </div>
-          <div id="mb-stg">
-            <span>Spoilers <span class="tt-menu">�
-              <span class="tt-text">leaks + story/boss spoiler content</span></span>
-            </span>
-            <label id="mb-st">
+          <div id="mb-tgl">
+            <span>Spoilers <span class="tt-menu">�<span class="tt-text">leaks + story/boss spoiler content</span></span></span>
+            <label id="mb-tgl-spl">
               <input type="checkbox" id="spl" style="display:none;">
-              <span id="st"></span>
+              <span id="tgl-spl"></span>
             </label>
           </div>
         </div>
@@ -83,16 +76,16 @@
     </div>
     <div id="page">
       <div id="vs">
-        <div id="vs-x-bar">
+        <div id="vs-bar">
           <div id="vs-x" onclick="toggleVersionSelector()">✖</div>
         </div>
-        <div id="vg">
-          <div id="vg-misc"></div>
-          <div id="vg-title"></div>
-          <div id="vg-main"></div>
+        <div id="vs-cont">
+          <div id="vs-misc"></div>
+          <div id="vs-header"></div>
+          <div id="vs-main"></div>
         </div>
       </div>
-      <div id="title">Threshold Simulation</div>
+      <div id="header">Threshold Simulation</div>
       <div id="v">
         <div id="v-l" onclick="changeVersion(-1)">◁</div>
         <div id="v-text" onclick="toggleVersionSelector()">
@@ -107,20 +100,19 @@
         <div id="n-text"></div>
         <div id="n-r" onclick="changeNode(1)">▷</div>
       </div>
-      <div id="end">
-        <div class="end-text" data-format="1" onclick="changeEndings(1)">1</div>
-        <div class="end-text" data-format="2" onclick="changeEndings(2)">2</div>
-        <div class="end-text" id="end-3" data-format="3" onclick="changeEndings(3)">3</div>
+      <div id="var">
+        <div class="var-opt" data-format="1" onclick="changeVariant(1)">1</div>
+        <div class="var-opt" data-format="2" onclick="changeVariant(2)">2</div>
+        <div class="var-opt" id="var3" data-format="3" onclick="changeVariant(3)">3</div>
       </div>
       <div id="v-hp">
-        <div id="v-hp-b">
-          <span style="color:#ff5555;font-weight:bold;">Raw</span> Boss HP: <span id="v-hp-raw-b"></span><span class="tt-v-hp">� <span class="tt-text">sum of all boss HP</span></span><br>
-          <span style="color:#f6b26b;font-weight:bold;">Alt</span> Boss HP: <span id="v-hp-alt-b"></span><span class="tt-v-hp">� <span class="tt-text">raw hp & boss mechanic interaction<br>(+ normalized for lower DEF)</span></span>
-        </div>
         <div id="v-hp-e">
-          <span style="color:#ff5555;font-weight:bold;">Raw</span> Enemy HP: <span id="v-hp-raw-e"></span><span class="tt-v-hp">� <span class="tt-text">sum of all enemy HP</span></span><br>
-          <span style="color:#6d9eeb;font-weight:bold;">AOE</span> Enemy HP: <span id="v-hp-aoe-e"></span><span class="tt-v-hp">� <span class="tt-text">sum of highest enemy HP in each wave</span></span><br>
-          <span style="color:#f6b26b;font-weight:bold;">Alt</span> Enemy HP: <span id="v-hp-alt-e"></span><span class="tt-v-hp">� <span class="tt-text">AOE HP & enemy mechanic interaction<br>(+ normalized for lower DEF)</span></span>
+          Enemy <span style="color:#ff5555;font-weight:bold;">Raw</span><span class="tt-v-hp">�<span class="tt-text">sum of all enemy HP</span></span> / <span style="color:#6d9fff;font-weight:bold;">AOE</span><span class="tt-v-hp">�<span class="tt-text">sum of highest enemy HP in each wave</span></span> / <span style="color:#f6b969;font-weight:bold;">Alt</span><span class="tt-v-hp">�<span class="tt-text">AOE HP & enemy mechanic interaction<br>(+ normalized for lower DEF)</span></span> HP<br>
+          <span id="v-hp-e-raw"></span> / <span id="v-hp-e-aoe"></span> / <span id="v-hp-e-alt"></span>
+        </div>
+        <div id="v-hp-h">
+          Boss <span style="color:#ff5555;font-weight:bold;">Raw</span> / <span style="color:#f6b969;font-weight:bold;">Alt</span> HP<br>
+          <span id="v-hp-h-raw"></span> / <span id="v-hp-h-alt"></span>
         </div>
       </div>
       <div id="b">
@@ -129,11 +121,11 @@
         <div id="b3"></div>
         <div id="b4"></div>
       </div>
-      <div id="s-b">
-        <div id="sb"></div>
+      <div id="s-h">
+        <div id="sh"></div>
         <div id="t">
-          <div id="t-title"></div>
-          <div id="t-desc"></div>
+          <div id="t-header"></div>
+          <div id="t-text"></div>
         </div>
       </div>
       <div id="s-e">

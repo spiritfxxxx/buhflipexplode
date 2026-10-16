@@ -1,27 +1,26 @@
-/* ------------------------------------------------------------------------ MAIN PAGE ----------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-let leaksToggle = document.getElementById("lks");
-let spoilersToggle = document.getElementById("spl");
-let currNumberFormat;
-let menuIsOpen = false;
+let menuBarIsOpen = false;
+let currNumberFormat, leaksToggle = document.getElementById("lks"), spoilersToggle = document.getElementById("spl");
 
-// build & display main page
+// display main page
 function loadPage() {
-  loadSavedState();
+  loadSaveState();
   changeNumberFormat();
 }
+window.addEventListener("DOMContentLoaded", () => { loadPage(); });
 
-/* ------------------------------------------------------------ MISCELLANEOUS + QOL + NAVIGATION ------------------------------------------------------------ */
+/* ----------------------------------------------------------------------- QOL & NAV ----------------------------------------------------------------------- */
 
-// load last page/settings
-function loadSavedState() {
-  if (localStorage.getItem("leaksEnabled") == "true") leaksToggle.checked = true;
-  if (localStorage.getItem("spoilersEnabled") == "true") spoilersToggle.checked = true;
+// load saved settings/page
+function loadSaveState() {
   currNumberFormat = localStorage.getItem("numberFormat") || "period";
+  leaksToggle.checked = localStorage.getItem("leaksEnabled") == "true";
+  spoilersToggle.checked = localStorage.getItem("spoilersEnabled") == "true";
 }
 
-// save current page/settings
-function saveProgress() {
+// save current settings/page
+function saveState() {
   localStorage.setItem("numberFormat", currNumberFormat);
   localStorage.setItem("leaksEnabled", leaksToggle.checked);
   localStorage.setItem("spoilersEnabled", spoilersToggle.checked);
@@ -37,47 +36,45 @@ function jumpToTop() {
 document.addEventListener("keydown", (e) => {
   e.stopPropagation();
   if (e.shiftKey || e.ctrlKey || e.metaKey || e.altKey) return;
-  if (e.key == "Escape") { e.preventDefault(); toggleMenu(); }
-  else if (e.key == "Enter" && !menuIsOpen) { e.preventDefault(); jumpToTop(); }
+  if (e.key == "Escape") { e.preventDefault(); toggleMenuBar(); }
   else if (e.key == " ") { e.preventDefault(); }
+  else if (e.key == "Enter" && !menuBarIsOpen) { e.preventDefault(); jumpToTop(); }
 });
 
-/* ------------------------------------------------------------------------ MENU BAR ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------ MENU BAR ------------------------------------------------------------------------ */
 
 // display/hide menu bar
-function toggleMenu() {
-  menuIsOpen = !menuIsOpen;
+function toggleMenuBar() {
+  menuBarIsOpen = !menuBarIsOpen;
   let menuBar = document.getElementById("mb");
-  let menuBarOverlay = document.getElementById("mb-o");
-  document.body.style.overflow = menuIsOpen ? "hidden" : "auto";
-  menuBar.style.display = menuBarOverlay.style.display = menuIsOpen ? "flex" : "none";
+  let menuBarOverlay = document.getElementById("mb-over");
+  document.body.style.overflow = menuBarIsOpen ? "hidden" : "auto";
+  menuBar.style.display = menuBarOverlay.style.display = menuBarIsOpen ? "flex" : "none";
 }
 
-// display number format & example: 2222222 2,222,222 2.222.222
+// display number format
 function showNumberFormat(num) {
-  if (currNumberFormat == "comma") return num.toLocaleString("en-US");
   if (currNumberFormat == "period") return num.toLocaleString("de-DE");
+  if (currNumberFormat == "comma") return num.toLocaleString("en-US");
   return num;
 }
+
+// change number format
 function changeNumberFormat(e) {
   if (e) currNumberFormat = e.dataset.format;
-  let ex = document.getElementById("mb-ex-num");
-  let numFormatButtons = document.querySelectorAll(".nfb");
-  ex.innerHTML = showNumberFormat(2222222);
-  numFormatButtons.forEach(btn => btn.classList.toggle("selected", btn.dataset.format == currNumberFormat));
-  saveProgress();
+  let numFormatExample = document.getElementById("mb-nf-ex");
+  let numFormatOptions = document.querySelectorAll(".nf-opt");
+  numFormatExample.innerHTML = showNumberFormat(2222222);
+  numFormatOptions.forEach(opt => opt.classList.toggle("selected", opt.dataset.format == currNumberFormat));
+  saveState();
 }
 
 // display/hide leaks/spoilers
 leaksToggle.addEventListener("change", () => {
   if (!leaksToggle.checked) spoilersToggle.checked = false;
-  saveProgress();
+  saveState();
 });
 spoilersToggle.addEventListener("change", () => {
   if (spoilersToggle.checked) leaksToggle.checked = true;
-  saveProgress();
+  saveState();
 });
-
-/* ----------------------------------------------------------------------------- MAIN ----------------------------------------------------------------------- */
-
-window.addEventListener("DOMContentLoaded", async () => { loadPage(); });

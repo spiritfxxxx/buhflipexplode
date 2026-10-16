@@ -4,7 +4,7 @@
   - 1001: menu bar
   - 2000: version selector overlay
   - 2001: version selector
-  - 3000: chart
+  - 3001: chart
   - 4000: calculator overlay
   - 4001: calculator
   - 9999: tooltip text
@@ -30,15 +30,15 @@ body:after {
   width: 0px;
   height: 0px;
   overflow: hidden;
-  content: url(../../assets/misc/home-hover.webp) url(../../assets/misc/top-hover.webp) url(../../assets/misc/calc-hover.webp) url(../../assets/misc/chart-hover.webp) url(../../assets/misc/download-hover.webp);
+  content: url(../../assets/misc/menu-hover.webp) url(../../assets/misc/home-hover.webp) url(../../assets/misc/info-hover.webp) url(../../assets/misc/top-hover.webp) url(../../assets/misc/calc-hover.webp) url(../../assets/misc/chart-hover.webp) url(../../assets/misc/download-hover.webp);
 }
 li {
   margin-left: 15px;
 }
 
-/* ----------------------------------------------------------------------- PAGE ELEMENTS ----------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-#sidebar {
+#sb {
   z-index: 999;
   top: 0px;
   left: 0px;
@@ -50,20 +50,19 @@ li {
 }
 #page {
   margin-left: 47.5px;
-  position: relative;
 }
 
-/* ------------------------------------------------------------------------ TITLE ------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- HEAD -------------------------------------------------------------------------- */
 
 /* main page header */
-#title {
+#header {
   font-size: 24px;
   font-weight: bold;
   user-select: none;
-  padding: 1em 0em;
+  padding: 25px 0px;
 }
 
-/* ----------------------------------------------------------------------- VERSION ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------ VERSION ------------------------------------------------------------------------ */
 
 /* version display */
 #v {
@@ -72,32 +71,18 @@ li {
   justify-content: center;
 }
 #v-text {
-  width: 260px;
+  width: 250px;
   padding: 15px;
   border: 2px solid #ffffff;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
 }
 #v-text:hover {
   border: 2px solid #b2cee7;
   background-color: #b2cee7;
   color: #000000;
-  transition: all 0.1s ease-in-out;
 }
-/* version changer buttons */
-#v-l, #v-r {
-  margin-top: -7.5px;
-  font-size: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  user-select: none;
-}
-#v-l:hover, #v-r:hover {
-  color: #b2cee7;
-  transition: all 0.1s ease-in-out;
-}
-/* version name/time */
 #v-name {
   font-weight: bold;
 }
@@ -108,12 +93,26 @@ li {
 }
 #v-id {
   margin-top: 5px;
-  color: #aaaaaa;
+  color: #bbbbbb;
   font-size: 12px;
   font-style: italic;
 }
 
-/* ------------------------------------------------------------------------ NODE ------------------------------------------------------------------------ */
+/* version changer buttons */
+#v-l, #v-r {
+  margin-top: -5px;
+  font-size: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+}
+#v-l:hover, #v-r:hover {
+  color: #b2cee7;
+}
+
+/* -------------------------------------------------------------------------- NODE -------------------------------------------------------------------------- */
 
 /* node display */
 #n {
@@ -125,6 +124,7 @@ li {
   margin: 10px 0px;
   font-size: 24px;
 }
+
 /* node changer buttons */
 #n-l, #n-r {
   margin-top: -2.5px;
@@ -133,43 +133,75 @@ li {
   display: flex;
   align-items: center;
   user-select: none;
+  transition: all 0.1s ease-in-out;
 }
 #n-l:hover, #n-r:hover {
   color: #b2cee7;
-  transition: all 0.1s ease-in-out;
 }
 
-/* ----------------------------------------------------------------------- ENDING ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------ VARIANT ------------------------------------------------------------------------ */
 
-/* ending display */
-#end {
+/* variant display */
+#var {
   margin-bottom: 10px;
-  display: none;
+  display: flex;
   justify-content: center;
   user-select: none;
 }
 
-/* ending changer buttons */
-.end-text {
-  padding: 0px 15px;
-  width: 15px;
+/* variant changer buttons */
+.var-opt {
+  width: 60px;
   font-size: 16px;
   cursor: pointer;
   justify-content: center;
   user-select: none;
-}
-.end-text:hover {
-  color: #b2cee7;
   transition: all 0.1s ease-in-out;
 }
-.end-text.selected {
+.var-opt:hover {
+  color: #b2cee7;
+}
+.var-opt.selected {
   color: #b2cee7;
   font-weight: bold;
   text-decoration: underline;
-  transition: all 0.1s ease-in-out;
 }
 
-/* --------------------------------------------------------------------- BUFF/TRAIT --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------- HP --------------------------------------------------------------------------- */
+
+/* hp display */
+#v-hp {
+  margin: 0px 20vw;
+  padding: 7.5px;
+  gap: 30px;
+  border-radius: 4px;
+  background-color: #27363e;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+}
+
+/* enemy/boss hp display */
+#v-hp-e, #v-hp-h {
+  align-content: center;
+}
+#v-hp-e-raw, #v-hp-h-raw {
+  color: #ff5555;
+  font-weight: bold;
+  user-select: all;
+}
+#v-hp-e-aoe {
+  color: #6d9fff;
+  font-weight: bold;
+  user-select: all;
+}
+#v-hp-e-alt, #v-hp-h-alt {
+  color: #f6b969;
+  font-weight: bold;
+  user-select: all;
+}
+
+/* ---------------------------------------------------------------------- BUFF + TRAIT ---------------------------------------------------------------------- */
 
 /* buff display */
 #b {
@@ -184,14 +216,14 @@ li {
   background-color: #27363e;
   flex: 1;
 }
+
 /* trait display */
 #t {
   margin-top: 15px;
   padding: 15px;
-  width: 40vw;
+  width: 45vw;
   border-radius: 4px;
   background-color: #27363e;
-  text-align: left;
 }
 
 /* buff image/text */
@@ -205,81 +237,34 @@ li {
   text-decoration: underline;
   user-select: all;
 }
+
 /* trait text */
-#t-title {
+#t-header {
   margin-bottom: 15px;
   color: #f29e38;
   font-weight: bold;
   text-decoration: underline;
   text-align: right;
 }
+
 /* buff/trait text */
-.b-desc, #t-desc {
+.b-text, #t-text {
   margin-top: 7.5px;
   font-size: 12px;
   text-align: left;
   line-height: 1.75;
 }
 
-/* ------------------------------------------------------------------------- HP ------------------------------------------------------------------------- */
-
-/* hp display */
-#v-hp {
-  margin: 0px 20vw;
-  padding: 10px;
-  gap: 30px;
-  border-radius: 4px;
-  background-color: #27363e;
-  line-height: 1.5;
-  display: flex;
-  justify-content: center;
-}
-
-/* boss hp display */
-#v-hp-b {
-  align-content: center;
-}
-#v-hp-raw-b {
-  color: #ff5555;
-  font-weight: bold;
-  user-select: all;
-}
-#v-hp-alt-b {
-  color: #f6b26b;
-  font-weight: bold;
-  user-select: all;
-}
-
-/* enemy hp display */
-#v-hp-e {
-  align-content: center;
-}
-#v-hp-raw-e {
-  color: #ff5555;
-  font-weight: bold;
-  user-select: all;
-}
-#v-hp-aoe-e {
-  color: #6d9eeb;
-  font-weight: bold;
-  user-select: all;
-}
-#v-hp-alt-e {
-  color: #f6b26b;
-  font-weight: bold;
-  user-select: all;
-}
-
-/* ------------------------------------------------------------------------ SIDE ------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- SIDE -------------------------------------------------------------------------- */
 
 /* side display */
-#s-b, #s-e {
+#s-h, #s-e {
   margin: 15px;
   gap: 15px;
   display: flex;
   justify-content: center;
 }
-#sb {
+#sh {
   margin-top: 15px;
   width: 250px;
   min-height: 468.5px;
@@ -301,14 +286,14 @@ li {
   font-size: 16px;
   font-weight: bold;
 }
-.s-hp-daze-anom-mult {
+.s-mult {
   margin-top: 7.5px;
   color: #ffffff;
   font-size: 12px;
   user-select: none;
 }
 
-/* ------------------------------------------------------------------------ WAVE ------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- WAVE -------------------------------------------------------------------------- */
 
 /* wave display */
 .w-e {
@@ -319,7 +304,7 @@ li {
   flex-wrap: wrap;
 }
 
-/* ------------------------------------------------------------------------ ENEMY ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ ENEMIES ------------------------------------------------------------------------ */
 
 /* enemy display */
 .e {
@@ -328,22 +313,11 @@ li {
   align-items: center;
   position: relative;
 }
-
-/* enemy image */
-.e-hover {
-  height: 96px;
-  position: relative;
-}
 .e-img {
   height: 96px;
-  transition: opacity 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   user-select: none;
 }
-.e-hover:hover .e-img {
-  opacity: 0.2;
-}
-
-/* enemy name */
 .e-name {
   top: 50%;
   left: 50%;
@@ -352,14 +326,8 @@ li {
   font-size: 12px;
   font-weight: bold;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
-.e-hover:hover .e-name {
-  opacity: 1;
-  user-select: all;
-}
-
-/* enemy count */
 .e-count {
   bottom: 0px;
   right: 0px;
@@ -371,6 +339,18 @@ li {
   border-radius: 4px;
 }
 
+/* enemy hover display */
+.e-hover {
+  height: 96px;
+  position: relative;
+}
+.e-hover:hover .e-img {
+  opacity: 0.2;
+}
+.e-hover:hover .e-name {
+  opacity: 1;
+}
+
 /* enemy weakness/resistance */
 .wr {
   margin-top: 7.5px;
@@ -380,35 +360,40 @@ li {
 }
 .wk {
   height: 20px;
-  border-bottom: 2.5px solid #38761d;
+  border-bottom: 2.5px solid #2bad00;
   user-select: none;
 }
-.res {
+.rs {
   height: 20px;
-  border-bottom: 2.5px solid #990000;
+  border-bottom: 2.5px solid #ad002b;
   user-select: none;
 }
-/* enemy 40%+ resistance */
-.res-40plus {
+
+/* enemy >20% resistance */
+.r20p {
   margin-top: 15px;
   gap: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.e-res-title {
+.rs20p-header {
   font-weight: bold;
 }
-.e-res-ele {
+.rs20p {
   gap: 10px;
   display: flex;
 }
-.e-res {
+.rs20p-ele {
   gap: 5px;
   display: flex;
   flex-direction: column;
 }
-.e-res-mult {
+.rs20p-img {
+  height: 20px;
+  user-select: none;
+}
+.rs20p-mult {
   font-size: 12px;
   font-weight: bold;
 }
@@ -438,45 +423,49 @@ li {
   user-select: all;
 }
 
-/* ---------------------------------------------------------------------- GO TO TOP ----------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------- GO TO TOP ----------------------------------------------------------------------- */
 
-#top-btn {
-  bottom: 10px;
-  left: 10px;
+#top {
+  bottom: 0px;
+  padding: 10px;
   position: absolute;
-  width: 27.5px;
-  height: 27.5px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
-  user-select: none;
-  background-size: 27.5px;
+  background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
 }
-#top-btn {
+#top {
   background-image: url(../../assets/misc/top.webp);
 }
-#top-btn:hover {
+#top:hover {
   background-image: url(../../assets/misc/top-hover.webp);
 }
 
-/* ----------------------------------------------------------------------- MENU BAR ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------ MENU BAR ------------------------------------------------------------------------ */
 
 /* menu bar toggle buttons */
-#mb-btn, #mb-btn-open {
-  top: 7.5px;
-  left: 10px;
+#mb-o, #mb-x {
+  top: 0px;
+  padding: 10px;
   position: absolute;
-  font-size: 28px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
-  user-select: none;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-#mb-btn:hover, #mb-btn-open:hover {
-  color: #b2cee7;
-  transition: all 0.1s ease-in-out;
+#mb-o, #mb-x {
+  background-image: url(../../assets/misc/menu.webp);
+}
+#mb-o:hover, #mb-x:hover {
+  background-image: url(../../assets/misc/menu-hover.webp);
 }
 
 /* menu bar outside overlay */
-#mb-o {
+#mb-over {
   z-index: 1000;
   top: 0px;
   left: 0px;
@@ -488,7 +477,7 @@ li {
   display: none;
 }
 
-/* menu bar */
+/* menu bar menu */
 #mb {
   z-index: 1001;
   top: 0px;
@@ -503,53 +492,48 @@ li {
   flex-direction: column;
 }
 #mb-bar {
-  height: 50px;
+  height: 45px;
   border-bottom: 2.5px solid #444444;
 }
-#mb-c {
+#mb-cont {
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
 
 /* menu bar home/about buttons */
-#mb-bar-misc {
+#mb-misc {
   right: 0px;
   position: absolute;
-  height: 50px;
   display: flex;
 }
 #mb-bar a {
+  padding: 12.5px;
   width: 20px;
   height: 20px;
-  padding: 15px;
-  color: #ffffff;
-  text-decoration: none;
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
 }
-#mb-bar a:hover {
-  color: #b2cee7;
-}
-#mb-home-btn {
+#mb-home {
   background-image: url(../../assets/misc/home.webp);
 }
-#mb-home-btn:hover {
+#mb-home:hover {
   background-image: url(../../assets/misc/home-hover.webp);
 }
-#mb-about-btn {
-  font-size: 20px;
+#mb-about {
+  background-image: url(../../assets/misc/info.webp);
+}
+#mb-about:hover {
+  background-image: url(../../assets/misc/info-hover.webp);
 }
 
-/* menu bar section splitter */
-#mb-sec {
+/* menu bar sections */
+#mb-header {
   margin: 5px;
   margin-top: 25px;
-  width: calc(100% - 10px);
   color: #f29e38;
   font-size: 14px;
   font-weight: bold;
@@ -557,32 +541,41 @@ li {
 }
 
 /* menu bar navigation buttons to other pages */
-#mb-c a {
+#mb-cont a {
   padding: 10px;
-  width: calc(100% - 20px);
   color: #ffffff;
   text-decoration: none;
+  transition: all 0.1s ease-in-out;
 }
-#mb-c a:hover {
+#mb-cont a:hover {
   color: #b2cee7;
 }
 
-/* menu bar number format changer */
-#mb-nf {
+/* menu bar settings */
+#mb-stg {
   margin-top: auto;
   padding: 15px;
   gap: 10px;
-  width: calc(100% - 30px);
   font-size: 16px;
   display: flex;
   flex-direction: column;
 }
-#mb-nfb {
+
+/* settings number format */
+#mb-nf {
+  margin-bottom: 5px;
   gap: 10px;
   display: flex;
 }
-/* number format buttons */
-.nfb {
+
+/* number format example */
+#mb-nf-ex {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+/* number format options */
+.nf-opt {
   padding: 5px;
   border: 1px solid #b2cee7;
   border-radius: 4px;
@@ -591,58 +584,44 @@ li {
   font-family: "Inconsolata", monospace;
   font-size: 14px;
   cursor: pointer;
-  user-select: none;
   flex: 1;
+  transition: all 0.1s ease-in-out;
 }
-.nfb:hover {
+.nf-opt:hover {
   border-color: #ffffff;
   background-color: #ffffff;
   color: #000000;
-  transition: all 0.1s ease-in-out;
 }
-.nfb.selected {
+.nf-opt.selected {
   background-color: #b2cee7;
   color: #000000;
   font-weight: bold;
   text-decoration: underline;
-  transition: all 0.1s ease-in-out;
-}
-/* example number */
-#mb-ex-num {
-  color: #ff5555;
-  font-weight: bold;
 }
 
-/* menu bar toggles */
-#mb-t {
-  margin-bottom: 15px;
-  width: 100%;
-  gap: 10px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-}
-/* menu bar setting */
-#mb-stg {
-  margin: 0px 25px;
+/* settings toggles */
+#mb-tgl {
+  margin: 0px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-/* leaks/spoilers toggle */
-#mb-lt, #mb-st {
+
+/* toggle options */
+#mb-tgl-lks, #mb-tgl-spl {
   width: 45px;
   height: 22.5px;
   position: relative;
 }
-#lt, #st {
+#tgl-lks, #tgl-spl {
   inset: 0px;
   position: absolute;
   border-radius: 25px;
   background-color: #444444;
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
 }
-#lt:before, #st:before {
+#tgl-lks:before, #tgl-spl:before {
   left: 2.5px;
   bottom: 2.5px;
   position: absolute;
@@ -653,17 +632,28 @@ li {
   content: "";
   transition: all 0.1s ease-in-out;
 }
-input:checked + #lt:before, input:checked + #st:before {
-  transform: translateX(22.5px);
-}
-input:checked + #lt, input:checked + #st {
+input:checked + #tgl-lks, input:checked + #tgl-spl {
   background-color: #b2cee7;
 }
+input:checked + #tgl-lks:before, input:checked + #tgl-spl:before {
+  transform: translateX(22.5px);
+}
 
-/* ------------------------------------------------------------------ VERSION SELECTOR ------------------------------------------------------------------ */
+/* -------------------------------------------------------------------- VERSION SELECTOR -------------------------------------------------------------------- */
 
-/* version-selector outside overlay */
-#vs-o {
+/* version selector toggle buttons */
+#vs-x {
+  width: 37.5px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#vs-x:hover {
+  color: #b2cee7;
+}
+
+/* version selector outside overlay */
+#vs-over {
   z-index: 2000;
   top: 0px;
   left: 0px;
@@ -678,7 +668,7 @@ input:checked + #lt, input:checked + #st {
 /* version selector menu */
 #vs {
   z-index: 2001;
-  inset: 5vh 2.5vw 5vh calc(47.5px + 2.5vw);
+  inset: 5vh 2.5vw 5vh calc(2.5vw + 47.5px);
   position: fixed;
   border-radius: 4px;
   background-color: #222222;
@@ -686,44 +676,34 @@ input:checked + #lt, input:checked + #st {
   display: none;
   flex-direction: column;
 }
-
-/* version selector toggle button */
-#vs-x-bar {
+#vs-bar {
   padding: 10px 10px;
   border-bottom: 2.5px solid #444444;
-  display: flex;
 }
-#vs-x {
-  font-size: 28px;
-  cursor: pointer;
-}
-#vs-x:hover {
-  color: #b2cee7;
-  transition: all 0.1s ease-in-out;
-}
-
-/* version selector grid */
-#vg {
+#vs-cont {
+  padding: 15px;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
-/* mode section splitter */
-#vg-title {
-  margin-top: 15px;
+
+/* version selector sections */
+#vs-header {
+  margin-top: 30px;
+  margin-bottom: 15px;
   color: #f29e38;
   font-size: 16px;
   font-weight: bold;
   text-decoration: underline;
 }
-#vg-misc, #vg-main {
-  padding: 15px;
+#vs-misc, #vs-main {
   gap: 15px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-/* grid option */
-.vg-c {
+
+/* version selector options */
+.vs-opt {
   gap: 5px;
   padding: 15px;
   width: 200px;
@@ -733,27 +713,26 @@ input:checked + #lt, input:checked + #st {
   transition: all 0.1s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-.vg-c-name {
-  font-weight: bold;
-}
-.vg-c-time {
-  font-size: 12px;
-  font-style: italic;
-}
-.vg-c-id {
-  color: #888888;
-  font-size: 12px;
-  font-style: italic;
-}
-.vg-c:hover {
+.vs-opt:hover {
   border: 2px solid #b2cee7;
   background-color: #b2cee7;
-  color: #222222;
+  color: #000000;
+}
+.vs-opt-name {
+  font-weight: bold;
+}
+.vs-opt-time {
+  font-size: 12px;
+  font-style: italic;
+}
+.vs-opt-id {
+  color: #bbbbbb;
+  font-size: 12px;
+  font-style: italic;
 }
 
-/* ----------------------------------------------------------------------- TOOLTIPS ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------ TOOLTIPS ------------------------------------------------------------------------ */
 
 /* menu bar/enemy tooltips */
 .tt-menu, .tt-v-hp {
@@ -761,7 +740,6 @@ input:checked + #lt, input:checked + #st {
   position: relative;
   font-family: "Arial";
   font-size: 14px;
-  display: inline-block;
   user-select: none;
 }
 .tt-e-hp {
@@ -773,7 +751,7 @@ input:checked + #lt, input:checked + #st {
   user-select: none;
 }
 .tt-e-stat {
-  width: 25px;
+  width: 30px;
   margin-top: 2.5px;
   color: #888888;
   font-size: 16px;
@@ -781,6 +759,9 @@ input:checked + #lt, input:checked + #st {
 }
 .tt-menu:hover, .tt-v-hp:hover, .tt-e-stat:hover {
   color: #b2cee7;
+}
+.tt-menu:hover, .tt-v-hp:hover, .tt-e-hp:hover, .tt-e-stat:hover {
+  cursor: help;
 }
 
 /* tooltip text */
@@ -798,23 +779,24 @@ input:checked + #lt, input:checked + #st {
   line-height: 1.5;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   user-select: text;
+  cursor: auto;
 }
 .tt-menu .tt-text {
   bottom: 25px;
   width: 120px;
 }
 .tt-v-hp .tt-text {
-  bottom: 27.5px;
+  bottom: 25px;
   width: 225px;
 }
 .tt-e-hp .tt-text {
-  bottom: 37.5px;
+  bottom: 32.5px;
   white-space: nowrap;
 }
 .tt-e-stat .tt-text {
-  top: 190px;
+  top: 185px;
   white-space: nowrap;
 }
 .tt-menu:hover .tt-text, .tt-v-hp:hover .tt-text, .tt-e-hp:hover .tt-text, .tt-e-stat:hover .tt-text {
@@ -839,7 +821,7 @@ input:checked + #lt, input:checked + #st {
   border-color: transparent transparent #444444 transparent;
 }
 
-/* ---------------------------------------------------------------------- VERY MISC ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------- MISC + RES ----------------------------------------------------------------------- */
 
 @font-face {
   font-family: "Inconsolata";
@@ -852,21 +834,20 @@ input:checked + #lt, input:checked + #st {
   #v-hp { margin: 0px 15px; }
   #b { flex-direction: column; }
   #b1, #b2, #b3, #b4 { min-height: 0px; }
-  #s-b, #s-e { flex-direction: column; align-items: center; }
+  #s-h, #s-e { flex-direction: column; align-items: center; }
   #s1 { margin-top: 75px; }
   #s1, #s2, #s3 { margin-bottom: 144.5px; }
   #s4 { margin-bottom: 159.5px; }
   #t { margin-top: 75px; width: auto; }
-  .vg-c { width: 250px; }
-  .tt-v-hp .tt-text { width: 120px; }
+  .tt-v-hp .tt-text { width: 125px; }
 }
 @media (max-width: 480px) {
-  #sidebar { width: 100vw; height: 50px; border-right: 0px; border-bottom: 2.5px solid #444444; }
-  #c-btn { top: 10px; left: 60px; }
-  #top-btn { left: auto; right: 10px; }
-  #page { margin-left: 0px; margin-top: 52.5px; }
+  #sb { width: 100vw; height: 45px; border-right: 0px; border-bottom: 2.5px solid #444444; }
+  #ch-o { top: 10px; left: 60px; }
+  #top { right: 0px; }
+  #page { margin-left: 0px; margin-top: 47.5px; }
   #v-text { width: 215px; }
   #v-hp { flex-direction: column; gap: 15px; }
-  #vs { inset: calc(5vh + 52.5px) 5vw 5vh 5vw; }
-  .vg-c { width: 100%; }
+  #vs { inset: calc(5vh + 47.5px) 5vw 5vh 5vw; }
+  .vs-opt { width: 100%; }
 }

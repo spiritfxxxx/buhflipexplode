@@ -4,15 +4,15 @@ Hi~♪, miss me yet?
 ![buhflipexplode](/assets/misc/buhREADME.png)
 
 ## Features
--  ZZZ Endgame Section: Shiyu Defense, Deadly Assault, Threshold Simulation
+-  ZZZ Endgame Section: Shiyu Defense, Deadly Assault, Threshold Simulation, Annihilation Simulacrum
 -  HSR Endgame Section: Forgotten Hall, Pure Fiction, Apocalyptic Shadow, Anomaly Arbitration
 -  Charts + Tools + Leaks + QOL
 
 ## Self-Hosting
-Self-hosting is a way to view the site at top speeds, and with no Internet connection required!<br>
+Self-hosting is a way to view the site at top speeds, with no Internet connection required!<br>
 If you don't trust this method, really? Just throw the commands in your browser and find out what they mean.<br>
-If you don't like this method, I'll reward you loyal and curious people with [this](https://spiritfxxxx.github.io/buhflipexplode/home/).<br>
-If you use mobile or Windows (Winslop), I don't care. Use the browser version or use ChatGPT to convert it.
+If you don't like this method, use the online version [here](https://spiritfxxxx.github.io/buhflipexplode/home/).<br>
+If you use mobile or Windows (Winslop), I don't care. Use the online version or use ChatGPT to convert the script.
 
 ```
 # Initialize
@@ -21,8 +21,8 @@ git clone https://github.com/spiritfxxxx/buhflipexplode.git
 # Run
 cd buhflipexplode
 git pull              
-open http://localhost:8080/home/index.html
-python3 -m http.server 8080
+open http://localhost:2222/home/index.html
+python3 -m http.server 2222
 cd
 clear
 ```

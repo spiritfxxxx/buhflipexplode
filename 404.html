@@ -3,57 +3,75 @@
     <title>buhbooooom!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <img id="buh" src="/buhflipexplode/assets/misc/buhFlipExplodeLoop.webp">
-    <div id="msg">buhbooooom! this page doesn't exist!</div>
-    <nav>
-      <a href="/buhflipexplode/home/">Home</a>
-    </nav>
+    <div id="page">
+      <img id="buh" src="/assets/misc/buhFlipExplodeLoop.webp">
+      <div id="msg">buhbooooom!</div>
+      <div id="msg-sub">this page doesn't exist</div>
+      <nav>
+        <a href="/home/">Home</a>
+      </nav>
+    </div>
     <style>
       html, body {
-        margin: 0px;
-        padding: 0px;
-        background-color: #111111;
-        color: #ffffff;
-        font-family: "Inconsolata", monospace;
-        text-align: center;
-        scrollbar-gutter: stable;
-        -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        text-size-adjust: 100%;
+          margin: 0px;
+          padding: 0px;
+          background-color: #111111;
+          color: #ffffff;
+          font-family: "Inconsolata", monospace;
+          text-align: center;
+          scrollbar-gutter: stable;
+          -webkit-text-size-adjust: 100%;
+          -moz-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+        }
+
+      /* main page */
+      #page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
-      /* buhflipexplode */
+
+      /* buh */
       #buh {
-        margin-top: 17.5vh;
         width: 275px;
+        height: 275px;
         border: 2px solid #b2cee7;
         user-select: none;
       }
+
       /* 404 message */
       #msg {
-        padding: 2.5vh;
+        padding: 15px;
         font-size: 32px;
+        font-weight: bold;
         user-select: none;
       }
-      /* go home button*/
+      #msg-sub {
+        color: #bbbbbb;
+        font-size: 16px;
+        user-select: none;
+      }
+
+      /* 404 navigation button to go home */
       nav {
-        padding: 2.5vh;
-        gap: 50px;
+        margin: 30px;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
       }
       a {
         padding: 10px 20px;
-        display: inline-block;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 18px;
+        width: 107.5px;
         border: 2px solid #b2cee7;
-        border-radius: 8px;
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
         user-select: none;
       }
       a:hover {
@@ -61,6 +79,7 @@
         background-color: #b2cee7;
         transition: all 0.1s ease-in-out;
       }
+
       @font-face {
         font-family: "Inconsolata";
         src: url(/assets/Inconsolata-Regular.woff2) format("woff2");

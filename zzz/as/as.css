@@ -1,0 +1,848 @@
+/* Z-INDEX TRACKER:
+  - 999: sidebar
+  - 1000: menu bar overlay
+  - 1001: menu bar
+  - 2000: version selector overlay
+  - 2001: version selector
+  - 3001: chart
+  - 4000: calculator overlay
+  - 4001: calculator
+  - 9999: tooltip text
+*/
+
+/* main page initial styling */
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: "Inconsolata", monospace;
+  text-align: center;
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body:after {
+  z-index: -1;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  content: url(../../assets/misc/menu-hover.webp) url(../../assets/misc/home-hover.webp) url(../../assets/misc/info-hover.webp) url(../../assets/misc/top-hover.webp) url(../../assets/misc/calc-hover.webp) url(../../assets/misc/chart-hover.webp) url(../../assets/misc/download-hover.webp);
+}
+li {
+  margin-left: 15px;
+}
+
+/* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
+
+#sb {
+  z-index: 999;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 45px;
+  height: 100vh;
+  background-color: #222222;
+  border-right: 2.5px solid #444444;
+}
+#page {
+  margin-left: 47.5px;
+}
+
+/* -------------------------------------------------------------------------- HEAD -------------------------------------------------------------------------- */
+
+/* main page header */
+#header {
+  font-size: 24px;
+  font-weight: bold;
+  user-select: none;
+  padding: 25px 0px;
+}
+
+/* ------------------------------------------------------------------------ VERSION ------------------------------------------------------------------------ */
+
+/* version display */
+#v {
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+}
+#v-text {
+  width: 250px;
+  padding: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#v-text:hover {
+  border: 2px solid #b2cee7;
+  background-color: #b2cee7;
+  color: #000000;
+}
+#v-name {
+  font-weight: bold;
+}
+#v-time {
+  margin-top: 5px;
+  font-size: 12px;
+  font-style: italic;
+}
+#v-id {
+  margin-top: 5px;
+  color: #bbbbbb;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* version changer buttons */
+#v-l, #v-r {
+  margin-top: -5px;
+  font-size: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+}
+#v-l:hover, #v-r:hover {
+  color: #b2cee7;
+}
+
+/* ------------------------------------------------------------------------ VARIANT ------------------------------------------------------------------------ */
+
+/* variant display */
+#var {
+  margin: 12.5px 0px 10px 0px;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+
+/* variant changer buttons */
+.var-opt {
+  width: 60px;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+}
+.var-opt:hover {
+  color: #b2cee7;
+}
+.var-opt.selected {
+  color: #b2cee7;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------- HP --------------------------------------------------------------------------- */
+
+/* hp display */
+#v-hp {
+  margin: 0px 32.5vw;
+  padding: 7.5px;
+  border-radius: 4px;
+  background-color: #27363e;
+  line-height: 1.5;
+}
+
+/* enemy hp display */
+#v-hp-raw {
+  color: #ff5555;
+  font-weight: bold;
+  user-select: all;
+}
+#v-hp-alt {
+  color: #f6b969;
+  font-weight: bold;
+  user-select: all;
+}
+
+/* ------------------------------------------------------------------------- AGENT ------------------------------------------------------------------------- */
+
+/* agent display */
+#a {
+  margin: 15px;
+  padding: 15px;
+  min-height: 91px;
+  border-radius: 4px;
+  background-color: #27363e;
+}
+#a-cont {
+  min-height: 60px;
+  gap: 15px 45px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* agent image/text */
+.a {
+  height: 60px;
+}
+.a-img {
+  height: 60px;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+}
+.a-name {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+}
+.a-hover {
+  height: 60px;
+  position: relative;
+}
+.a-hover:hover .a-img {
+  opacity: 0.2;
+}
+.a-hover:hover .a-name {
+  opacity: 1;
+}
+.a-text {
+  font-weight: bold;
+  line-height: 1.75;
+  user-select: none;
+}
+
+/* agent buff tooltip */
+.a-tt-buff {
+  top: -72.5px;
+  left: -27.5px;
+  position: relative;
+  font-family: "Arial";
+  font-size: 24px;
+  user-select: none;
+}
+.a-tt-buff .tt-text {
+  bottom: 37.5px;
+  width: 120px;
+}
+.a-tt-buff:hover .tt-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* agent buff tooltip arrow */
+.a-tt-buff .tt-text::after {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border: 5px solid;
+  content: "";
+}
+.a-tt-buff .tt-text::after {
+  top: 100%;
+  border-color: #444444 transparent transparent transparent;
+}
+
+/* ---------------------------------------------------------------------- BUFF + TRAIT ---------------------------------------------------------------------- */
+
+/* trait display */
+.t {
+  padding: 15px;
+  min-height: 571px;
+  border-radius: 4px;
+  background-color: #27363e;
+}
+
+/* trait text */
+#a-header, .t-header {
+  margin-bottom: 15px;
+  color: #f29e38;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: right;
+}
+
+/* buff/trait text */
+.bt-text {
+  margin-top: 7.5px;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.75;
+}
+
+/* -------------------------------------------------------------------------- SIDE -------------------------------------------------------------------------- */
+
+/* side display */
+#s {
+  margin: 15px;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+}
+#s1, #s2, #s3 {
+  margin-top: 15px;
+  gap: 30px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* side header */
+.s-header {
+  color: #f29e38;
+  font-size: 16px;
+  font-weight: bold;
+}
+.s-mult {
+  margin-top: 7.5px;
+  color: #ffffff;
+  font-size: 12px;
+  user-select: none;
+}
+
+/* -------------------------------------------------------------------------- WAVE -------------------------------------------------------------------------- */
+
+/* wave display */
+.w-e {
+  min-height: 403.5px;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------------------ ENEMIES ------------------------------------------------------------------------ */
+
+/* enemy display */
+.e {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.e-img {
+  height: 192px;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+}
+.e-name {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+}
+.e-count {
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  padding: 2.5px 5px;
+  background: #dddddd;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* enemy hover display */
+.e-hover {
+  height: 192px;
+  position: relative;
+}
+.e-hover:hover .e-img {
+  opacity: 0.2;
+}
+.e-hover:hover .e-name {
+  opacity: 1;
+}
+
+/* enemy weakness/resistance */
+.wr {
+  margin-top: 7.5px;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+}
+.wk {
+  height: 24px;
+  border-bottom: 2.5px solid #2bad00;
+  user-select: none;
+}
+.rs {
+  height: 24px;
+  border-bottom: 2.5px solid #ad002b;
+  user-select: none;
+}
+
+/* enemy >20% resistance */
+.r20p {
+  margin-top: 15px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rs20p-header {
+  font-size: 16px;
+  font-weight: bold;
+}
+.rs20p {
+  gap: 10px;
+  display: flex;
+}
+.rs20p-ele {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.rs20p-img {
+  height: 24px;
+  user-select: none;
+}
+.rs20p-mult {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* enemy stats */
+.hp {
+  margin-top: 5px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.e-hp {
+  color: #ff5555;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: all;
+}
+.e-hp-mult {
+  color: #888888;
+  font-size: 12px;
+}
+.e-def {
+  margin-top: 2.5px;
+  color: #5555ff;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: all;
+}
+
+/* ----------------------------------------------------------------------- GO TO TOP ----------------------------------------------------------------------- */
+
+#top {
+  bottom: 0px;
+  padding: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#top {
+  background-image: url(../../assets/misc/top.webp);
+}
+#top:hover {
+  background-image: url(../../assets/misc/top-hover.webp);
+}
+
+/* ------------------------------------------------------------------------ MENU BAR ------------------------------------------------------------------------ */
+
+/* menu bar toggle buttons */
+#mb-o, #mb-x {
+  top: 0px;
+  padding: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#mb-o, #mb-x {
+  background-image: url(../../assets/misc/menu.webp);
+}
+#mb-o:hover, #mb-x:hover {
+  background-image: url(../../assets/misc/menu-hover.webp);
+}
+
+/* menu bar outside overlay */
+#mb-over {
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
+
+/* menu bar menu */
+#mb {
+  z-index: 1001;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background-color: #222222;
+  border-right: 2.5px solid #444444;
+  user-select: none;
+  display: none;
+  flex-direction: column;
+}
+#mb-bar {
+  height: 45px;
+  border-bottom: 2.5px solid #444444;
+}
+#mb-cont {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* menu bar home/about buttons */
+#mb-misc {
+  right: 0px;
+  position: absolute;
+  display: flex;
+}
+#mb-bar a {
+  padding: 12.5px;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#mb-home {
+  background-image: url(../../assets/misc/home.webp);
+}
+#mb-home:hover {
+  background-image: url(../../assets/misc/home-hover.webp);
+}
+#mb-about {
+  background-image: url(../../assets/misc/info.webp);
+}
+#mb-about:hover {
+  background-image: url(../../assets/misc/info-hover.webp);
+}
+
+/* menu bar sections */
+#mb-header {
+  margin: 5px;
+  margin-top: 25px;
+  color: #f29e38;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* menu bar navigation buttons to other pages */
+#mb-cont a {
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+#mb-cont a:hover {
+  color: #b2cee7;
+}
+
+/* menu bar settings */
+#mb-stg {
+  margin-top: auto;
+  padding: 15px;
+  gap: 10px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* settings number format */
+#mb-nf {
+  margin-bottom: 5px;
+  gap: 10px;
+  display: flex;
+}
+
+/* number format example */
+#mb-nf-ex {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+/* number format options */
+.nf-opt {
+  padding: 5px;
+  border: 1px solid #b2cee7;
+  border-radius: 4px;
+  background-color: #222222;
+  color: #ffffff;
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1;
+  transition: all 0.1s ease-in-out;
+}
+.nf-opt:hover {
+  border-color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+}
+.nf-opt.selected {
+  background-color: #b2cee7;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* settings toggles */
+#mb-tgl {
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* toggle options */
+#mb-tgl-lks, #mb-tgl-spl {
+  width: 45px;
+  height: 22.5px;
+  position: relative;
+}
+#tgl-lks, #tgl-spl {
+  inset: 0px;
+  position: absolute;
+  border-radius: 25px;
+  background-color: #444444;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#tgl-lks:before, #tgl-spl:before {
+  left: 2.5px;
+  bottom: 2.5px;
+  position: absolute;
+  width: 17.5px;
+  height: 17.5px;
+  border-radius: 12.5px;
+  background-color: #ffffff;
+  content: "";
+  transition: all 0.1s ease-in-out;
+}
+input:checked + #tgl-lks, input:checked + #tgl-spl {
+  background-color: #b2cee7;
+}
+input:checked + #tgl-lks:before, input:checked + #tgl-spl:before {
+  transform: translateX(22.5px);
+}
+
+/* -------------------------------------------------------------------- VERSION SELECTOR -------------------------------------------------------------------- */
+
+/* version selector toggle buttons */
+#vs-x {
+  width: 37.5px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#vs-x:hover {
+  color: #b2cee7;
+}
+
+/* version selector outside overlay */
+#vs-over {
+  z-index: 2000;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
+
+/* version selector menu */
+#vs {
+  z-index: 2001;
+  inset: 5vh 2.5vw 5vh calc(2.5vw + 47.5px);
+  position: fixed;
+  border-radius: 4px;
+  background-color: #222222;
+  user-select: none;
+  display: none;
+  flex-direction: column;
+}
+#vs-bar {
+  padding: 10px 10px;
+  border-bottom: 2.5px solid #444444;
+}
+#vs-cont {
+  padding: 15px;
+  gap: 15px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* version selector options */
+.vs-opt {
+  gap: 5px;
+  padding: 15px;
+  width: 200px;
+  border: 2px solid #888888;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.vs-opt:hover {
+  border: 2px solid #b2cee7;
+  background-color: #b2cee7;
+  color: #000000;
+}
+.vs-opt-name {
+  font-weight: bold;
+}
+.vs-opt-time {
+  font-size: 12px;
+  font-style: italic;
+}
+.vs-opt-id {
+  color: #bbbbbb;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------------------ TOOLTIPS ------------------------------------------------------------------------ */
+
+/* menu bar/enemy tooltips */
+.tt-menu, .tt-v-hp {
+  margin-left: 7.5px;
+  position: relative;
+  font-family: "Arial";
+  font-size: 14px;
+  user-select: none;
+}
+.tt-e-hp {
+  top: -19.5px;
+  left: -13.5px;
+  position: absolute;
+  font-family: "Arial";
+  font-size: 32px;
+  user-select: none;
+}
+.tt-e-stat {
+  width: 30px;
+  margin-top: 2.5px;
+  color: #888888;
+  font-size: 18px;
+  user-select: none;
+}
+.tt-menu:hover, .tt-v-hp:hover, .tt-e-stat:hover {
+  color: #b2cee7;
+}
+.tt-menu:hover, .tt-v-hp:hover, .tt-e-hp:hover, .tt-e-stat:hover {
+  cursor: help;
+}
+
+/* tooltip text */
+.tt-text {
+  z-index: 9999;
+  padding: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border-radius: 4px;
+  background-color: #444444;
+  color: #ffffff;
+  font-family: "Inconsolata", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-in-out;
+  user-select: text;
+  cursor: auto;
+}
+.tt-menu .tt-text {
+  bottom: 25px;
+  width: 120px;
+}
+.tt-v-hp .tt-text {
+  bottom: 25px;
+  width: 225px;
+}
+.tt-e-hp .tt-text {
+  bottom: 40px;
+  white-space: nowrap;
+}
+.tt-e-stat .tt-text {
+  top: 289.5px;
+  white-space: nowrap;
+}
+.tt-menu:hover .tt-text, .tt-v-hp:hover .tt-text, .tt-e-hp:hover .tt-text, .tt-e-stat:hover .tt-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* tooltip arrow */
+.tt-menu .tt-text::after, .tt-v-hp .tt-text::after, .tt-e-hp .tt-text::after, .tt-e-stat .tt-text::after {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border: 5px solid;
+  content: "";
+}
+.tt-menu .tt-text::after, .tt-v-hp .tt-text::after, .tt-e-hp .tt-text::after {
+  top: 100%;
+  border-color: #444444 transparent transparent transparent;
+}
+.tt-e-stat .tt-text::after {
+  bottom: 100%;
+  border-color: transparent transparent #444444 transparent;
+}
+
+/* ----------------------------------------------------------------------- MISC + RES ----------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url(../../assets/Inconsolata-Regular.woff2) format("woff2");
+}
+@media (max-width: 1360px) {
+  #a { min-height: 165px; }
+  .t { min-height: 755px; }
+}
+@media (max-width: 1080px) {
+  #v-hp { margin: 15px; }
+  #a, .t { min-height: 0px; }
+  #s { flex-direction: column; }
+  #s2, #s3 { margin-top: 75px; }
+}
+@media (max-width: 480px) {
+  #sb { width: 100vw; height: 45px; border-right: 0px; border-bottom: 2.5px solid #444444; }
+  #top { right: 0px; }
+  #page { margin-left: 0px; margin-top: 47.5px; }
+  #v-text { width: 215px; }
+  #vs { inset: calc(5vh + 47.5px) 5vw 5vh 5vw; }
+  .vs-opt { width: 100%; }
+  .tt-v-hp .tt-text { width: 125px; }
+}
