@@ -30,7 +30,7 @@ body:after {
   width: 0px;
   height: 0px;
   overflow: hidden;
-  content: url(../assets/misc/menu-hover.webp) url(../assets/misc/home-hover.webp) url(../assets/misc/info-hover.webp) url(../assets/misc/top-hover.webp) url(../assets/misc/calc-hover.webp) url(../assets/misc/chart-hover.webp) url(../assets/misc/download-hover.webp);
+  content: url(../assets/misc/menu-hover.webp) url(../assets/misc/home-hover.webp) url(../assets/misc/info-hover.webp) url(../assets/misc/top-hover.webp) url(../assets/misc/down-hover.webp) url(../assets/misc/calc-hover.webp) url(../assets/misc/chart-hover.webp) url(../assets/misc/download-hover.webp);
 }
 li {
   margin-left: 15px;
@@ -249,7 +249,7 @@ li {
 }
 
 /* menu bar home/about buttons */
-#mb-misc {
+#mb-nav {
   right: 0px;
   position: absolute;
   display: flex;

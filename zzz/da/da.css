@@ -30,7 +30,7 @@ body:after {
   width: 0px;
   height: 0px;
   overflow: hidden;
-  content: url(../../assets/misc/menu-hover.webp) url(../../assets/misc/home-hover.webp) url(../../assets/misc/info-hover.webp) url(../../assets/misc/top-hover.webp) url(../../assets/misc/calc-hover.webp) url(../../assets/misc/chart-hover.webp) url(../../assets/misc/download-hover.webp);
+  content: url(../../assets/misc/menu-hover.webp) url(../../assets/misc/home-hover.webp) url(../../assets/misc/info-hover.webp) url(../../assets/misc/top-hover.webp) url(../../assets/misc/down-hover.webp) url(../../assets/misc/calc-hover.webp) url(../../assets/misc/chart-hover.webp) url(../../assets/misc/download-hover.webp);
 }
 li {
   margin-left: 15px;
@@ -151,7 +151,7 @@ li {
 }
 #b1, #b2, #b3 {
   padding: 15px;
-  min-height: 220.5px;
+  min-height: 177px;
   border-radius: 4px;
   background-color: #27363e;
   flex: 1;
@@ -167,7 +167,7 @@ li {
 }
 .t {
   padding: 15px;
-  min-height: 567px;
+  min-height: 389.5px;
   border-radius: 4px;
   background-color: #27363e;
 }
@@ -451,7 +451,7 @@ li {
 }
 
 /* menu bar home/about buttons */
-#mb-misc {
+#mb-nav {
   right: 0px;
   position: absolute;
   display: flex;
@@ -624,8 +624,36 @@ input:checked + #tgl-lks:before, input:checked + #tgl-spl:before {
   flex-direction: column;
 }
 #vs-bar {
-  padding: 10px 10px;
+  padding: 10px;
   border-bottom: 2.5px solid #444444;
+  display: flex;
+  align-items: center;
+}
+#vs-nav {
+  right: 10px;
+  position: absolute;
+  gap: 12.5px;
+  display: flex;
+}
+#vs-top, #vs-btm {
+  width: 37.5px;
+  height: 37.5px;
+  cursor: pointer;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#vs-top {
+  background-image: url(../../assets/misc/top.webp);
+}
+#vs-top:hover {
+  background-image: url(../../assets/misc/top-hover.webp);
+}
+#vs-btm {
+  background-image: url(../../assets/misc/down.webp);
+}
+#vs-btm:hover {
+  background-image: url(../../assets/misc/down-hover.webp);
 }
 #vs-cont {
   padding: 15px;
@@ -1018,10 +1046,14 @@ input:checked + #tgl-lks:before, input:checked + #tgl-spl:before {
   font-family: "Inconsolata";
   src: url(../../assets/Inconsolata-Regular.woff2) format("woff2");
 }
+@media (max-width: 1840px) {
+  #b1, #b2, #b3 { min-height: 219px; }
+  .t { min-height: 537px; }
+}
 @media (max-width: 1360px) {
-  #b1, #b2, #b3 { min-height: 281.5px; }
+  #b1, #b2, #b3 { min-height: 282px; }
   #t { min-height: 524.5px; }
-  .t { min-height: 755px; }
+  .t { min-height: 704px; }
 }
 @media (max-width: 1080px) {
   #v-hp { margin: 15px; }

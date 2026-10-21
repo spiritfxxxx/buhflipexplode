@@ -26,10 +26,16 @@ function saveState() {
   localStorage.setItem("spoilersEnabled", spoilersToggle.checked);
 }
 
-// go to top of page
-function jumpToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+// go to top
+function jumpToTop(e) {
+  if (e == "body") { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
+  else { document.getElementById(e).scrollTop = 0; }
+}
+
+// go to bottom
+function jumpToBottom(e) {
+  if (e == "body") { document.body.scrollTop = document.body.scrollHeight; document.documentElement.scrollTop = document.documentElement.scrollHeight; }
+  else { document.getElementById(e).scrollTop = document.getElementById(e).scrollHeight; }
 }
 
 // navigation keyboard shortcuts

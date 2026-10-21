@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 1, vBeta = 2;
+let vLive = 2, vBeta = 3;
 let menuBarIsOpen = versionSelectorIsOpen = false;
 let elementData = ["ice", "fire", "electric", "ether", "physical", "wind"];
 let currNumberFormat, leaksToggle = document.getElementById("lks"), spoilersToggle = document.getElementById("spl");
@@ -54,11 +54,15 @@ function loadHPData() {
         let modPurify = eMods.find(mod => /^prfy.+$/.test(mod));
         let modShutdown = eMods.find(mod => /^shut.+$/.test(mod));
         let modConvert = eMods.find(mod => /^conv.+$/.test(mod));
+        let modMiscD = eMods.find(mod => /^mscd.+$/.test(mod));
+        let modMiscU = eMods.find(mod => /^mscu.+$/.test(mod));
 
         if (modImpair) hpAltStandard -= eHP * modImpair.slice(7, 12) / 10000;
         if (modPurify) hpAltStandard -= eHP * modPurify.slice(7, 12) / 10000;
         if (modShutdown) hpAltStandard -= eHP * modShutdown.slice(7, 12) / 10000;
         if (modConvert) hpAltStandard -= eHP * (modConvert.slice(7, 12) - modConvert.slice(13, 18)) / 10000;
+        if (modMiscD) hpAltStandard -= eHP * modMiscD.slice(7, 12) / 10000;
+        if (modMiscU) hpAltStandard += eHP * modMiscU.slice(13, 18) / 10000;
       }
       hpRawExtreme = hpRawStandard / sideHPMultStandard * sideHPMultExtreme;
       hpAltExtreme = hpAltStandard / sideHPMultStandard * sideHPMultExtreme;
@@ -195,7 +199,7 @@ function showEnemies() {
     let eStunMult = eData.stunMult;
     let eStunTime = eData.stunTime;
     let eAnom = eData.baseAnom;
-    let eElementMult = eData.elementMult;
+    let eElementMult = currEnemy.customElementMult || eData.elementMult;
 
     // display enemy
     let enemy = document.createElement("div");
@@ -251,6 +255,8 @@ function showEnemies() {
       let modPurify = eMods.find(mod => /^prfy.+$/.test(mod));
       let modShutdown = eMods.find(mod => /^shut.+$/.test(mod));
       let modConvert = eMods.find(mod => /^conv.+$/.test(mod));
+      let modMiscD = eMods.find(mod => /^mscd.+$/.test(mod));
+      let modMiscU = eMods.find(mod => /^mscu.+$/.test(mod));
 
       if (modImpair) {
         eHPAlt -= eHP * modImpair.slice(7, 12) / 10000;
@@ -271,6 +277,16 @@ function showEnemies() {
         eHPAlt -= eHP * (modConvert.slice(7, 12) - modConvert.slice(13, 18)) / 10000;
         ttHPColor = "#0088ff";
         ttHP.innerHTML += `${generateInstant(ttHPColor, modConvert.slice(5, 6), "CONVERT!!", modConvert.slice(7, 12) / 100, "Corruptive Barrier(s)", modConvert.slice(13, 18) / 100)}<br>`;
+      }
+      if (modMiscD) {
+        eHPAlt -= eHP * modMiscD.slice(7, 12) / 10000;
+        ttHPColor = "#ffffff";
+        ttHP.innerHTML += `${generateInstant(ttHPColor, modMiscD.slice(5, 6), modMiscD.slice(19), modMiscD.slice(7, 12) / 100, "", 0)}<br>`;
+      }
+      if (modMiscU) {
+        eHPAlt += eHP * modMiscU.slice(13, 18) / 10000;
+        ttHPColor = "#ffffff";
+        ttHP.innerHTML += `${generateInstant(ttHPColor, modMiscU.slice(5, 6), "", 0, modMiscU.slice(19), modMiscU.slice(13, 18) / 100)}<br>`;
       }
 
       // display enemy alt hp tooltip
@@ -429,10 +445,16 @@ function saveState() {
   localStorage.setItem("lastAZVariant", variantNum);
 }
 
-// go to top of page
-function jumpToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+// go to top
+function jumpToTop(e) {
+  if (e == "body") { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
+  else { document.getElementById(e).scrollTop = 0; }
+}
+
+// go to bottom
+function jumpToBottom(e) {
+  if (e == "body") { document.body.scrollTop = document.body.scrollHeight; document.documentElement.scrollTop = document.documentElement.scrollHeight; }
+  else { document.getElementById(e).scrollTop = document.getElementById(e).scrollHeight; }
 }
 
 // navigation keyboard shortcuts

@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 59, vBeta = 60, vPost = 38, vWind = 47, modeNumOld = modeNum = 4;
+let vLive = 59, vBeta = 63, vPost = 38, vWind = 47, modeNumOld = modeNum = 4;
 let menuBarIsOpen = versionSelectorIsOpen = chartIsOpen = false;
 let elementData = ["ice", "fire", "electric", "ether", "physical", "wind"];
 let currNumberFormat, leaksToggle = document.getElementById("lks"), spoilersToggle = document.getElementById("spl");
@@ -80,12 +80,16 @@ function loadHPData() {
                 let modPurify = eMods.find(mod => /^prfy.+$/.test(mod));
                 let modShutdown = eMods.find(mod => /^shut.+$/.test(mod));
                 let modConvert = eMods.find(mod => /^conv.+$/.test(mod));
+                let modMiscD = eMods.find(mod => /^mscd.+$/.test(mod));
+                let modMiscU = eMods.find(mod => /^mscu.+$/.test(mod));
 
                 if (eMods.includes("palicus")) hpAlt += eHP * 0.5;
                 if (modImpair) hpAlt -= eHP * modImpair.slice(7, 12) / 10000;
                 if (modPurify) hpAlt -= eHP * modPurify.slice(7, 12) / 10000;
                 if (modShutdown) hpAlt -= eHP * modShutdown.slice(7, 12) / 10000;
                 if (modConvert) hpAlt -= eHP * (modConvert.slice(7, 12) - modConvert.slice(13, 18)) / 10000;
+                if (modMiscD) hpAlt -= eHP * modMiscD.slice(7, 12) / 10000;
+                if (modMiscU) hpAlt += eHP * modMiscU.slice(13, 18) / 10000;
               }
               addAOE = false;
             }
@@ -263,7 +267,7 @@ function showEnemies() {
         let eStunMult = eData.stunMult;
         let eStunTime = eData.stunTime;
         let eAnom = eData.baseAnom;
-        let eElementMult = eData.elementMult;
+        let eElementMult = currEnemy.customElementMult || eData.elementMult;
 
         // display enemy
         let enemy = document.createElement("div");
@@ -332,6 +336,8 @@ function showEnemies() {
             let modPurify = eMods.find(mod => /^prfy.+$/.test(mod));
             let modShutdown = eMods.find(mod => /^shut.+$/.test(mod));
             let modConvert = eMods.find(mod => /^conv.+$/.test(mod));
+            let modMiscD = eMods.find(mod => /^mscd.+$/.test(mod));
+            let modMiscU = eMods.find(mod => /^mscu.+$/.test(mod));
 
             if (eMods.includes("palicus")) {
               eHPAlt -= eHP * 0.25;
@@ -357,6 +363,16 @@ function showEnemies() {
               eHPAlt -= eHP * (modConvert.slice(7, 12) - modConvert.slice(13, 18)) / 10000;
               ttHPColor = "#0088ff";
               ttHP.innerHTML += `${generateInstant(ttHPColor, modConvert.slice(5, 6), "CONVERT!!", modConvert.slice(7, 12) / 100, "Corruptive Barrier(s)", modConvert.slice(13, 18) / 100)}<br>`;
+            }
+            if (modMiscD) {
+              eHPAlt -= eHP * modMiscD.slice(7, 12) / 10000;
+              ttHPColor = "#ffffff";
+              ttHP.innerHTML += `${generateInstant(ttHPColor, modMiscD.slice(5, 6), modMiscD.slice(19), modMiscD.slice(7, 12) / 100, "", 0)}<br>`;
+            }
+            if (modMiscU) {
+              eHPAlt += eHP * modMiscU.slice(13, 18) / 10000;
+              ttHPColor = "#ffffff";
+              ttHP.innerHTML += `${generateInstant(ttHPColor, modMiscU.slice(5, 6), "", 0, modMiscU.slice(19), modMiscU.slice(13, 18) / 100)}<br>`;
             }
 
             // display enemy alt hp tooltip
@@ -519,10 +535,16 @@ function saveLastPage() {
   localStorage.setItem("lastSDChartType", chartType);
 }
 
-// go to top of page
-function jumpToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+// go to top
+function jumpToTop(e) {
+  if (e == "body") { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
+  else { document.getElementById(e).scrollTop = 0; }
+}
+
+// go to bottom
+function jumpToBottom(e) {
+  if (e == "body") { document.body.scrollTop = document.body.scrollHeight; document.documentElement.scrollTop = document.documentElement.scrollHeight; }
+  else { document.getElementById(e).scrollTop = document.getElementById(e).scrollHeight; }
 }
 
 // navigation keyboard shortcuts

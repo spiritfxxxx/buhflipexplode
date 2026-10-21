@@ -209,23 +209,23 @@
 
   "62000084":[ "Fleeting Blaze",                "<li>Agent <span style='color:#ff5521;font-weight:bold;'>Fire DMG</span> and <span style='color:#fe437e;font-weight:bold;'>Ether DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>15%</span>, and <span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>Agent <span style='font-weight:bold;'>Ultimate</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>. When an <span style='font-weight:bold;'>Ultimate</span> attack hits an enemy, it ignores <span style='color:#2bad00;font-weight:bold;'>10%</span> of the target's All-Attribute RES.</li>" ],
 
-  "62000085":[ "Blazing Rhythm",                "<li><span style='font-weight:bold;'>Anomaly</span> specialty Agents' <span style='color:#ff5521;font-weight:bold;'>Fire DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>When an Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a CRIT, the whole squad recovers <span style='color:#2bad00;font-weight:bold;'>20</span> Energy, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span> for 20s. The Energy Generation generation effect can trigger once every 20 seconds.</li>" ],
+  "62000085":[ "Blazing Rhythm",                "<li><span style='font-weight:bold;'>Anomaly</span> specialty Agents' <span style='color:#ff5521;font-weight:bold;'>Fire DMG</span> is increased by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>When an Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a critical hit, the squad recovers <span style='color:#2bad00;font-weight:bold;'>20</span> Energy, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span> for 20s. This effect can trigger once every 20s.</li>" ],
 
-  "62000086":[ "Rending Bladeguard",            "<li>Agent <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and DEF increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>When an Agent defeats an Elite enemy, Agents with the <span style='font-weight:bold;'>Stun</span> specialty restore <span style='color:#2bad00;font-weight:bold;'>30</span> Energy, and the whole squad restores <span style='color:#2bad00;font-weight:bold;'>500</span> Decibels.</li>" ],
+  "62000086":[ "Rending Bladeguard",            "<li>Agents' <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and DEF increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>When an Agent defeats an Elite enemy, Agents with the <span style='font-weight:bold;'>Stun</span> specialty restore <span style='color:#2bad00;font-weight:bold;'>30</span> Energy, and the whole squad restores <span style='color:#2bad00;font-weight:bold;'>500</span> Decibels.</li>" ],
 
   "62000087":[ "Condensed Frostburst",          "<li><span style='font-weight:bold;'>Attack</span> specialty Agents' <span style='color:#fe437e;font-weight:bold;'>Ether DMG</span> and <span style='color:#98eff0;font-weight:bold;'>Ice DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li><li>When an Agent <span style='color:#ffe599;font-weight:bold;'>Stuns</span> an enemy, their <span style='color:#ffe599;font-weight:bold;'>Stun Recovery Rate</span> decreases by <span style='color:#2bad00;font-weight:bold;'>15%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "62000088":[ "Tempest Flames",                "<li><span style='font-weight:bold;'>Attack</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>35%</span>, and <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>When an Agent's <span style='font-weight:bold;'>Ultimate</span> hits an enemy, the enemy's <span style='color:#a6c5fd;font-weight:bold;'>Wind RES</span> decreases by <span style='color:#2bad00;font-weight:bold;'>15%</span> for 30s. Repeated triggers reset the duration.</li>" ],
+  "62000088":[ "Tempest Flames",                "<li><span style='font-weight:bold;'>Attack</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>35%</span>, and <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>When an Agent's <span style='font-weight:bold;'>Ultimate</span> hits an enemy, the enemy's <span style='color:#a6c5fd;font-weight:bold;'>Wind RES</span> reduces by <span style='color:#2bad00;font-weight:bold;'>15%</span> for 30s. Repeated triggers reset the duration.</li>" ],
 
-  "62000089":[ "Blazing Nightfire",             "<li>When an <span style='font-weight:bold;'>Anomaly</span> specialty Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a CRIT, the whole squad's ATK increases by <span style='color:#2bad00;font-weight:bold;'>10%</span> and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span> for 15s. Repeated triggers reset the duration.</li><li>When an Agent inflicts a <span style='color:#ff5521;font-weight:bold;'>Fire Attribute Anomaly</span> on an enemy, their <span style='color:#ff5521;font-weight:bold;'>Fire RES</span> decreases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "62000089":[ "Blazing Nightfire",             "<li>Agents with the <span style='font-weight:bold;'>Anomaly</span> specialty that deal <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and trigger a CRIT increase the whole squad's ATK by <span style='color:#2bad00;font-weight:bold;'>10%</span> and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> by <span style='color:#2bad00;font-weight:bold;'>20%</span> for 15s. Repeated triggers reset the duration.</li><li>When an Agent inflicts an enemy with <span style='color:#ff5521;font-weight:bold;'>Fire Anomaly</span>, the target's <span style='color:#ff5521;font-weight:bold;'>Fire RES</span> is reduced by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "62000090":[ "Glacial Realmshatter",          "<li>Agent <span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>35%</span>.</li><li>After an Agent with the <span style='font-weight:bold;'>Rupture</span> specialty uses an <span style='font-weight:bold;'>Ultimate</span>, their <span style='color:#ff5521;font-weight:bold;'>Fire DMG</span> and <span style='color:#98eff0;font-weight:bold;'>Ice DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>50%</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "62000090":[ "Glacial Realmshatter",          "<li>Agents' <span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>35%</span>.</li><li>After a <span style='font-weight:bold;'>Rupture</span> specialty Agent uses their <span style='font-weight:bold;'>Ultimate</span>, their <span style='color:#ff5521;font-weight:bold;'>Fire DMG</span> and <span style='color:#98eff0;font-weight:bold;'>Ice DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>50%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "62000091":[ "Rending Gale",                  "<li><span style='font-weight:bold;'>Attack</span> specialty Agents' <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, and CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li><li>After an Agent uses <span style='font-weight:bold;'>EX Special Attack</span>, attacks ignore <span style='color:#2bad00;font-weight:bold;'>20%</span> of the enemy's <span style='color:#a6c5fd;font-weight:bold;'>Wind RES</span> on hit for 15s. Repeated triggers reset the duration.</li>" ],
+  "62000091":[ "Rending Gale",                  "<li><span style='font-weight:bold;'>Attack</span> specialty Agents' <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span> and CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li><li>After an Agent uses <span style='font-weight:bold;'>EX Special Attack</span>, attacks ignore <span style='color:#2bad00;font-weight:bold;'>20%</span> of the enemy's <span style='color:#a6c5fd;font-weight:bold;'>Wind RES</span> on hit for 15s. Repeated triggers reset the duration.</li>" ],
 
   "62000092":[ "Thunderfire Starburn",          "<li><span style='font-weight:bold;'>Armorer</span> specialty Agents' DEF increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>, and <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>When an Agent's attack hits an enemy, it ignores <span style='color:#2bad00;font-weight:bold;'>10%</span> of the enemy's <span style='color:#ff5521;font-weight:bold;'>Fire RES</span> and <span style='color:#2eb6ff;font-weight:bold;'>Electric RES</span>.</li>" ],
 
-  "62000093":[ "Spirit Realm Wallbreaker",      "<li>Agent <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>30</span>. After <span style='color:#ffe599;font-weight:bold;'>Stunning</span> an enemy, their <span style='color:#ffe599;font-weight:bold;'>Stun Recovery Rate</span> decreases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li><li>While in Ether Veil, Agent ATK increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>, and attacks ignore <span style='color:#2bad00;font-weight:bold;'>20%</span> of enemy <span style='color:#fe437e;font-weight:bold;'>Ether RES</span>.</li>" ],
+  "62000093":[ "Spirit Realm Wallbreaker",      "<li>Agents' <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>30</span>. After <span style='color:#ffe599;font-weight:bold;'>Stunning</span> an enemy, their <span style='color:#ffe599;font-weight:bold;'>Stun Recovery Rate</span> decreases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li><li>While in Ether Veil, Agent ATK increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>, and attacks ignore <span style='color:#2bad00;font-weight:bold;'>20%</span> of the enemy's <span style='color:#fe437e;font-weight:bold;'>Ether RES</span>.</li>" ],
 
 
 
@@ -389,153 +389,23 @@
 
   "69000078":[ "Knife Edge",                    "006",              "<li>Agent DEF increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>, and their <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>For Agents with the <span style='font-weight:bold;'>Stun</span> specialty, <span style='color:#ffe599;font-weight:bold;'>Daze</span> dealt by their <span style='font-weight:bold;'>EX Special Attack</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>. After an Agent uses an <span style='font-weight:bold;'>EX Special Attack</span> or <span style='font-weight:bold;'>Special Attack</span>, <span style='color:#2eb6ff;font-weight:bold;'>Electric DMG</span> and <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>30%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "69000079":[ "Blazing Descent",               "003",              "<li>If there are 2/3 Agents in the squad with the <span style='font-weight:bold;'>Anomaly</span> specialty, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>20/50</span> respectively.</li><li>When an <span style='font-weight:bold;'>Anomaly</span> specialty Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a CRIT, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and <span style='color:#ff5521;font-weight:bold;'>Fire Attribute Anomaly DMG</span> further increases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "69000079":[ "Blazing Descent",               "003",              "<li>If there are 2/3 <span style='font-weight:bold;'>Anomaly</span> specialty Agents in your squad, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>20/50</span> respectively.</li><li>When an <span style='font-weight:bold;'>Anomaly</span> specialty Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a critical hit, <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt by the whole squad increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and <span style='color:#ff5521;font-weight:bold;'>Fire Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "69000080":[ "Radiant Sky",                   "006",              "<li><span style='font-weight:bold;'>Stun</span> specialty Agents' <span style='color:#ffe599;font-weight:bold;'>Daze</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and Energy Generation Rate increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>After an Agent uses an <span style='font-weight:bold;'>EX Special Attack</span> or <span style='font-weight:bold;'>Special Attack</span>, <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, and attacks ignore <span style='color:#2bad00;font-weight:bold;'>20%</span> of enemy <span style='color:#2eb6ff;font-weight:bold;'>Electric RES</span> and <span style='color:#fe437e;font-weight:bold;'>Ether RES</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "69000080":[ "Radiant Sky",                   "006",              "<li><span style='font-weight:bold;'>Stun</span> specialty Agents' <span style='color:#ffe599;font-weight:bold;'>Daze</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and Energy Generation Rate increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>.</li><li>After the Agent uses an <span style='font-weight:bold;'>EX Special Attack</span> or <span style='font-weight:bold;'>Special Attack</span>, <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, and attacks that hit enemies ignore <span style='color:#2bad00;font-weight:bold;'>20%</span> of their <span style='color:#2eb6ff;font-weight:bold;'>Electric RES</span> and <span style='color:#fe437e;font-weight:bold;'>Ether RES</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "69000081":[ "Perfect Rhythm",                "003",              "<li><span style='font-weight:bold;'>Stun</span> specialty Agents' <span style='color:#ffe599;font-weight:bold;'>Daze</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>. When hitting a <span style='color:#ffe599;font-weight:bold;'>Stunned</span> enemy, their <span style='color:#ffe599;font-weight:bold;'>Stun Recovery Rate</span> decreases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li><li>Agent <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>. When an enemy is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, Agent <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt further increases by <span style='color:#2bad00;font-weight:bold;'>25%</span>.</li>" ],
+  "69000081":[ "Perfect Rhythm",                "003",              "<li><span style='font-weight:bold;'>Stun</span> specialty Agents' <span style='color:#ffe599;font-weight:bold;'>Daze</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>. Upon hitting a <span style='color:#ffe599;font-weight:bold;'>Stunned</span> enemy, their <span style='color:#ffe599;font-weight:bold;'>Stun Recovery Speed</span> reduces by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li><li><span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt by Agents increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>. Against <span style='color:#ffe599;font-weight:bold;'>Stunned</span> enemies, <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt additionally increases by <span style='color:#2bad00;font-weight:bold;'>25%</span>.</li>" ],
 
-  "69000082":[ "Blazing Radiance",              "003",              "<li><span style='font-weight:bold;'>Anomaly</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, and <span style='color:#ff5521;font-weight:bold;'>Fire Anomaly Buildup Rate</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>When an Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a CRIT, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>30</span>, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "69000082":[ "Blazing Radiance",              "003",              "<li><span style='font-weight:bold;'>Anomaly</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, and <span style='color:#ff5521;font-weight:bold;'>Fire Anomaly Buildup Rate</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>When an Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a critical hit, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>30</span> and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "69000083":[ "Storm Tribulation",             "002",              "<li>Agent <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>, and <span style='color:#a6c5fd;font-weight:bold;'>Wind</span> CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li><li><span style='font-weight:bold;'>Attack</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>25%</span>, and <span style='font-weight:bold;'>Basic Attack</span> DMG dealt increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li>" ],
+  "69000083":[ "Storm Tribulation",             "002",              "<li>Agents' <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>, and <span style='color:#a6c5fd;font-weight:bold;'>Wind</span> CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li><li><span style='font-weight:bold;'>Attack</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>25%</span>, and <span style='font-weight:bold;'>Basic Attack</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>.</li>" ],
 
-  "69000084":[ "Corroding Edge",                "006",              "<li>Agent <span style='color:#2eb6ff;font-weight:bold;'>Electric DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, and <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li><span style='font-weight:bold;'>Attack</span> or <span style='font-weight:bold;'>Armorer</span> specialty Agents' PEN Ratio increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and <span style='font-weight:bold;'>Special Attack</span> and <span style='font-weight:bold;'>EX Special Attack</span> DMG dealt increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>.</li>" ],
+  "69000084":[ "Corroding Edge",                "006",              "<li>Agents' <span style='color:#2eb6ff;font-weight:bold;'>Electric DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li><span style='font-weight:bold;'>Attack</span> or <span style='font-weight:bold;'>Armorer</span> specialty Agents' PEN Ratio increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, and DMG dealt by <span style='font-weight:bold;'>Special Attack</span> and <span style='font-weight:bold;'>EX Special Attack</span> increase by <span style='color:#2bad00;font-weight:bold;'>30%</span>.</li>" ],
 
-  "69000085":[ "Sweeping Frost",                "002",              "<li>Agent <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, and attacks ignore <span style='color:#2bad00;font-weight:bold;'>30%</span> of enemy <span style='color:#a6c5fd;font-weight:bold;'>Wind RES</span>.</li><li><span style='font-weight:bold;'>Attack</span> specialty Agents' CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span>, and <span style='font-weight:bold;'>Basic Attack</span> DMG dealt increases by <span style='color:#2bad00;font-weight:bold;'>50%</span>.</li>" ],
+  "69000085":[ "Sweeping Frost",                "002",              "<li>Agents' <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>. When attacks hit enemies, ignore <span style='color:#2bad00;font-weight:bold;'>30%</span> of their <span style='color:#a6c5fd;font-weight:bold;'>Wind RES</span>.</li><li><span style='font-weight:bold;'>Attack</span> specialty Agents' CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>40%</span> and <span style='font-weight:bold;'>Basic Attack</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>50%</span>.</li>" ],
 
-  "69000086":[ "Surging Thunder",               "004",              "<li>Agent DEF increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, and <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>After an Agent uses an <span style='font-weight:bold;'>EX Special Attack</span>, <span style='font-weight:bold;'>Special Attack</span>, or <span style='font-weight:bold;'>Ultimate</span>, <span style='color:#2eb6ff;font-weight:bold;'>Electric DMG</span> and <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>20%</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "69000086":[ "Surging Thunder",               "004",              "<li>Agents' DEF increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, and their <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>After an Agent uses an <span style='font-weight:bold;'>EX Special Attack</span>, <span style='font-weight:bold;'>Special Attack</span>, or <span style='font-weight:bold;'>Ultimate</span>, <span style='color:#2eb6ff;font-weight:bold;'>Electric DMG</span> and <span style='color:#a6c5fd;font-weight:bold;'>Wind DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>20%</span> for 15s. Repeated triggers reset the duration.</li>" ],
 
-  "69000087":[ "Spirit Zenith",                 "003",              "<li><span style='font-weight:bold;'>Anomaly</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, and <span style='color:#ff5521;font-weight:bold;'>Fire</span> and <span style='color:#a6c5fd;font-weight:bold;'>Wind Anomaly Buildup Rate</span> increase by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>When an Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a CRIT, the whole squad recovers <span style='color:#2bad00;font-weight:bold;'>20</span> Energy, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>20%</span> for 20s. The Energy Generation generation effect can trigger once every 20 seconds.</li>" ],
-
-
-
-
-
-
-  "10A00000":[ "Anby",                          "anby",             null ],
-
-  "10A01000":[ "Anton",                         "anton",            null ],
-
-  "10A02000":[ "Ben",                           "ben",              null ],
-
-  "10A03000":[ "Billy",                         "billy",            null ],
-
-  "10A04000":[ "Corin",                         "corin",            null ],
-
-  "10A05000":[ "Lucy",                          "lucy",             null ],
-
-  "10A06000":[ "Nicole",                        "nicole",           null ],
-
-  "10A07000":[ "Piper",                         "piper",            null ],
-
-  "10A08000":[ "Soukaku",                       "soukaku",          null ],
-
-  "10S00000":[ "Ellen",                         "ellen",            null ],
-
-  "10S01000":[ "Zhu Yuan",                      "zhuyuan",          null ],
-
-  "10S02000":[ "Grace",                         "grace",            null ],
-
-  "10S03000":[ "Koleda",                        "koleda",           null ],
-
-  "10S04000":[ "Lycaon",                        "lycaon",           null ],
-
-  "10S05000":[ "Nekomata",                      "nekomata",         null ],
-
-  "10S06000":[ "Rina",                          "rina",             null ],
-
-  "10S07000":[ "Soldier 11",                    "soldier11",        null ],
-
-  "11A00000":[ "Seth",                          "seth",             null ],
-
-  "11S00000":[ "Qingyi",                        "qingyi",           null ],
-
-  "11S01000":[ "Jane",                          "jane",             "<span style='color:#f0d12b;font-weight:bold;'>Assault</span> CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>27%</span>." ],
-
-  "12S00000":[ "Caesar",                        "caesar",           "While Shielded, Agents' DMG taken decreases by <span style='color:#2bad00;font-weight:bold;'>67%</span>." ],
-
-  "12S01000":[ "Burnice",                       "burnice",          null ],
-
-  "13S00000":[ "Yanagi",                        "yanagi",           "<span style='color:#2eb6ff;font-weight:bold;'>Shock DMG</span> and <span style='color:#7b78ff;font-weight:bold;'>Disorder DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>46%</span>." ],
-
-  "13S01000":[ "Lighter",                       "lighter",          null ],
-
-  "14S00000":[ "Miyabi",                        "miyabi",           null ],
-
-  "14S01000":[ "Harumasa",                      "harumasa",         null ],
-
-  "15S00000":[ "Astra Yao",                     "astra",            null ],
-
-  "15S01000":[ "Evelyn",                        "evelyn",           "<span style='font-weight:bold;'>Chain Attack</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>399%</span>." ],
-
-  "16A00000":[ "Pulchra",                       "pulchra",          null ],
-
-  "16S00000":[ "Soldier 0: Anby",               "sanby",            null ],
-
-  "16S01000":[ "Trigger",                       "trigger",          null ],
-
-  "17S00000":[ "Vivian",                        "vivian",           null ],
-
-  "17S01000":[ "Hugo",                          "hugo",             "<span style='color:#ffe599;font-weight:bold;'>Totalize</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>472%</span>." ],
-
-  "20A00000":[ "Pan Yinhu",                     "panyinhu",         null ],
-
-  "20S00000":[ "Yixuan",                        "yixuan",           null ],
-
-  "20S01000":[ "Ju Fufu",                       "jufufu",           null ],
-
-  "21S00000":[ "Yuzuha",                        "yuzuha",           null ],
-
-  "21S01000":[ "Alice",                         "alice",            null ],
-
-  "22S00000":[ "Seed",                          "seed",             null ],
-
-  "22S01000":[ "Orphie & Magus",                "orphie",           null ],
-
-  "23A00000":[ "Manato",                        "manato",           null ],
-
-  "23S00000":[ "Lucia",                         "lucia",            null ],
-
-  "23S01000":[ "Yidhari",                       "yidhari",          "<span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>24%</span>." ],
-
-  "24S00000":[ "Dialyn",                        "dialyn",           null ],
-
-  "24S01000":[ "Banyue",                        "banyue",           null ],
-
-  "25S00000":[ "Ye Shunguang",                  "shunguang",        null ],
-
-  "25S01000":[ "Zhao",                          "zhao",             null ],
-
-  "26S00000":[ "Sunna",                         "sunna",            null ],
-
-  "26S01000":[ "Aria",                          "aria",             null ],
-
-  "27S00000":[ "Nangong Yu",                    "nangong",          null ],
-
-  "27S01000":[ "Cissia",                        "cissia",           null ],
-
-  "28S00000":[ "Promeia",                       "promeia",          null ],
-
-  "28S01000":[ "Starlight: Billy",              "sbilly",           null ],
-
-  "30S00000":[ "Velina",                        "velina",           null ],
-
-  "30S01000":[ "Norma",                         "norma",            null ],
-
-  "30S02000":[ "Pyrois",                        "pyrois",           null ],
-
-  "31S00000":[ "Remielle",                      "remielle",         null ],
-
-  "31S01000":[ "Sigrid",                        "sigrid",           null ],
-
-  "32S00000":[ "Claret",                        "claret",           null ],
-
-  "32S01000":[ "Roxy",                          "roxy",             null ],
-
-  "33S00000":[ "Phoenix",                       "phoenix",          null ],
-
-  "33S01000":[ "Severian",                      "severian",         null ],
-
+  "69000087":[ "Spirit Zenith",                 "003",              "<li><span style='font-weight:bold;'>Anomaly</span> specialty Agents' ATK increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, and <span style='color:#ff5521;font-weight:bold;'>Fire</span> and <span style='color:#a6c5fd;font-weight:bold;'>Wind Anomaly Buildup Rate</span> increase by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>When an Agent deals <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and triggers a critical hit, the whole squad gains <span style='color:#2bad00;font-weight:bold;'>20</span> Energy, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>20%</span> for 20s. This effect can trigger once every 20s.</li>" ],
 
 
 
@@ -676,7 +546,7 @@
 
 
   "31301dad":[ "<li>After Infernal Revenant enters the <span style='font-weight:bold;'>Infernal</span> state, the <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> it takes is reduced by <span style='color:#ad002b;font-weight:bold;'>30%</span>; every time <span style='font-weight:bold;'>Chain Parry</span> is triggered, the Boss gains 1 stack of <span style='font-weight:bold;'>Overheat</span>; triggering <span style='font-weight:bold;'>Defensive Assist</span> or <span style='font-weight:bold;'>Perfect Dodge</span> 2 times in total applies 1 stack of <span style='font-weight:bold;'>Overheat</span> on the Boss, and each stack of <span style='font-weight:bold;'>Overheat</span> increases CRIT DMG of the whole squad by <span style='color:#2bad00;font-weight:bold;'>25%</span>, stacking up to 3 times and lasting 20s. Triggering <span style='font-weight:bold;'>Defensive Assist</span> or retriggering <span style='font-weight:bold;'>Overheat</span> resets the duration.</li>",
-               "<li>After Infernal Revenant enters the <span style='font-weight:bold;'>Infernal</span> state, the <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> it takes is reduced by <span style='color:#ad002b;font-weight:bold;'>30%</span>. Every flint shattered restores <span style='color:#2bad00;font-weight:bold;'>20</span> Energy to the whole squad. Every time <span style='font-weight:bold;'>Chain Parry</span> is triggered, the Boss gains 1 stack of <span style='font-weight:bold;'>Overheat</span>; triggering <span style='font-weight:bold;'>Defensive Assist</span> or <span style='font-weight:bold;'>Perfect Dodge</span> 2 times in total applies 1 stack of <span style='font-weight:bold;'>Overheat</span> on the Boss, and each stack of <span style='font-weight:bold;'>Overheat</span> increases CRIT DMG of the whole squad by <span style='color:#2bad00;font-weight:bold;'>25%</span>, stacking up to 3 times and lasting 20s. Triggering <span style='font-weight:bold;'>Defensive Assist</span> or retriggering <span style='font-weight:bold;'>Overheat</span> resets the duration.</li>" ],
+               "<li>After Infernal Revenant enters the <span style='font-weight:bold;'>Infernal</span> state, the <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> it takes is reduced by <span style='color:#ad002b;font-weight:bold;'>30%</span>. Every flintstone shattered gives <span style='color:#2bad00;font-weight:bold;'>20</span> Energy to the whole team. Every time <span style='font-weight:bold;'>Chain Parry</span> is triggered, the Boss gains 1 stack of <span style='font-weight:bold;'>Overheat</span>; triggering <span style='font-weight:bold;'>Defensive Assist</span> or <span style='font-weight:bold;'>Perfect Dodge</span> 2 times in total applies 1 stack of <span style='font-weight:bold;'>Overheat</span> on the Boss, and each stack of <span style='font-weight:bold;'>Overheat</span> increases CRIT DMG of the whole squad by <span style='color:#2bad00;font-weight:bold;'>25%</span>, stacking up to 3 times and lasting 20s. Triggering <span style='font-weight:bold;'>Defensive Assist</span> or retriggering <span style='font-weight:bold;'>Overheat</span> resets the duration.</li>" ],
   "31301dap":[ "<li>Successfully triggering <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> grants <span style='color:#f29e38;font-weight:bold;'>2000 Performance Points</span>; each flint shattered grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>, up to a maximum of 5000 Performance Points.</li>" ],
   "31301dam":[ null ],
 
@@ -689,9 +559,9 @@
 
 
 
-  "33300dad":[ "<li>Agent <span style='color:#7b78ff;font-weight:bold;'>Anomaly Buildup Rate</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>When an Agent inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on an enemy, the target enemy gains 1 stack of <span style='font-weight:bold;'>Afterglow</span>. When a Boss accumulates 3 stacks of <span style='font-weight:bold;'>Afterglow</span>, all <span style='font-weight:bold;'>Afterglow</span> stacks are immediately removed and the Boss enters the <span style='font-weight:bold;'>Waxen Wings</span> state for 30s.</li><li>While in the <span style='font-weight:bold;'>Waxen Wings</span> state, enemies take <span style='color:#2bad00;font-weight:bold;'>30%</span> bonus <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span>, and inflicting an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on the Boss accumulates <span style='color:#2bad00;font-weight:bold;'>5%</span> <span style='color:#ffe599;font-weight:bold;'>Daze</span> but does not apply a stack of <span style='font-weight:bold;'>Afterglow</span>.</li><li>When an enemy is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, they enter the <span style='font-weight:bold;'>Waxen Wings</span> state. Repeated triggers reset the duration.</li>" ],
-  "33300dap":[ "<li>Successfully triggering <span style='font-weight:bold;'>Chain Parry</span> against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>.</li><li>After the Boss deploys a spatial barrier, successfully stepping on a golden Glare Zone and performing a <span style='font-weight:bold;'>Defensive Assist</span> grants <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>" ],
-  "33300dads":[ "<li>Agent <span style='color:#7b78ff;font-weight:bold;'>Anomaly Buildup Rate</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>When an Agent inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on an enemy, the target enemy gains 1 stack of <span style='font-weight:bold;'>Afterglow</span>. When a Boss accumulates 3 stacks of <span style='font-weight:bold;'>Afterglow</span>, all <span style='font-weight:bold;'>Afterglow</span> stacks are immediately removed and the Boss enters the <span style='font-weight:bold;'>Waxen Wings</span> state for 30s.</li><li>While in the <span style='font-weight:bold;'>Waxen Wings</span> state, enemies take <span style='color:#2bad00;font-weight:bold;'>30%</span> bonus <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span>, and inflicting an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on the Boss accumulates <span style='color:#2bad00;font-weight:bold;'>5%</span> <span style='color:#ffe599;font-weight:bold;'>Daze</span> but does not apply a stack of <span style='font-weight:bold;'>Afterglow</span>.</li><li>When an enemy is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, they enter the <span style='font-weight:bold;'>Waxen Wings</span> state. Repeated triggers reset the duration.</li>" ],
+  "33300dad":[ "<li>When a Boss enemy is attacked, the attack's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Buildup Rate</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>Each time a Boss enemy enters an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> state, it gains 1 stack of <span style='font-weight:bold;'>Afterglow Mark</span>. When it reaches 3 stacks, all <span style='font-weight:bold;'>Afterglow Marks</span> are consumed, and the Boss enters the <span style='font-weight:bold;'>Wax Wings</span> state for 30 seconds.</li><li>While in the <span style='font-weight:bold;'>Wax Wings</span> state, the Boss takes <span style='color:#2bad00;font-weight:bold;'>30%</span> increased <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and accumulates an additional <span style='color:#2bad00;font-weight:bold;'>5%</span> <span style='color:#ffe599;font-weight:bold;'>Daze</span> when entering an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> state, but no longer gains <span style='font-weight:bold;'>Afterglow Marks</span>.</li><li>When the Boss is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, it immediately enters the <span style='font-weight:bold;'>Wax Wings</span> state. If it is already in the Wax Wings state, the duration is reset.</li>" ],
+  "33300dap":[ "<li>Each successful <span style='font-weight:bold;'>Chain Parry</span> against an enemy attack grants an additional <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>.</li><li>After an enemy deploys a Spatial Barrier, each successful stomp on a golden area that triggers a <span style='font-weight:bold;'>Defensive Assist</span> grants an additional <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>; up to 5000 Performance Points can be earned this way.</li>" ],
+  "33300dads":[ "<li>When a Boss enemy is attacked, the attack's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Buildup Rate</span> increases by <span style='color:#2bad00;font-weight:bold;'>10%</span>.</li><li>Each time a Boss enemy enters an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> state, it gains 1 stack of <span style='font-weight:bold;'>Afterglow Mark</span>. When it reaches 3 stacks, all <span style='font-weight:bold;'>Afterglow Marks</span> are consumed, and the Boss enters the <span style='font-weight:bold;'>Wax Wings</span> state for 30 seconds.</li><li>While in the <span style='font-weight:bold;'>Wax Wings</span> state, the Boss takes <span style='color:#2bad00;font-weight:bold;'>30%</span> increased <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and accumulates an additional <span style='color:#2bad00;font-weight:bold;'>5%</span> <span style='color:#ffe599;font-weight:bold;'>Daze</span> when entering an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> state, but no longer gains <span style='font-weight:bold;'>Afterglow Marks</span>.</li><li>When the Boss is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, it immediately enters the <span style='font-weight:bold;'>Wax Wings</span> state. If it is already in the Wax Wings state, the duration is reset.</li>" ],
   "33300daps":[ "<li>Successfully triggering <span style='font-weight:bold;'>Chain Parry</span> against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>.</li><li>After the Boss deploys a spatial barrier, successfully stepping on a golden Glare Zone and performing a <span style='font-weight:bold;'>Defensive Assist</span> grants <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>" ],
   "33300dam":[ "<li>Suitable for Agents with <span style='font-weight:bold;'>Anomaly</span> specialty.</li>" ],
 
@@ -699,10 +569,10 @@
 
 
 
-
   "28400dad":[ "<li>When an Agent lands <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> on an enemy, the enemy's All-Attribute RES decreases by <span style='color:#2bad00;font-weight:bold;'>10%</span>, Agents with <span style='font-weight:bold;'>Attack</span> specialty gain <span style='color:#2bad00;font-weight:bold;'>20%</span> bonus ATK, <span style='color:#2bad00;font-weight:bold;'>25%</span> bonus PEN Ratio, and their <span style='color:#98eff0;font-weight:bold;'>Ice</span> and <span style='color:#fe437e;font-weight:bold;'>Ether</span> CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>60%</span>.</li><li>Upon triggering a special stagger, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>40</span> pts and their <span style='color:#7b78ff;font-weight:bold;'>Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>.</li>",
-               "<li>When an Agent lands <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> on an enemy, <span style='color:#ffe599;font-weight:bold;'>Daze</span> dealt by the whole squad increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>, DEF increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, CRIT DMG dealt increases by <span style='color:#2bad00;font-weight:bold;'>75%</span>, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>When the Boss is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, Agent <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>60%</span>, Agent <span style='color:#98eff0;font-weight:bold;'>Ice</span> and <span style='color:#a6c5fd;font-weight:bold;'>Wind</span> CRIT DMG increase by <span style='color:#2bad00;font-weight:bold;'>80%</span>, and Agents ignore <span style='color:#2bad00;font-weight:bold;'>40%</span> of the Boss's <span style='color:#5555ff;font-weight:bold;'>DEF</span>.</li>" ],
-  "28400dap":[ "<li>Each successful counter and subsequent trigger of a special stagger against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>. During the Control Skill, each successful counter against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>500 Performance Points</span>. Performing a <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> on the Boss's Control Skill grants <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>. Maximum obtainable Performance Points: 5000.</li>" ],
+               "<li>After <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> against a Boss enemy's Control Skill, <span style='color:#ffe599;font-weight:bold;'>Daze</span> dealt by the whole squad's Agents increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>, DEF increases by <span style='color:#2bad00;font-weight:bold;'>30%</span>, and when their attacks hit enemies, CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>75%</span>, and <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>While the Boss is <span style='color:#ffe599;font-weight:bold;'>Stunned</span>, <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> dealt by the whole squad's Agents increases by <span style='color:#2bad00;font-weight:bold;'>60%</span>, <span style='color:#a6c5fd;font-weight:bold;'>Wind</span> and <span style='color:#98eff0;font-weight:bold;'>Ice</span> CRIT DMG dealt increase by <span style='color:#2bad00;font-weight:bold;'>80%</span> and ignore <span style='color:#2bad00;font-weight:bold;'>40%</span> of the Boss's <span style='color:#5555ff;font-weight:bold;'>DEF</span>.</li>" ],
+  "28400dap":[ "<li>Each successful counter and subsequent trigger of a special stagger against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>. During the Control Skill, each successful counter against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>500 Performance Points</span>. Performing a <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> on the Boss's Control Skill grants <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>. Maximum obtainable Performance Points: 5000.</li>",
+               "<li>Each time you successfully neutralize the boss's attacks and trigger the boss's special stagger, it grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>. During the Control Skill, each successful counter against the Boss's attacks grants <span style='color:#f29e38;font-weight:bold;'>500 Performance Points</span>. Performing a <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> on the Boss's Control Skill grants <span style='color:#f29e38;font-weight:bold;'>2000 Performance Points</span>. Maximum obtainable Performance Points: 5000.</li>" ],
   "28400dam":[ null ],
 
 
@@ -715,7 +585,7 @@
 
   "31400dad":[ "<li>When an Agent's attack hits a Boss, the Boss gains 1 point of <span style='font-weight:bold;'>Dissonance</span>. The same Agent can apply at most 1 point of <span style='font-weight:bold;'>Dissonance</span> every 1s.</li><li>When a Boss accumulates 10 points of <span style='font-weight:bold;'>Dissonance</span>, all <span style='font-weight:bold;'>Dissonance</span> points are immediately removed and the Boss enters the <span style='font-weight:bold;'>Dissonant</span> state. While in the <span style='font-weight:bold;'>Dissonant</span> state, enemies take <span style='color:#2bad00;font-weight:bold;'>40%</span> bonus <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> for 10s. Re-entering the <span style='font-weight:bold;'>Dissonant</span> state resets the duration.</li><li>When an Agent successfully inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on a Boss, all Agents on the squad gain the <span style='font-weight:bold;'>Transmutation</span> effect: DMG dealt increases by <span style='color:#2bad00;font-weight:bold;'>15%</span> and <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>20</span> points. The <span style='font-weight:bold;'>Transmutation</span> effect lasts 10s, and repeated triggers reset the duration.</li>",
                "<li>When an Agent's attack hits a Boss, the Boss gains 1 point of <span style='font-weight:bold;'>Dissonance</span>. The same Agent can apply at most 1 point of <span style='font-weight:bold;'>Dissonance</span> every 1s.</li><li>When a Boss accumulates 10 points of <span style='font-weight:bold;'>Dissonance</span>, all <span style='font-weight:bold;'>Dissonance</span> points are immediately removed and the Boss enters the <span style='font-weight:bold;'>Dissonant</span> state. While in the <span style='font-weight:bold;'>Dissonant</span> state, enemies take <span style='color:#2bad00;font-weight:bold;'>40%</span> bonus <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> and <span style='color:#2bad00;font-weight:bold;'>75%</span> bonus <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> for 10s. Re-entering the <span style='font-weight:bold;'>Dissonant</span> state resets the duration.</li><li>When an Agent successfully inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on a Boss, all Agents on the squad gain the <span style='font-weight:bold;'>Transmutation</span> effect: DMG dealt increases by <span style='color:#2bad00;font-weight:bold;'>15%</span> and <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>20</span> points. The <span style='font-weight:bold;'>Transmutation</span> effect lasts 10s, and repeated triggers reset the duration.</li>",
-               "<li>When an Agent's attack hits a Boss, the Boss gains 1 point of <span style='font-weight:bold;'>Dissonance</span>. The same Agent can apply at most 1 point of <span style='font-weight:bold;'>Dissonance</span> every 1s.</li><li>When a Boss accumulates 10 points of <span style='font-weight:bold;'>Dissonance</span>, all <span style='font-weight:bold;'>Dissonance</span> points are immediately removed and the Boss enters the <span style='font-weight:bold;'>Dissonant</span> state. While in the <span style='font-weight:bold;'>Dissonant</span> state, enemies take <span style='color:#2bad00;font-weight:bold;'>20%</span> bonus <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span>, <span style='color:#2bad00;font-weight:bold;'>120%</span> bonus CRIT DMG, <span style='color:#2bad00;font-weight:bold;'>65%</span> bonus <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span>, and <span style='color:#2bad00;font-weight:bold;'>25%</span> bonus <span style='color:#ff8888;font-weight:bold;'>Laceration DMG</span> for 10s. Re-entering the <span style='font-weight:bold;'>Dissonant</span> state resets the duration.</li><li>When an Agent successfully inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on a Boss, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>20</span> points for 10s. Repeated triggers reset the duration.</li>" ],
+               "<li>When an Agent's attack hits a Boss, the Boss gains 1 point of <span style='font-weight:bold;'>Dissonance</span>. The same Agent can apply 1 point of <span style='font-weight:bold;'>Dissonance</span> at most once every 1s.</li><li>When a Boss accumulates 10 points of <span style='font-weight:bold;'>Dissonance</span>, all <span style='font-weight:bold;'>Dissonance</span> points are immediately removed and the Boss enters the <span style='font-weight:bold;'>Dissonant</span> state. While in the <span style='font-weight:bold;'>Dissonant</span> state, <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span> dealt to the Boss increases by <span style='color:#2bad00;font-weight:bold;'>20%</span>, CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>120%</span>, <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> dealt to the Boss increases by <span style='color:#2bad00;font-weight:bold;'>65%</span>, and <span style='color:#ff8888;font-weight:bold;'>Laceration DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>25%</span> for 10s. Re-entering the <span style='font-weight:bold;'>Dissonant</span> state resets the duration.</li><li>When an Agent successfully inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on a Boss, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>20</span> points for 10s. Repeated triggers reset the duration.</li>" ],
   "31400dap":[ "<li>Each time you successfully parry an attack from Girtablullu's summoned minions and trigger <span style='color:#0088ff;font-weight:bold;'>CONVERT!!</span>, you gain <span style='color:#f29e38;font-weight:bold;'>500 Performance Points</span>; successfully triggering <span style='font-weight:bold;'>Chain Parry</span> against Girtablullu's attacks grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>, up to 3 times; if you successfully break the Corruptive Barrier within 25s of Girtablullu first activating Corruptive Barrier, you gain <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>" ],
   "31400dam":[ null ],
 
@@ -727,9 +597,139 @@
 
 
 
-  "33400dad":[ "<li>When an Agent inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on an enemy, the target enemy gains 1 stack of <span style='font-weight:bold;'>Blight Mark</span> of the corresponding Attribute. When an Agent inflicts <span style='color:#ff8888;font-weight:bold;'>Maim</span> on an enemy, the target enemy gains 2 stacks of attribute-less <span style='font-weight:bold;'>Blight Mark</span>. <span style='font-weight:bold;'>Blight Mark</span> stacks up to 3 times and lasts 10s. Repeated triggers of same-Attribute <span style='font-weight:bold;'>Blight Mark</span> reset its duration.</li><li>For every stack of <span style='font-weight:bold;'>Blight Mark</span> inflicted, the enemies take <span style='color:#2bad00;font-weight:bold;'>15%</span> more <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly DMG</span>, <span style='color:#2bad00;font-weight:bold;'>35%</span> more <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span>, and DMG taken by Corruptive Barrier increases by <span style='color:#2bad00;font-weight:bold;'>15%</span>.</li><li>When inflicting <span style='color:#daad00;font-weight:bold;'>IMPAIRED!!</span> or <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> on an enemy, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>50</span> for 15s. Repeated triggers reset the duration.</li>" ],
+  "33400dad":[ "<li>When an Agent inflicts an <span style='color:#7b78ff;font-weight:bold;'>Attribute Anomaly</span> on an enemy, the target enemy gains 1 stack of <span style='font-weight:bold;'>Blight Mark</span> of the corresponding Attribute. When an enemy's <span style='color:#ff8888;font-weight:bold;'>Gash</span> is removed upon <span style='color:#ff8888;font-weight:bold;'>Maim</span> DMG settlement, they gain 2 stacks of non-attribute <span style='font-weight:bold;'>Blight Marks</span>, lasting 10s. <span style='font-weight:bold;'>Blight Marks</span> can stack up to 3 times, and reapplying a <span style='font-weight:bold;'>Blight Mark</span> of the same Attribute resets its duration.</li><li>For each <span style='font-weight:bold;'>Blight Mark</span> an enemy has, <span style='color:#7b78ff;font-weight:bold;'>Anomaly DMG</span> they take is increased by <span style='color:#2bad00;font-weight:bold;'>15%</span>, DMG from Corruptive Barrier is increased by <span style='color:#2bad00;font-weight:bold;'>15%</span>, and <span style='color:#ff8888;font-weight:bold;'>Sharp DMG</span> is increased by <span style='color:#2bad00;font-weight:bold;'>35%</span>.</li><li>When <span style='color:#daad00;font-weight:bold;'>IMPAIRED!!</span> or <span style='color:#b778ff;font-weight:bold;'>SHUTDOWN!!</span> is inflicted on an enemy, the whole squad's <span style='color:#7b78ff;font-weight:bold;'>Anomaly Proficiency</span> increases by <span style='color:#2bad00;font-weight:bold;'>50</span> for 15s. Repeated triggers reset the duration.</li>" ],
   "33400dap":[ "<li>Successfully inflicting <span style='color:#daad00;font-weight:bold;'>IMPAIRED!!</span> grants <span style='color:#f29e38;font-weight:bold;'>1000 Performance Points</span>; successfully countering Control Skill grants <span style='color:#f29e38;font-weight:bold;'>500 Performance Points</span> each time; preventing an enemy's Corruptive Barrier from completing its charge and rendering them <span style='color:#daad00;font-weight:bold;'>IMPAIRED!!</span> grants <span style='color:#f29e38;font-weight:bold;'>1500 Performance Points</span>. A maximum of 5000 Performance Points can be obtained.</li>" ],
   "33400dam":[ null ],
+
+
+
+
+
+  "10A00000":[ "Anby",                          "anby",             null ],
+
+  "10A01000":[ "Anton",                         "anton",            null ],
+
+  "10A02000":[ "Ben",                           "ben",              null ],
+
+  "10A03000":[ "Billy",                         "billy",            null ],
+
+  "10A04000":[ "Corin",                         "corin",            null ],
+
+  "10A05000":[ "Lucy",                          "lucy",             null ],
+
+  "10A06000":[ "Nicole",                        "nicole",           null ],
+
+  "10A07000":[ "Piper",                         "piper",            null ],
+
+  "10A08000":[ "Soukaku",                       "soukaku",          null ],
+
+  "10S00000":[ "Ellen",                         "ellen",            null ],
+
+  "10S01000":[ "Zhu Yuan",                      "zhuyuan",          null ],
+
+  "10S02000":[ "Grace",                         "grace",            null ],
+
+  "10S03000":[ "Koleda",                        "koleda",           null ],
+
+  "10S04000":[ "Lycaon",                        "lycaon",           null ],
+
+  "10S05000":[ "Nekomata",                      "nekomata",         null ],
+
+  "10S06000":[ "Rina",                          "rina",             null ],
+
+  "10S07000":[ "Soldier 11",                    "soldier11",        null ],
+
+  "11A00000":[ "Seth",                          "seth",             null ],
+
+  "11S00000":[ "Qingyi",                        "qingyi",           null ],
+
+  "11S01000":[ "Jane",                          "jane",             "<span style='color:#f0d12b;font-weight:bold;'>Assault</span> CRIT DMG increases by <span style='color:#2bad00;font-weight:bold;'>27%</span>." ],
+
+  "12S00000":[ "Caesar",                        "caesar",           "While Shielded, Agents' DMG taken decreases by <span style='color:#2bad00;font-weight:bold;'>67%</span>." ],
+
+  "12S01000":[ "Burnice",                       "burnice",          null ],
+
+  "13S00000":[ "Yanagi",                        "yanagi",           "<span style='color:#2eb6ff;font-weight:bold;'>Shock DMG</span> and <span style='color:#7b78ff;font-weight:bold;'>Disorder DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>46%</span>." ],
+
+  "13S01000":[ "Lighter",                       "lighter",          null ],
+
+  "14S00000":[ "Miyabi",                        "miyabi",           null ],
+
+  "14S01000":[ "Harumasa",                      "harumasa",         null ],
+
+  "15S00000":[ "Astra Yao",                     "astra",            null ],
+
+  "15S01000":[ "Evelyn",                        "evelyn",           "<span style='font-weight:bold;'>Chain Attack</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>399%</span>." ],
+
+  "16A00000":[ "Pulchra",                       "pulchra",          null ],
+
+  "16S00000":[ "Soldier 0: Anby",               "sanby",            null ],
+
+  "16S01000":[ "Trigger",                       "trigger",          null ],
+
+  "17S00000":[ "Vivian",                        "vivian",           "<span style='color:#7b78ff;font-weight:bold;'>Abloom DMG</span> and <span style='color:#7b78ff;font-weight:bold;'>Disorder DMG</span> increase by <span style='color:#2bad00;font-weight:bold;'>202.5%</span>." ],
+
+  "17S01000":[ "Hugo",                          "hugo",             "<span style='color:#ffe599;font-weight:bold;'>Totalize</span> DMG increases by <span style='color:#2bad00;font-weight:bold;'>472%</span>." ],
+
+  "20A00000":[ "Pan Yinhu",                     "panyinhu",         null ],
+
+  "20S00000":[ "Yixuan",                        "yixuan",           null ],
+
+  "20S01000":[ "Ju Fufu",                       "jufufu",           null ],
+
+  "21S00000":[ "Yuzuha",                        "yuzuha",           null ],
+
+  "21S01000":[ "Alice",                         "alice",            null ],
+
+  "22S00000":[ "Seed",                          "seed",             null ],
+
+  "22S01000":[ "Orphie & Magus",                "orphie",           null ],
+
+  "23A00000":[ "Manato",                        "manato",           null ],
+
+  "23S00000":[ "Lucia",                         "lucia",            null ],
+
+  "23S01000":[ "Yidhari",                       "yidhari",          "<span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>24%</span>." ],
+
+  "23S01001":[ "Yidhari",                       "yidhari",          "<span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>35.1%</span>." ],
+
+  "24S00000":[ "Dialyn",                        "dialyn",           null ],
+
+  "24S01000":[ "Banyue",                        "banyue",           "<span style='color:#da00ad;font-weight:bold;'>Sheer DMG</span> dealt by <span style='font-weight:bold;'>Basic Attack</span> and <span style='font-weight:bold;'>EX Special Attack</span> increase by <span style='color:#2bad00;font-weight:bold;'>109.4%</span>." ],
+
+  "25S00000":[ "Ye Shunguang",                  "shunguang",        null ],
+
+  "25S01000":[ "Zhao",                          "zhao",             null ],
+
+  "26S00000":[ "Sunna",                         "sunna",            null ],
+
+  "26S01000":[ "Aria",                          "aria",             "<span style='color:#7b78ff;font-weight:bold;'>Abloom DMG</span> increases by <span style='color:#2bad00;font-weight:bold;'>17.3%</span>." ],
+
+  "27S00000":[ "Nangong Yu",                    "nangong",          null ],
+
+  "27S01000":[ "Cissia",                        "cissia",           null ],
+
+  "28S00000":[ "Promeia",                       "promeia",          null ],
+
+  "28S01000":[ "Starlight: Billy",              "sbilly",           null ],
+
+  "30S00000":[ "Velina",                        "velina",           null ],
+
+  "30S01000":[ "Norma",                         "norma",            null ],
+
+  "30S02000":[ "Pyrois",                        "pyrois",           null ],
+
+  "31S00000":[ "Remielle",                      "remielle",         null ],
+
+  "31S01000":[ "Sigrid",                        "sigrid",           null ],
+
+  "32S00000":[ "Claret",                        "claret",           null ],
+
+  "32S01000":[ "Roxy",                          "roxy",             null ],
+
+  "33S00000":[ "Phoenix",                       "phoenix",          null ],
+
+  "33S01000":[ "Severian",                      "severian",         null ],
 
 
 

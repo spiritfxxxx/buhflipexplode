@@ -4120,7 +4120,7 @@
             },
 
     "3.3.1":{ "versionName":"3.3 Phase 1",
-              "versionTime":"xx/xx/20xx - xx/xx/20xx",
+              "versionTime":"30/10/2026 - 13/11/2026",
               "versionBuffMain":1, "versionBuffIDs":["62000085", "62000086", "62000087"],
               "versionDazeMult":100, "versionAnomMult":100,
               "versionEnemies":{
@@ -4178,7 +4178,7 @@
             },
 
     "3.3.2":{ "versionName":"3.3 Phase 2",
-              "versionTime":"xx/xx/20xx - xx/xx/20xx",
+              "versionTime":"13/11/2026 - 27/11/2026",
               "versionBuffMain":1, "versionBuffIDs":["62000088", "62000089", "62000090"],
               "versionDazeMult":100, "versionAnomMult":100,
               "versionEnemies":{
@@ -4235,7 +4235,7 @@
             },
 
     "3.3.3":{ "versionName":"3.3 Phase 3",
-              "versionTime":"xx/xx/20xx - xx/xx/20xx",
+              "versionTime":"27/11/2026 - 11/12/2026",
               "versionBuffMain":1, "versionBuffIDs":["62000091", "62000092", "62000093"],
               "versionDazeMult":100, "versionAnomMult":100,
               "versionEnemies":{
