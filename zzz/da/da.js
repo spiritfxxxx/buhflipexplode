@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 47, vBeta = 51, vMias = 19, vWind = 35, vAdv = 42;
+let vLive = 48, vBeta = 51, vMias = 19, vWind = 35, vAdv = 42;
 let menuBarIsOpen = versionSelectorIsOpen = calcIsOpen = chartIsOpen = false;
 let elementData = ["ice", "fire", "electric", "ether", "physical", "wind"];
 let currNumberFormat, leaksToggle = document.getElementById("lks"), spoilersToggle = document.getElementById("spl");

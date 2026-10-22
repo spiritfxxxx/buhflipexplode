@@ -252,7 +252,7 @@ li {
 /* trait display */
 .t {
   padding: 15px;
-  min-height: 571px;
+  min-height: 414px;
   border-radius: 4px;
   background-color: #27363e;
 }
@@ -855,9 +855,12 @@ input:checked + #tgl-lks:before, input:checked + #tgl-spl:before {
   font-family: "Inconsolata";
   src: url(../../assets/Inconsolata-Regular.woff2) format("woff2");
 }
+@media (max-width: 1840px) {
+  .t { min-height: 561.5px; }
+}
 @media (max-width: 1360px) {
   #a { min-height: 165px; }
-  .t { min-height: 755px; }
+  .t { min-height: 770px; }
 }
 @media (max-width: 1080px) {
   #v-hp { margin: 15px; }
