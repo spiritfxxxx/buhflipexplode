@@ -506,5 +506,38 @@
               {"id":"32300", "type":0, "desc":1, "perf":0, "misc":0},
               {"id":"28300", "type":0, "desc":0, "perf":0, "misc":0},
               {"id":"31400", "type":0, "desc":2, "perf":0, "misc":-1, "customElementMult":[1.0, 0.8, 1.0, 1.0, 1.0, 0.8]} ]
+          },
+
+  "3.4.1":{ "versionName":"3.4 Phase 1",
+            "versionTime":"xx/xx/20xx - xx/xx/20xx",
+            "versionBuffIDs":["69000088", "69000089", "69000090"],
+            "versionHPMult":[220, 250, 250, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
+            "versionEnemies":[
+              {"id":"34300", "type":0, "desc":0, "perf":0, "misc":0},
+              {"id":"28300", "type":0, "desc":0, "perf":0, "misc":0},
+              {"id":"33300", "type":0, "desc":0, "perf":0, "misc":0},
+              {"id":"34400", "type":0, "desc":0, "perf":0, "misc":0, "customElementMult":[1.0, 0.8, 1.0, 1.0, 1.0, 1.2]} ]
+          },
+
+  "3.4.2":{ "versionName":"3.4 Phase 2",
+            "versionTime":"xx/xx/20xx - xx/xx/20xx",
+            "versionBuffIDs":["69000091", "69000092", "69000093"],
+            "versionHPMult":[220, 300, 270, 350], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
+            "versionEnemies":[
+              {"id":"34300", "type":0, "desc":0, "perf":0, "misc":0},
+              {"id":"27300", "type":0, "desc":0, "perf":1, "misc":0},
+              {"id":"30300", "type":0, "desc":0, "perf":0, "misc":0},
+              {"id":"33400", "type":0, "desc":0, "perf":0, "misc":-1, "customElementMult":[1.0, 0.8, 0.8, 1.0, 1.0, 1.0]} ]
+          },
+
+  "3.4.3":{ "versionName":"3.4 Phase 3",
+            "versionTime":"xx/xx/20xx - xx/xx/20xx",
+            "versionBuffIDs":["69000094", "69000095", "69000096"],
+            "versionHPMult":[280, 520, 250, 330], "versionDazeMult":[100, 100, 100, 100], "versionAnomMult":[110, 110, 110, 110],
+            "versionEnemies":[
+              {"id":"32300", "type":0, "desc":1, "perf":0, "misc":0},
+              {"id":"10304", "type":0, "desc":0, "perf":0, "misc":-1},
+              {"id":"33300", "type":0, "desc":0, "perf":0, "misc":0},
+              {"id":"33400", "type":0, "desc":0, "perf":0, "misc":-1, "customElementMult":[1.0, 0.8, 0.8, 1.0, 1.0, 1.0]} ]
           }
 }

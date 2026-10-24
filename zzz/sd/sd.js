@@ -839,7 +839,7 @@ function showChart() {
     hpDataAOE = hpDataNew[1];
     hpDataAlt = hpDataNew[2];
     hpChart.options.scales.y.min = chartType == "Post 2.5" && chartNodeNum == 5 ? 70000000 : 0;
-    hpChart.options.scales.y.max = chartType == "Post 2.5" && chartNodeNum == 5 ? 210000000 : 70000000;
+    hpChart.options.scales.y.max = chartType == "Post 2.5" && chartNodeNum == 5 ? 280000000 : 70000000;
   }
   else {
     labels = Array.from({length: versionEnemies.nodes.length}, (_, n) => `Node ${n + 1}`);
