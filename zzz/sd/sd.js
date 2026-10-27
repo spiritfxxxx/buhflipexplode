@@ -411,7 +411,7 @@ function showEnemies() {
   // display enemy hp total
   document.getElementById("v-hp-raw").innerHTML = showNumberFormat(hpData[modeNum - 1][nodeNum - 1][0][versionNum - 1]);
   document.getElementById("v-hp-aoe").innerHTML = showNumberFormat(hpData[modeNum - 1][nodeNum - 1][1][versionNum - 1]);
-  document.getElementById("v-hp-alt").innerHTML = modeNum <= 2 || (modeNum == 4 && (v >= vPost ? nodeNum >= 4 : nodeNum >= 6)) ? showNumberFormat(hpData[modeNum - 1][nodeNum - 1][2][versionNum - 1]) : showNumberFormat(hpData[modeNum - 1][nodeNum - 1][1][versionNum - 1]);
+  document.getElementById("v-hp-alt").innerHTML = showNumberFormat(hpData[modeNum - 1][nodeNum - 1][modeNum <= 2 || (modeNum == 4 && (versionNum >= vPost ? nodeNum >= 4 : nodeNum >= 6)) ? 2 : 1][versionNum - 1]);
 
   // save current settings/page
   saveSettings();
