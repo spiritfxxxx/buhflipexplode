@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------- MAIN PAGE ----------------------------------------------------------------------- */
 
-let vLive = 59, vBeta = 63, vPost = 38, vWind = 47, modeNumOld = modeNum = 4;
+let vLive = 60, vBeta = 63, vPost = 38, vWind = 47, modeNumOld = modeNum = 4;
 let menuBarIsOpen = versionSelectorIsOpen = chartIsOpen = false;
 let elementData = ["ice", "fire", "electric", "ether", "physical", "wind"];
 let currNumberFormat, leaksToggle = document.getElementById("lks"), spoilersToggle = document.getElementById("spl");
