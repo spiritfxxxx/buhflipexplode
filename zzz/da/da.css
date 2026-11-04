@@ -1058,11 +1058,10 @@ input:checked + #tgl-lks:before, input:checked + #tgl-spl:before {
 @media (max-width: 1080px) {
   #v-hp { margin: 15px; }
   #b { flex-direction: column; }
-  #b1, #b2, #b3, .t { min-height: 0px; }
+  #b1, #b2, #b3, #t, .t { min-height: 0px; }
   #t { width: auto; }
-  #s-h { margin-bottom: 75px; flex-direction: column; align-items: center; }
+  #s-h { flex-direction: column; align-items: center; }
   #s-e { flex-direction: column; }
-  #s2, #s3 { margin-top: 75px; }
 }
 @media (max-width: 480px) {
   #sb { width: 100vw; height: 45px; border-right: 0px; border-bottom: 2.5px solid #444444; }
